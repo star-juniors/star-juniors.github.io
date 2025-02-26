@@ -1,7 +1,6 @@
 ---
 title: Educational materials
 parent: Resources
-nav_order: 1
 ---
 
 # Educational materials
@@ -34,21 +33,21 @@ nav_order: 1
 
 - Introduction to STAR software and makers [https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf](https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf) (Leszek Kosarzewski)
 - Introduction to PicoDst [https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov)
-- Introduction to MuDst: 
-  - [https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin) 
-  - [http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko) 
+- Introduction to MuDst:
+  - [https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin)
+  - [http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko)
   - [http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf](http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf) (Jim Thomas)
 - Basic to STAR analysis:  
-  - [https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) (Isaac Upsal) 
+  - [https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) (Isaac Upsal)
   - [https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma)
 - STAR scheduler:  
-  - [https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu) 
+  - [https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu)
   - SUMS(aks STAR scheduler) and Condor Drupal page [https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor](https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor)
-- CVS in STAR [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs) 
+- CVS in STAR [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
   - We transferred to Git recently, report an issue here: [https://github.com/star-bnl/star-sw/issues/new](https://github.com/star-bnl/star-sw/issues/new)
 - FileCatalog [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
-- Starsim: 
-  - [https://www.star.bnl.gov/public/comp/simu/newsite/](https://www.star.bnl.gov/public/comp/simu/newsite/) (looks old but has some useful info) 
+- Starsim:
+  - [https://www.star.bnl.gov/public/comp/simu/newsite/](https://www.star.bnl.gov/public/comp/simu/newsite/) (looks old but has some useful info)
   - [https://drupal.star.bnl.gov/STAR/comp/simu/star-simulation-framework](https://drupal.star.bnl.gov/STAR/comp/simu/star-simulation-framework) (looks unfinished but still useful)
 - BFC chain: [https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx](https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx)
 - [nsww.org - Nuclear Science and Technology: STAR experiment](https://nsww.org/projects/bnl/star/index.php)
