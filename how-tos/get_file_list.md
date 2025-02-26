@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Generating File List for STAR Data
 parent: How-to's
 ---

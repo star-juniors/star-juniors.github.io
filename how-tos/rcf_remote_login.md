@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Remote Desktop for RCF Using NX/NoMachine
 parent: How-to's
 ---

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: SSH key agent
 parent: How-to's
 ---

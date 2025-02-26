@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Issue where ssh/rterm hangs on exit
 parent: How-to's
 ---

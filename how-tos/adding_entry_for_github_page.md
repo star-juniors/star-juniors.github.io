@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Adding Entry to The Github Page
 parent: How-to's
 ---

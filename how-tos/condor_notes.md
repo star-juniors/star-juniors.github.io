@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Notes on using HTCondor
 parent: How-to's
 ---

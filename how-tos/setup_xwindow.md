@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Setup X window system for graphical display of remote files
 parent: How-to's
 ---

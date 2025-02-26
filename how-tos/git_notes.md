@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Notes on using git and Github
 parent: How-to's
 ---

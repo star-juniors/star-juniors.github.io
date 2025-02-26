@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Generate A New Key Pair SSH
 parent: How-to's
 ---

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: SDCC file mounting
 parent: How-to's
 ---

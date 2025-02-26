@@ -1,5 +1,4 @@
 ---
-layout: default
 title: HPSS Archiving Tools
 parent: How-to's
 ---

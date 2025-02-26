@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Logging into BNL Computer System
 parent: How-to's
 ---
