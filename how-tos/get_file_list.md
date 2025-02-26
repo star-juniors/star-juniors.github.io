@@ -1,3 +1,11 @@
+---
+layout: default
+title: Generating File List for STAR Data
+parent: How-to's
+nav_order: 1
+---
+
+
 Generating File List for STAR Data
 -----------------------------------
 
