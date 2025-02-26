@@ -12,6 +12,7 @@ permalink: /
 - [Run Page](https://online.star.bnl.gov/)
 - [Drupal](https://drupal.star.bnl.gov/STAR/comp/)
 - [STAR Juniors](https://drupal.star.bnl.gov/STAR/juniors/educational-materials)
+- [Chatbot](https://starchat.streamlit.app/)
 
 Learn About STAR Detectors
 ==========================
