@@ -1,6 +1,6 @@
 ---
 title: ROOT interactive tutorial
-parent: tutorials
+parent: Tutorials
 ---
 
 # ROOT training for STAR/EIC workshop
