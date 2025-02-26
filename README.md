@@ -58,24 +58,23 @@ Note: After you click on the link, you might need to log-in to drupal first in o
 Resources
 ==========================
 
-- [STAR Theses Repository](https://drupal.star.bnl.gov/STAR/theses)
-- [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes)
-- [Example trigger page](https://www.star.bnl.gov/protected/common/common2016/trigger2016/streams.html)
-- [Real Data summary production](https://www.star.bnl.gov/public/comp/prod/ProdList.html)
-- [BFC production options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl)
-- [Disc quota and usage status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/)
-- [GPC information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml)
-- [STAR Beam Use Request Drupal Page Link](https://drupal.star.bnl.gov/STAR/public/smd)  
-- [STAR mailing lists](https://www.star.bnl.gov/central/lists/)
-- [Sympa](https://lists.bnl.gov/sympa/lists)
-- [STAR CVS](https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/)
-- [STAR Github Repository](https://github.com/star-bnl)
-- [STAR Maker Class Doxygen References](https://www.star.bnl.gov/webdata/dox/html/index.html)
-- [Shift Sign-Up Page](https://online.star.bnl.gov/ShiftSignup/)
-  - [Login Info](https://drupal.star.bnl.gov/STAR/comp/sofi/web-access)
-- [STAR RunLog Browser](https://online.star.bnl.gov/RunLog/)
-- [Check HPSS request status](https://www.star.bnl.gov/devcgi/display_accnt.cgi)
-- [HPSS archiving tools](https://www.sdcc.bnl.gov/services/storage-services/hpss/hpss-archiving-tools)
-- [Notes on Statistics for Physicists](https://ned.ipac.caltech.edu/level5/Sept01/Orear/Orear.html)
+- [STAR Theses Repository](https://drupal.star.bnl.gov/STAR/theses) <sub>drupal.star.bnl.gov/STAR/theses</sub>
+- [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes)<sub>drupal.star.bnl.gov/STAR/theses</sub>
+- [Example trigger page](https://www.star.bnl.gov/protected/common/common2016/trigger2016/streams.html) https://www.star.bnl.gov/protected/common/common2016/trigger2016/
+- [Real Data summary production](https://www.star.bnl.gov/public/comp/prod/ProdList.html)<sub>www.star.bnl.gov/public/comp/prod/ProdList.html</sub>
+- [BFC production options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl)<sub>/www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl</sub>
+- [Disc quota and usage status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/)<sub>monitoring.sdcc.bnl.gov/Facility/GCE/GPFS</sub>
+- [GPC information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml)<sub>www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml</sub>
+- [STAR mailing lists](https://www.star.bnl.gov/central/lists/)<sub>www.star.bnl.gov/central/lists</sub>
+- [Sympa](https://lists.bnl.gov/sympa/lists)<sub>ists.bnl.gov/sympa/lists</sub>
+- [STAR CVS](https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/)<sub>www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroo</sub>
+- [STAR Github Repository](https://github.com/star-bnl)<sub>github.com/star-bnl</sub>
+- [STAR Maker Class Doxygen References](https://www.star.bnl.gov/webdata/dox/html/index.html)<sub>www.star.bnl.gov/webdata/dox/html/index.html</sub>
+- [Shift Sign-Up Page](https://online.star.bnl.gov/ShiftSignup/)<sub>online.star.bnl.gov/ShiftSignup</sub>
+  - [Login Info](https://drupal.star.bnl.gov/STAR/comp/sofi/web-access)<sub>drupal.star.bnl.gov/STAR/comp/sofi/web-access</sub>
+- [STAR RunLog Browser](https://online.star.bnl.gov/RunLog/)<sub>online.star.bnl.gov/RunLog</sub>
+- [Check HPSS request status](https://www.star.bnl.gov/devcgi/display_accnt.cgi)<sub>www.star.bnl.gov/devcgi/display_accnt.cgi</sub>
+- [HPSS archiving tools](https://www.sdcc.bnl.gov/services/storage-services/hpss/hpss-archiving-tools)<sub>www.sdcc.bnl.gov/services/storage-services/hpss/hpss-archiving-tools</sub>
+- [Notes on Statistics for Physicists](https://ned.ipac.caltech.edu/level5/Sept01/Orear/Orear.html)<sub>ned.ipac.caltech.edu/level5/Sept01/Orear/Orear.html</sub>
 
 The webpage was inspired by [https://github.com/ucr-rhic/ucr-rhic.github.io/](https://github.com/ucr-rhic/ucr-rhic.github.io/)
