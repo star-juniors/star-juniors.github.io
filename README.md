@@ -1,4 +1,3 @@
-# STAR juniors summary info
 
 STAR Main Web Sites
 -------------------
@@ -9,7 +8,7 @@ STAR Main Web Sites
 STAR How-Tos
 -------------------
 
-- [How to modify UCR Github page content](how-tos/adding_entry_for_ucr_page.md)
+- [How to modify Github page content](how-tos/adding_entry_for_ucr_page.md)
 - [How to get a computer account in STAR](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/general-access)
 - [How to get file list](how-tos/get_file_list.md)
 - [How to login to RCF machines](how-tos/rcf_generic_login.md)
@@ -71,7 +70,6 @@ Note: After you click on the link, you might need to log-in to drupal first in o
 Resources
 ---------
 
-- [RHIC Cold QCD Plan for 2017 - 2023](https://arxiv.org/abs/1602.03922)
 - [STAR Beam Use Request Drupal Page Link](https://drupal.star.bnl.gov/STAR/public/smd)  
 - [Beam Use Request (BUR) for Runs 21, 23 and data taking in 2023 - 25](https://drupal.star.bnl.gov/STAR/files/BUR2020_final.pdf)
 - [General STAR Information/Organization from PAC meeting Fall 2022](20220916_PACreport.pdf)
@@ -89,6 +87,7 @@ Resources
 - [Mattermost Chat Site](https://chat.sdcc.bnl.gov/login)
 - [STAR Theses Repository](https://drupal.star.bnl.gov/STAR/theses)
 - [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes)
+- [STAR RAG chatbot](https://starchat.streamlit.app/)
 
 Student Custom Pages
 --------------------
