@@ -5,6 +5,8 @@ parent: Tutorials
 
 # How to use Singularity (= Apptainer)
 
+![alt text](container.png)
+
 ## On **local** PC for star infrastructure
 
 Here is the README file for containers for star-software , read the section containers

@@ -5,6 +5,8 @@ parent: Software
 
 # VS Code
 
+![alt text](img/vscode.png)
+
 Visual Studio Code <https://code.visualstudio.com/download> (please, download and install Windows version for WSL2)
 
 Then open a terminal (Ubuntu) and test it:
