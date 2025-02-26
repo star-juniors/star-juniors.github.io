@@ -1,11 +1,13 @@
-# Detector Meetings
+# Educational materials
+
+## Detector Meetings
 
 - [Event Plane Detector](https://drupal.star.bnl.gov/STAR/event/2020/02/20/star-juniors-detector-meeting-epd) (Mike Lisa, February 2020)
 - [Time Projection Chamber](https://drupal.star.bnl.gov/STAR/event/2020/06/11/star-juniors-detector-meeting-tpc) (Gene Van Buren, June 2020)
 - [Barrel Electromagnetic Calorimeter and Barrel Shower Maximum Detector](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-september-2020/juniors-day/star-barrel-calorimeter-and-shower-ma) (Stephen Trentalange, September 2020)
 - [STAR's Time of Flight Detector](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/stars-time-flight-detector) (Frank Geurts, March 2021)
 
-# Junior Meetings
+## Junior Meetings
 
 - [Relativistic hydrodynamics for heavy ion collisions](https://drupal.star.bnl.gov/STAR/event/2020/06/17/star-juniors-meeting-hydrodynamical-evolution) (Iurii Karpenko, June 2020)
 - [Handling Systematic Errors](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/handling-systematic-errors) (Roger Barlow, March 2021)
@@ -22,7 +24,7 @@
 - [Neutron star mergers](https://drupal.star.bnl.gov/STAR/meetings/STAR-Collaboration-Meeting-Spring-2023/Juniors-Day/TBD-Neutron-star-mergers) (Wenbin Lu, February 2023)
 - [Nucleon structure](https://drupal.star.bnl.gov/STAR/meetings/STAR-Collaboration-Meeting-Spring-2023/Juniors-Day/Studies-nucleon-structure-STAR) (Xiaoxuan Chu, February 2023)
 
-# Useful Resources
+## Useful Resources
 
 - Introduction to STAR software and makers [https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf](https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf) (Leszek Kosarzewski)
 - Introduction to PicoDst [https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov)
@@ -45,6 +47,6 @@
 - BFC chain: [https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx](https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx)
 - [nsww.org - Nuclear Science and Technology: STAR experiment](https://nsww.org/projects/bnl/star/index.php)
 
-# Introduction Manual to STAR Juniors
+## Introduction Manual to STAR Juniors
 
 [STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf)
