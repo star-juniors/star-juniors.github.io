@@ -54,4 +54,4 @@ parent: Resources
 
 ## Introduction Manual to STAR Juniors
 
-[STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf)
+[https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf)
