@@ -1,14 +1,14 @@
 # STAR Juniors
 
 STAR Main Web Sites
--------------------
+
 - [STAR Home Page](https://www.star.bnl.gov/)
 - [STAR Run Page](https://online.star.bnl.gov/)
 - [STAR Computing Drupal](https://drupal.star.bnl.gov/STAR/comp/)
 - [STAR Juniors Educational materials](https://drupal.star.bnl.gov/STAR/juniors/educational-materials)	
 
 STAR How-Tos
--------------------
+
 
 - [How to modify Github page content](how-tos/adding_entry_for_ucr_page.md)
 - [How to get a computer account in STAR](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/general-access)
@@ -28,7 +28,7 @@ STAR How-Tos
 
 
 Learn About STAR Detectors
-----------------------------
+
 
 (Ordered from Intro to Advanced)
 
@@ -50,7 +50,7 @@ Learn About STAR Detectors
   - [STAR PID NIM Paper](https://arxiv.org/abs/nucl-ex/0505026v2)
 
 Learn About STAR Data Analysis
----------------------------------
+
 
 **Collaboration Meeting Tutorials:** Every STAR collaboration meeting usually has tutorials/presentations on `STAR Data Analysis` during the juniors day. Here are some collections :
 
@@ -70,7 +70,7 @@ Note: After you click on the link, you might need to log-in to drupal first in o
     - [Analysis Resources By Yang](https://drive.google.com/drive/folders/1QOxYYtEDO6uO5a2PaWHPpcWfP4vYaeFN)
 
 Resources
----------
+
 
 - [STAR Beam Use Request Drupal Page Link](https://drupal.star.bnl.gov/STAR/public/smd)  
 - [Beam Use Request (BUR) for Runs 21, 23 and data taking in 2023 - 25](https://drupal.star.bnl.gov/STAR/files/BUR2020_final.pdf)
