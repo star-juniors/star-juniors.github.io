@@ -59,6 +59,11 @@ Note: After you click on the link, you might need to log-in to drupal first in o
 Resources
 ==========================
 
+- [Example trigger page](https://www.star.bnl.gov/protected/common/common2016/trigger2016/streams.html)
+- [Real Data summary production](https://www.star.bnl.gov/public/comp/prod/ProdList.html)
+- [BFC production options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl)
+- [Disc quota](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/)
+- [GPC information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml)
 - [STAR Beam Use Request Drupal Page Link](https://drupal.star.bnl.gov/STAR/public/smd)  
 - [Beam Use Request (BUR) for Runs 21, 23 and data taking in 2023 - 25](https://drupal.star.bnl.gov/STAR/files/BUR2020_final.pdf)
 - [General STAR Information/Organization from PAC meeting Fall 2022](20220916_PACreport.pdf)
