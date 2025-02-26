@@ -21,14 +21,13 @@ description: A Jekyll theme for documentation
 baseurl: "" # the subpath of your site, e.g. /blog
 repository: star-juniors/star-juniors.github.io # for github-metadata
 
-permalink: pretty
 
-defaults:
-  - scope:
-      path: "" # an empty string here means all files in the project
-      type: "pages"
-    values:
-      layout: "default"
+# defaults:
+#   - scope:
+#       path: "" # an empty string here means all files in the project
+#       type: "pages"
+#     values:
+#       layout: "default"
 
 
 # Enable or disable the site search
