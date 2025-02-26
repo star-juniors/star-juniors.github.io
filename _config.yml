@@ -4,6 +4,10 @@ remote_theme: just-the-docs/just-the-docs
 title: STAR Juniors
 description: A list of helpful links and description for STAR members
 url: "https://star-juniors.github.io"
+baseurl: "" # the subpath of your site, e.g. /blog
+repository: star-juniors/star-juniors.github.io # for github-metadata
+
+
 # Color scheme
 color_scheme: light
 
@@ -16,10 +20,6 @@ aux_links_new_tab: true
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Just the Docs
-description: A Jekyll theme for documentation
-baseurl: "" # the subpath of your site, e.g. /blog
-repository: star-juniors/star-juniors.github.io # for github-metadata
 
 
 # defaults:
@@ -98,8 +98,8 @@ liquid:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: 'first version by aprozo'
-
+footer:
+  content: ""
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
