@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 # STAR Juniors
-
+-----------------------------------------------
 STAR Main Web Sites
 
 - [STAR Home Page](https://www.star.bnl.gov/)
@@ -13,7 +13,7 @@ STAR Main Web Sites
 - [STAR Computing Drupal](https://drupal.star.bnl.gov/STAR/comp/)
 - [STAR Juniors Educational materials](https://drupal.star.bnl.gov/STAR/juniors/educational-materials)	
 
-
+-----------------------------------------------
 Learn About STAR Detectors
 
 
@@ -35,7 +35,7 @@ Learn About STAR Detectors
 - **NIM Papers:**
   - [NIM papers for all STAR detectors](https://www.star.bnl.gov/public/tpc/NimPapers/index.htm).
   - [STAR PID NIM Paper](https://arxiv.org/abs/nucl-ex/0505026v2)
-
+-----------------------------------------------
 Learn About STAR Data Analysis
 
 
@@ -55,7 +55,7 @@ Note: After you click on the link, you might need to log-in to drupal first in o
 
 - Other Resources:
     - [Analysis Resources By Yang](https://drive.google.com/drive/folders/1QOxYYtEDO6uO5a2PaWHPpcWfP4vYaeFN)
-
+-----------------------------------------------
 Resources
 
 
