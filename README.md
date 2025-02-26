@@ -91,7 +91,4 @@ Resources
 - [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes)
 - [STAR RAG chatbot](https://starchat.streamlit.app/)
 
-Student Custom Pages
---------------------
-- [David Kapukchyan General Website](https://www.star.bnl.gov/protected/spin/dkapstar/)
-	+ [FPS FPOST Good Run List](https://www.star.bnl.gov/protected/spin/dkapstar/Run17_RunList/)
+The webpage was inspired and partially copied from [https://github.com/ucr-rhic/ucr-rhic.github.io/](https://github.com/ucr-rhic/ucr-rhic.github.io/)
