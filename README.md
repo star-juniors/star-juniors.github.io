@@ -62,7 +62,7 @@ Resources
 - [STAR Beam Use Request Drupal Page Link](https://drupal.star.bnl.gov/STAR/public/smd)  
 - [Beam Use Request (BUR) for Runs 21, 23 and data taking in 2023 - 25](https://drupal.star.bnl.gov/STAR/files/BUR2020_final.pdf)
 - [General STAR Information/Organization from PAC meeting Fall 2022](20220916_PACreport.pdf)
-- [Notes on Statistics for Physicists](https://ned.ipac.caltech.edu/level5/Sept01/Orear/Orear.html)[(pdf file)](Orear.pdf)
+- [Notes on Statistics for Physicists](https://ned.ipac.caltech.edu/level5/Sept01/Orear/Orear.html)
 - [STAR mailing lists](https://www.star.bnl.gov/central/lists/)
 - [Sympa](https://lists.bnl.gov/sympa/lists)
 - [STAR CVS](https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/)
@@ -73,10 +73,9 @@ Resources
 - [STAR RunLog Browser](https://online.star.bnl.gov/RunLog/)
 - [Disk Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/)
 - [Check HPSS request status](https://www.star.bnl.gov/devcgi/display_accnt.cgi)
-- [HPSS archiving tools](https://www.sdcc.bnl.gov/information/services/hpss-archiving-tools)
+- [HPSS archiving tools](https://www.sdcc.bnl.gov/services/storage-services/hpss/hpss-archiving-tools)
 
 - [STAR Theses Repository](https://drupal.star.bnl.gov/STAR/theses)
 - [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes)
-- [STAR RAG chatbot](https://starchat.streamlit.app/)
 
 The webpage was inspired and partially copied from [https://github.com/ucr-rhic/ucr-rhic.github.io/](https://github.com/ucr-rhic/ucr-rhic.github.io/)

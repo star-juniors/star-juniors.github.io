@@ -2,9 +2,10 @@
 title: Containers
 parent: Tutorials
 ---
-## How to use Singularity (= Apptainer)
 
-### On **local** PC for star infrastructure
+# How to use Singularity (= Apptainer)
+
+## On **local** PC for star infrastructure
 
 Here is the README file for containers for star-software , read the section containers
 [https://github.com/star-bnl/star-sw/](https://github.com/star-bnl/star-sw/blob/main/docs/index.md#containers)
@@ -33,7 +34,7 @@ sudo apt install -y apptainer
 How to partially clone STAR repository git
 [star git tools](https://github.com/star-bnl/star-git-tools)
 
-### On **SDCC** for your own progams
+## On **SDCC** for your own progams
 
 An example of usage latest ROOT 6 to execute a script `my_script.sh` inside the container.
 
