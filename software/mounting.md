@@ -1,7 +1,9 @@
 ---
 title: Mounting SDCC on you laptop
-parent: Software
+parent: Remote Development
+grand_parent: Software
 ---
+
 ![alt text](img/sshfs.png)
 
 Replace your account name in example below:

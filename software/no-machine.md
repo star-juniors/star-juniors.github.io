@@ -1,6 +1,10 @@
 ---
 title: No-machine service for accessing
-parent: Software
+parent: Remote Development
+grand_parent: Software
+---
+
+
 ---
 ![alt text](img/nomachine2.png)
 
