@@ -2,6 +2,7 @@
 title: How-to's
 has_children: true
 permalink: /how-tos/
+nav_order: 5
 ---
 
 STAR How-Tos
