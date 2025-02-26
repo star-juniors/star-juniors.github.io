@@ -3,7 +3,8 @@ STAR Main Web Sites
 -------------------
 - [STAR Home Page](https://www.star.bnl.gov/)
 - [STAR Run Page](https://online.star.bnl.gov/)
-- [STAR Computing Drupal](https://drupal.star.bnl.gov/STAR/comp/)	
+- [STAR Computing Drupal](https://drupal.star.bnl.gov/STAR/comp/)
+- [STAR Juniors Educational materials](https://drupal.star.bnl.gov/STAR/juniors/educational-materials)	
 
 STAR How-Tos
 -------------------
