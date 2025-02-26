@@ -7,12 +7,11 @@ permalink: /
 
 # STAR Main Web Sites
 
-- [STAR Home Page](https://www.star.bnl.gov/)
-- [Mattermost](https://chat.sdcc.bnl.gov/login)
-- [Run Page](https://online.star.bnl.gov/)
-- [Drupal](https://drupal.star.bnl.gov/STAR/comp/)
-- [STAR Juniors](https://drupal.star.bnl.gov/STAR/juniors/educational-materials)
-- [Chatbot](https://starchat.streamlit.app/)
+## [STAR Home Page](https://www.star.bnl.gov/)
+##  [Mattermost](https://chat.sdcc.bnl.gov/login)
+##  [Run Page](https://online.star.bnl.gov/)
+##  [Drupal](https://drupal.star.bnl.gov/STAR/comp/)
+##  [Chatbot](https://starchat.streamlit.app/)
 
 Learn About STAR Detectors
 ==========================
