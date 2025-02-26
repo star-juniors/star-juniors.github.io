@@ -4,30 +4,20 @@ remote_theme: just-the-docs/just-the-docs
 # Site settings
 title: STAR Juniors
 description: A list of helpful links and description for STAR members
-url: "https://star-juniors.github.io" 
-baseurl: "/star-juniors.github.io"
-
+url: "https://star-juniors.github.io"
 # Color scheme
 color_scheme: light
 
 # Enable or disable the site search
 search_enabled: true
 
-# Aux links for the upper right navigation
-aux_links:
-  "View on GitHub":
-    - "//github.com/star-juniors/star-juniors.github.io"
-
 # Makes Aux links open in a new tab
 aux_links_new_tab: true
 
-# Sort order for navigation links
-nav_sort: case_sensitive
-
 # External navigation links
-nav_external_links:
-  - title: GitHub Repository
-    url: https://github.com/star-juniors/star-juniors.github.io
+#nav_external_links:
+#  - title: GitHub Repository
+#    url: https://github.com/star-juniors/star-juniors.github.io
 
 
 
