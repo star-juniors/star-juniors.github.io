@@ -1,3 +1,9 @@
+---
+title: Educational materials
+parent: Resources
+nav_order: 1
+---
+
 # Educational materials
 
 ## Detector Meetings
