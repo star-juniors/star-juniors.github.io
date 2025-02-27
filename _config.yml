@@ -7,13 +7,11 @@ url: "https://star-juniors.github.io"
 baseurl: "" # the subpath of your site, e.g. /blog
 repository: star-juniors/star-juniors.github.io # for github-metadata
 
-
 # Color scheme
 color_scheme: light
 
 # Makes Aux links open in a new tab
 aux_links_new_tab: true
-
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
@@ -21,14 +19,12 @@ aux_links_new_tab: true
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-
 # defaults:
 #   - scope:
 #       path: "" # an empty string here means all files in the project
 #       type: "pages"
 #     values:
 #       layout: "default"
-
 
 # Enable or disable the site search
 # Supports true (default) or false

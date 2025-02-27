@@ -38,7 +38,7 @@ nav_order: 2
 - Introduction to MuDst:
   - [https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin)
   - [http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko)
-  - [http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf](http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf) (Jim Thomas)
+  - [http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf](http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf) (Jim Thomas - broken link)
 - Basic to STAR analysis:  
   - [https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) (Isaac Upsal)
   - [https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma)
