@@ -29,11 +29,11 @@ Spin]
     PWG --> FCV[Flow, Chirality
      and Vorticity]
 
-    click HP "https://drupal.star.bnl.gov/STAR/pwg/Hard-Probes" "Hard Probes Webpage"
-    click LFSUPC "https://drupal.star.bnl.gov/STAR/pwg/lfs-upc" "LFSUPC Webpage"
-    click Spin "https://drupal.star.bnl.gov/STAR/pwg/cold-qcd" "Cold-QCD Webpage"
-    click FCV "https://drupal.star.bnl.gov/STAR/pwg/Fflow-chirality-and-vorticity" "Flow Chirality and Vorticity Webpage"
-    click Correlations "https://drupal.star.bnl.gov/STAR/pwg/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
+    click HP "https://drupal.star.bnl.gov/STAR/pwg/Hard-Probes/Weekly-HP-PWG-meeting" "Hard Probes weekly"
+    click LFSUPC "https://drupal.star.bnl.gov/STAR/pwg/light-flavor-spectra/lfs-upc-weekly-meeting" "LFSUPC weekly"
+    click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
+    click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
+    click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
 
 ```
 
