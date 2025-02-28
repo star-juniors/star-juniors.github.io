@@ -131,26 +131,26 @@ E.g., BHT1 (energetic hit in the calorimeter) * VPD30 (vertex placed within 30 c
 
 - Luminosity - "the ratio of the number of detected collisions $dN$ over time $dt$ and the cross-section ($\sigma$)"
 
-$$ L = \frac{1}{\sigma} \frac{\mathrm{d}N}{\mathrm{d}t}$$
+```math
+L = \frac{1}{\sigma} \frac{\mathrm{d}N}{\mathrm{d}t}
+```
 
 - Used to characterize the performance of the accelerator (number of collisions per unit time)
 
 - Typically has dimensions [b⁻¹ s⁻¹]
 
 - Integrated luminosity is important
-
-$$L_\mathrm{int} = \int L \mathrm{d}t$$
+```math
+L_\mathrm{int} = \int L \mathrm{d}t
+```
 
 ## Luminosity - Advanced
-
-$$ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}$$
-
+```math
+L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
+```
 - k - number of bunches in the accelerator
-
 - N - number of particles in a bunch
-
 - f - revolution frequency
-
 - σ - beam size at the collision point
 
 ## How to Access Luminosity 1/4
