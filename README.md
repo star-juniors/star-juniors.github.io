@@ -80,20 +80,20 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 ### DST tutorials
 
-- [Introduction to PicoDst](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov)
+- [Introduction to PicoDst](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov, 2019)
 - Introduction to MuDst:
-  - [A common-MuDst tutorial 2003](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin)
-  - [Starting Data Analysis on STAR 2011](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko)
+  - [A common-MuDst tutorial](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin, 2003)
+  - [Starting Data Analysis on STAR](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko, 2011)
 
 ### Basic STAR analysis
 
-- [Basics of a STAR analysis 2019](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) + [source](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting/afternoon-session/star-software-101) (Isaac Upsal)
-- [My experience of data analysis at STAR 2018](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma)
-- [Introduction to STAR software and makers 2015](https://nsww.org/projects/bnl/star/docs/STAR_soft_BNL_LK_2015_6_1.pdf) + [updated 2023](https://indico.fjfi.cvut.cz/event/218/contributions/3889/attachments/1253/1936/STAR_soft_LK_2023_2_17.pdf) (Leszek Kosarzewski)
+- [Basics of a STAR analysis](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) + [source](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting/afternoon-session/star-software-101) (Isaac Upsal, 2019)
+- [My experience of data analysis at STAR](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma, 2018)
+- [Introduction to STAR software and makers 2015](https://nsww.org/projects/bnl/star/docs/STAR_soft_BNL_LK_2015_6_1.pdf) + [updated 2023](https://indico.fjfi.cvut.cz/event/218/contributions/3889/attachments/1253/1936/STAR_soft_LK_2023_2_17.pdf) (Leszek Kosarzewski,2023)
 
 ### STAR scheduler  
 
-- [The STAR scheduler 2019](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu)
+- [The STAR scheduler](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu, 2019)
 - [SUMS(aks STAR scheduler) and Condor Drupal page](https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor)
 
 ### Starsim
@@ -135,7 +135,6 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 - [Disc Quota and Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/) — monitoring GPFS
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
 - [STAR Github Repository](https://github.com/star-bnl)
-- [Computing](https://drupal.star.bnl.gov/STAR/comp/)
 
 ### NIM Papers - each subdetector paper
 
