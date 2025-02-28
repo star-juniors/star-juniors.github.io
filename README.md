@@ -7,15 +7,30 @@ permalink: /
 
 # STAR Main Web Sites
 
-## [STAR Home Page](https://www.star.bnl.gov/)
+<span class="fs-8">
+[star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
+</span>
+<span class="fs-8">
+[Mattermost](https://chat.sdcc.bnl.gov){: .btn .btn-blue }
+</span>
+<span class="fs-8">
+[Drupal computing](https://drupal.star.bnl.gov/STAR/comp/){: .btn .btn-blue }
+</span>
+<span class="fs-8">
+[Chatbot](https://starchat.streamlit.app/){: .btn .btn-blue }
+</span>
+<span class="fs-8">
+[Run Page](https://online.star.bnl.gov/){: .btn .btn-blue }
+</span>
 
+<!-- 
 ## [Mattermost](https://chat.sdcc.bnl.gov/login)
 
 ## [Run Page](https://online.star.bnl.gov/)
 
 ## [Drupal](https://drupal.star.bnl.gov/STAR/comp/)
 
-## [Chatbot](https://starchat.streamlit.app/)
+## [Chatbot](https://starchat.streamlit.app/) -->
 
 ## Weekly meetings
 
@@ -114,7 +129,7 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 - [STAR Theses](https://drupal.star.bnl.gov/STAR/theses) — Collection of STAR theses with detailed detector insights.
 - [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes) — Access technical notes and internal documents.
-- [Presentations](https://drupal.star.bnl.gov/STAR/presentations/) -abstracts / talks / posters / proceedings
+- [Presentations](https://drupal.star.bnl.gov/STAR/presentations/) — abstracts / talks / posters / proceedings
 - [Real Data Summary Production](https://www.star.bnl.gov/public/comp/prod/ProdList.html) — Overview of data production summaries.
 - [BFC Production Options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl) — Configurations for dst, [git](https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx)
 - [Disc Quota and Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/) — monitoring GPFS
