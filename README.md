@@ -17,6 +17,8 @@ permalink: /
 
 ## [Chatbot](https://starchat.streamlit.app/)
 
+## Weekly meetings
+
 ```mermaid
 graph TD
     PWG[PWG] --> HP[Hard Probes ]
@@ -61,17 +63,35 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 # Learn About STAR Data Analysis
 
-## Collaboration Meeting Tutorials
+### DST tutorials
 
-(From Introductory to Advanced)
+- [Introduction to PicoDst](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov)
+- Introduction to MuDst:
+  - [A common-MuDst tutorial 2003](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin)
+  - [Starting Data Analysis on STAR 2011](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko)
 
-- [Starting Data Analysis on STAR](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf)
-- [Basics of a STAR analysis (with source code)](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting/afternoon-session/star-software-101)
-- [MuDst Tutorial](http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial06.pdf)
-- [Common MuDst Tutorial](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf)
-- [Introduction to STAR software and makers](https://nsww.org/projects/bnl/star/docs/STAR_soft_BNL_LK_2015_6_1.pdf)
-- [Introduction to PicoDst](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-19-23-august-2019-cracow-poland/juniors-day/introduction-picodst)
-- [The STAR Scheduler (SUMS)](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf)
+### Basic STAR analysis
+
+- [Basics of a STAR analysis 2019](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) + [source](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting/afternoon-session/star-software-101) (Isaac Upsal)
+- [My experience of data analysis at STAR 2018](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma)
+- [Introduction to STAR software and makers 2015](https://nsww.org/projects/bnl/star/docs/STAR_soft_BNL_LK_2015_6_1.pdf) + [updated 2023](https://indico.fjfi.cvut.cz/event/218/contributions/3889/attachments/1253/1936/STAR_soft_LK_2023_2_17.pdf) (Leszek Kosarzewski)
+
+### STAR scheduler  
+
+- [The STAR scheduler 2019](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu)
+- [SUMS(aks STAR scheduler) and Condor Drupal page](https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor)
+
+### Starsim
+
+- [STAR Simulation Page](https://www.star.bnl.gov/public/comp/simu/newsite/) (looks old but has some useful info)
+- [Drupal STAR Simulation Framework](https://drupal.star.bnl.gov/STAR/comp/simu/star-simulation-framework) (looks unfinished but still useful)
+
+### Other
+
+- CVS in STAR
+ [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
+
+- FileCatalog `get_file_list.pl` [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
 
 # Selected Junior Meetings on physics
 
@@ -102,28 +122,7 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 - [STAR Github Repository](https://github.com/star-bnl)
 - [Computing](https://drupal.star.bnl.gov/STAR/comp/)
 
-- [Analysis Resources by Yang](https://drive.google.com/drive/folders/1QOxYYtEDO6uO5a2PaWHPpcWfP4vYaeFN)
-
-- Introduction to STAR software and makers [https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf](https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf) (Leszek Kosarzewski)
-- Introduction to PicoDst [https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf](https://drupal.star.bnl.gov/STAR/system/files/Nigmatkulov_intro2pico_Krakow2019.pdf) (Grigory Nigmatkulov)
-- Introduction to MuDst:
-  - [https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf](https://www.star.bnl.gov/public/comp/meet/RM200311/MuDstTutorial.pdf) (Sergey Panitkin)
-  - [http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf](http://nuclear.ucdavis.edu/~brovko/GettingStarted.pdf) (Samantha Brovko)
-  - [http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf](http://rnc.lbl.gov/~jhthomas/public/MuDstTutorial2011.pdf) (Jim Thomas - broken link)
-- Basic to STAR analysis:  
-  - [https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf](https://drupal.star.bnl.gov/STAR/system/files/Upsal_JuniorsDay.pdf) (Isaac Upsal)
-  - [https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf](https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf) (Rongrong Ma)
-- STAR scheduler:  
-  - [https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu)
-  - SUMS(aks STAR scheduler) and Condor Drupal page [https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor](https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor)
-- CVS in STAR [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
-
-- FileCatalog `get_file_list.pl` [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
-- Starsim:
-  - [https://www.star.bnl.gov/public/comp/simu/newsite/](https://www.star.bnl.gov/public/comp/simu/newsite/) (looks old but has some useful info)
-  - [https://drupal.star.bnl.gov/STAR/comp/simu/star-simulation-framework](https://drupal.star.bnl.gov/STAR/comp/simu/star-simulation-framework) (looks unfinished but still useful)
-
-### NIM Papers
+### NIM Papers - each subdetector paper
 
 Deep dive into technical papers on STAR detectors:
 
@@ -132,4 +131,4 @@ Deep dive into technical papers on STAR detectors:
 
 <!-- [https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf) -->
 
-The webpage was inspired by [UCR RHIC's GitHub Page](https://github.com/ucr-rhic/ucr-rhic.github.io/)
+<!-- The webpage was inspired by [UCR RHIC's GitHub Page](https://github.com/ucr-rhic/ucr-rhic.github.io/) -->
