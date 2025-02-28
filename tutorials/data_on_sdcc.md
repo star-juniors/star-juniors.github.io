@@ -1,3 +1,8 @@
+---
+title: Access Data on SDCC
+parent: Tutorials
+---
+
 # Data on SDCC
 ## (formerly RACF (even earlier RCF))
 *Jakub Češka*  
