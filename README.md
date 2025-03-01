@@ -6,20 +6,27 @@ permalink: /
 ---
 
 # STAR Main Web Sites
-
 <span class="fs-8">
+[Timetable for current collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/70578){: .btn .btn-green }
+</span>
+
+
+
+
+
+<span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
 </span>
-<span class="fs-8">
+<span class="fs-5">
 [Mattermost](https://chat.sdcc.bnl.gov){: .btn .btn-blue }
 </span>
-<span class="fs-8">
+<span class="fs-5">
 [Drupal computing](https://drupal.star.bnl.gov/STAR/comp/){: .btn .btn-blue }
 </span>
-<span class="fs-8">
+<span class="fs-5">
 [Chatbot](https://starchat.streamlit.app/){: .btn .btn-blue }
 </span>
-<span class="fs-8">
+<span class="fs-5">
 [Run Page](https://online.star.bnl.gov/){: .btn .btn-blue }
 </span>
 
@@ -76,6 +83,15 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 - [Time of Flight Detector (TOF)](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/stars-time-flight-detector) (Frank Geurts, March 2021)
 
+
+### NIM Papers - each subdetector paper
+
+Deep dive into technical papers on STAR detectors:
+
+- [NIM papers for all STAR detectors](https://www.star.bnl.gov/public/tpc/NimPapers/index.htm)
+- [STAR PID NIM Paper](https://arxiv.org/abs/nucl-ex/0505026v2)
+ 
+
 # Learn About STAR Data Analysis
 
 ### DST tutorials
@@ -95,6 +111,8 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 - [The STAR scheduler](https://drupal.star.bnl.gov/STAR/system/files/The_STAR_Scheduler_V8.pdf) (Levente Hajdu, 2019)
 - [SUMS(aks STAR scheduler) and Condor Drupal page](https://drupal.star.bnl.gov/STAR/comp/sofi/batch#Condor)
+- [Manual](https://www.star.bnl.gov/public/comp/Grid/scheduler/manual.htm)
+- [STAR Scheduler tutorial](https://drupal.star.bnl.gov/STAR/event/2022/01/14/Scheduler-tutorial/Scheduler-Tutorial) (Levente Hajdu, Jerome Lauret, January 2022)
 
 ### Starsim
 
@@ -115,7 +133,7 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 - [STAR Embedding](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/star-embedding-tutorial) (Xianglei Zhu, March 2021)
 - [Correlations at the femtoscopic scale](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-september-2021/juniors-day/correlations-femtoscopic-scale) (Hanna Zbroszczyk, September 2021)
 - [Uproot and Awkward Array tutorial](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-september-2021/juniors-day/uproot-and-awkward-array-tutorial-par) (Jim Pivarski, September 2021)
-- [STAR Scheduler tutorial](https://drupal.star.bnl.gov/STAR/event/2022/01/14/Scheduler-tutorial/Scheduler-Tutorial) (Levente Hajdu, Jerome Lauret, January 2022)
+
 - [Jets at RHIC](https://drupal.star.bnl.gov/STAR/meetings/STAR-Collaboration-Meeting-February-2022/Junior-Day/TBD-1) (Saehanseul Oh, February 2022)
 - [CME primer and lessons from Isobar Run](https://drupal.star.bnl.gov/STAR/meetings/STAR-Collaboration-Meeting-February-2022/Junior-Day/CME-primer-and-what-we-learned-isobar-r) (Evan Finch, February 2022)
 - [QCD Phase Structure at finite baryon density](https://drupal.star.bnl.gov/STAR/meetings/STAR-Collaboration-Meeting-February-2022/Junior-Day/QCD-phase-structure-finite-baryon-densi) (Volodymyr Vovchenko, February 2022)
@@ -136,12 +154,6 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
 - [STAR Github Repository](https://github.com/star-bnl)
 
-### NIM Papers - each subdetector paper
-
-Deep dive into technical papers on STAR detectors:
-
-- [NIM papers for all STAR detectors](https://www.star.bnl.gov/public/tpc/NimPapers/index.htm)
-- [STAR PID NIM Paper](https://arxiv.org/abs/nucl-ex/0505026v2)
 
 <!-- [https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf) -->
 

@@ -38,8 +38,9 @@ parent: Tutorials
   - *local* - distributed disks (on a specific server), we use xrootd for access
   - *NFS* (network file storage) - shared disks, we can access directly
   - *HPSS* (high performance storage system) - tape storage, relevant for "more exotic" or older data
-< -- 
-> "Analyze 500 GeV proton-proton data from Run17, select BHT1 trigger. Find their luminosity for me."
+
+{: .highlight }
+"Analyze 500 GeV proton-proton data from Run17, select BHT1 trigger. Find their luminosity for me."
 
 ## Act 1
 

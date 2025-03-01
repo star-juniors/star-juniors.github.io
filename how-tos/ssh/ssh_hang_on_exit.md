@@ -1,6 +1,6 @@
 ---
 title: Issue where ssh/rterm hangs on exit
-parent: How-to's
+parent: SSH
 ---
 
 Issue where ssh/rterm hangs on exit

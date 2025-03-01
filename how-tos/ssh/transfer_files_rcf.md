@@ -1,6 +1,6 @@
 ---
 title: SDCC file mounting
-parent: How-to's
+parent: SSH
 ---
 
 Getting Files into and out of BNL RCF servers
