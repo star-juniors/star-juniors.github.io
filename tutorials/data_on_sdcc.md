@@ -32,7 +32,7 @@ parent: Tutorials
   - e.g., st_physics
 
 - **Trigger** - triggering mechanism that identifies "interesting" collisions
-  - e.g., BHT1*VPD30, BHT2*BBCMB
+  - e.g., BHT1\*VPD30, BHT2\*BBCMB
 
 - **storage** - where a specific file is stored; we know 3 types:
   - *local* - distributed disks (on a specific server), we use xrootd for access
@@ -40,7 +40,7 @@ parent: Tutorials
   - *HPSS* (high performance storage system) - tape storage, relevant for "more exotic" or older data
 
 {: .highlight }
-"Analyze 500 GeV proton-proton data from Run17, select BHT1 trigger. Find their luminosity for me."
+"Analyze 500 GeV proton-proton data from Run17 using BHT1 trigger. Find their luminosity for me."
 
 ## Act 1
 
@@ -188,7 +188,7 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ![Get file list](img/12-get_file_list.png)
 
-[Generating File List for STAR Data](/how-tos/get_file_list.md)
+[Generating File List for STAR Data](/how-tos/get_file_list.html)
 
 ## get_file_list.pl - Documentation
 
