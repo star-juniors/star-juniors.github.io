@@ -4,11 +4,12 @@ parent: Tutorials
 ---
 
 # Data on SDCC
+
 ## (formerly RACF (even earlier RCF))
+
 *Jakub Češka*  
 
-
-## Quick Glossary 
+## Quick Glossary
 
 - **Run** - a period of several months in a year when the accelerator conducts collisions
   - e.g., Run17 - acceleration that took place (started) in 2017
@@ -17,7 +18,7 @@ parent: Tutorials
   - e.g., 17319001 (first run of Run17)
 
 - **collision type** - collision system and center-of-mass energy
-  - e.g., pp 510GeV, AuAu 54GeV 
+  - e.g., pp 510GeV, AuAu 54GeV
 
 - **picoDst, MuDst** - format of stored data
   - most newer data primarily uses picoDst (newer format)
@@ -141,14 +142,17 @@ L = \frac{1}{\sigma} \frac{\mathrm{d}N}{\mathrm{d}t}
 - Typically has dimensions [b⁻¹ s⁻¹]
 
 - Integrated luminosity is important
+
 ```math
 L_\mathrm{int} = \int L \mathrm{d}t
 ```
 
 ## Luminosity - Advanced
+
 ```math
 L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 ```
+
 - k - number of bunches in the accelerator
 - N - number of particles in a bunch
 - f - revolution frequency
@@ -174,7 +178,7 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ![Per day](/img/10-perday.png)
 
-## We Have Luminosity!
+## We Have Luminosity
 
 ![Luminosity example](/img/11-lumi_example.png)
 
@@ -188,7 +192,7 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ![Get file list](/img/12-get_file_list.png)
 
-[Generating File List for STAR Data](/how-tos/get_file_list.html)
+[Generating File List for STAR Data](/software/how-tos/get_file_list)
 
 ## get_file_list.pl - Documentation
 
