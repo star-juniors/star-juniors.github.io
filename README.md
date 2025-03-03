@@ -47,12 +47,12 @@ Spin]
     click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
     click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
 
-style PWG fill:#1E90FF,stroke:#000,stroke-width:2px;
-style HP fill:#1E90FF,stroke:#000,stroke-width:2px;
-style LFSUPC fill:#1E90FF,stroke:#000,stroke-width:2px;
-style Spin fill:#1E90FF,stroke:#000,stroke-width:2px;
-style FCV fill:#1E90FF,stroke:#000,stroke-width:2px;
-style Correlations fill:#1E90FF,stroke:#000,stroke-width:2px;
+style PWG fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
+style HP fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
+style LFSUPC fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
+style Spin fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
+style FCV fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
+style Correlations fill:#24a0ed,stroke:#90c7f1,stroke-width:2px,color:#ffffff;
 
 
 
