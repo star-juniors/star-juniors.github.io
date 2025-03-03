@@ -8,7 +8,7 @@ Adding Entry to The Github Page
 
 - The  Github web page address is [`star-juniors.github.io`](https://star-juniors.github.io). And the corresponding Github repository is [`https://github.com/star-juniors/star-juniors.github.io`](https://github.com/star-juniors/star-juniors.github.io). You always update or modify the Github repository and the changes will be automatically applied to the Github web page within a couple of minutes.
 
-- Any text file written in Markdown format will be translated to web pages. Markdown is a very easy/intuitive text-based format. Markdown files are generally given `.md` as extension.  Knowing the very few basic syntax will be sufficient in our case. For example, compare this current page to it's raw version [here](https://raw.githubusercontent.com/star-juniors/star-juniors.github.io/master/how-tos/adding_entry_for_page.md). Also, check [this](https://github.com/tchapi/markdown-cheatsheet) page for basic syntax.
+- Any text file written in Markdown format will be translated to web pages. Markdown is a very easy/intuitive text-based format. Markdown files are generally given `.md` as extension.  Knowing the very few basic syntax will be sufficient in our case. Also, check [this](https://github.com/tchapi/markdown-cheatsheet) page for basic syntax.
 
 - There are two ways you can add an entry or modify an existing entry to the Github page.
 The first approach does not require any prior knowledge of `git`, I will call it `non-git user's` approach. The other approach assumes you are a git user who is familiar with the `git` commands. In both cases, you need to have a Github account and the account should be added to this repository as a collaborator.
