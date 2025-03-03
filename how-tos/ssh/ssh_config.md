@@ -1,6 +1,6 @@
 ---
 title: SSH config
-parent: How-to's
+parent: SSH
 ---
 
 

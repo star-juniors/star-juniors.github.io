@@ -1,5 +1,5 @@
 ---
-title: Generating File List for STAR Data
+title:  get_file_list.pl 
 parent: How-to's
 ---
 

@@ -2,6 +2,7 @@
 title: Publication process
 ---
 
+
 # How to get your results approved and published in STAR
 
 *Barbara Trzeciak*  

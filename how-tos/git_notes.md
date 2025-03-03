@@ -1,5 +1,5 @@
 ---
-title: Notes on using git and Github
+title: Notes on using git
 parent: How-to's
 ---
 

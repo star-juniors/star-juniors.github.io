@@ -1,6 +1,6 @@
 ---
 title: SSH key agent
-parent: How-to's
+parent: SSH
 ---
 
 How to use an authentication agent (SSH agent) to store your private key for SSH transactions

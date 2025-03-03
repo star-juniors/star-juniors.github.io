@@ -3,9 +3,9 @@ title: Containers
 parent: Tutorials
 ---
 
-# How to use Singularity (= Apptainer)
+# How to use Singularity (Apptainer)
 
-![alt text](container.png)
+
 
 ## On **local** PC for star infrastructure
 
@@ -36,12 +36,14 @@ sudo apt install -y apptainer
 How to partially clone STAR repository git
 [star git tools](https://github.com/star-bnl/star-git-tools)
 
+![alt text](img/container.png)
+
 ## On **SDCC** for your own progams
 
-An example of usage latest ROOT 6 to execute a script `my_script.sh` inside the container.
-
+An example of usage of latest ROOT 6 to run a bash sell inside the container.
+More info here - [quick_start](https://apptainer.org/docs/user/main/quick_start.html)
 ```bash
-#!/bin/bash
 singularity pull docker://rootproject/root
-singularity exec --bind /gpfs01/star/pwg:/gpfs01/star/pwg root_latest.sif /bin/sh my_script.sh
+singularity shell --bind /gpfs01/star/pwg:/gpfs01/star/pwg root_latest.sif 
 ```
+![alt text](img/singularity_sdcc.png)

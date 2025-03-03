@@ -1,6 +1,6 @@
 ---
 title: Logging into BNL Computer System
-parent: How-to's
+parent: SSH
 ---
 
 Logging into Brookhaven National Lab's (BNL) Computer System
