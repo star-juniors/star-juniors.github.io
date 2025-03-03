@@ -46,6 +46,16 @@ Spin]
     click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
     click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
     click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
+
+style PWG fill:#1E90FF,stroke:#000,stroke-width:2px;
+style HP fill:#1E90FF,stroke:#000,stroke-width:2px;
+style LFSUPC fill:#1E90FF,stroke:#000,stroke-width:2px;
+style Spin fill:#1E90FF,stroke:#000,stroke-width:2px;
+style FCV fill:#1E90FF,stroke:#000,stroke-width:2px;
+style Correlations fill:#1E90FF,stroke:#000,stroke-width:2px;
+
+
+
 ```
 
 ## Mailing lists
