@@ -1,8 +1,7 @@
 ---
 title: How-to's
-has_children: true
+parent: Software
 permalink: /how-tos/
-nav_order: 5
 ---
 
 STAR How-Tos
