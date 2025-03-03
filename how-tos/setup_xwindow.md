@@ -21,9 +21,11 @@ Installing and setting up X11 is highly machine dependent.  I will go over some 
 
 1. Open a terminal
 2. Type the command `xeyes`
- - If X11 tools **are** already installed then a window will pop up with a pair of eyes that follow your mouse.
- - If X11 tools are **not** installed you will be prompted to download and install any of its dependencies.  Follow the terminal prompts to do this
-  - Once completed type `xeyes` again to confirm it is working.
+
+- If X11 tools **are** already installed then a window will pop up with a pair of eyes that follow your mouse.
+- If X11 tools are **not** installed you will be prompted to download and install any of its dependencies.  Follow the terminal prompts to do this
+- Once completed type `xeyes` again to confirm it is working.
+
 3. Finished: Proceed to [setup](#X11Setup)
 
 ### Mac OS X
@@ -50,9 +52,12 @@ Using X11 on Ubuntu is fairly simple.
 
 1. Set the **DISPLAY** environment variable to *localhost:0*[^1] using the command `export DISPLAY=localhost:0`
 2. Enable X11 forwarding with your SSH command using option '-X' `ssh -X user@ssh.sdcc.bnl.gov`
- - You can use option '-Y' instead which tells ssh it is a trusted client but this may lead to security issues [see here](https://askubuntu.com/questions/35512/what-is-the-difference-between-ssh-y-trusted-x11-forwarding-and-ssh-x-u) and [here](https://stackoverflow.com/questions/13425820/difference-between-ssh-x-and-ssh-y), only use it if '-X' is not working.
+
+- You can use option '-Y' instead which tells ssh it is a trusted client but this may lead to security issues [see here](https://askubuntu.com/questions/35512/what-is-the-difference-between-ssh-y-trusted-x11-forwarding-and-ssh-x-u) and [here](https://stackoverflow.com/questions/13425820/difference-between-ssh-x-and-ssh-y), only use it if '-X' is not working.
+
 3. Finished: Any graphical interface will now be opened on the X-window display, you can also [display image files](#X11DisplayImage)
- - It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
+
+- It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
 
 ### Mac OS X
 
@@ -67,24 +72,35 @@ Using X11 on windows is highly dependent on the terminal application you want to
 ##### Start X11 program
 
 - Start Xming or VcXsrv
+
  1. Find and start the program `XLaunch.exe`
-  - Any installation of *Xming* or *VcXsrv* will install this executable
+
+- Any installation of *Xming* or *VcXsrv* will install this executable
+
  2. Select settings as desired and click next until X11 starts
-  - Default options are fine but if you want to here is the place to customize.[^1]
-  - The only indication that the program has started is an icon that looks like an **X** will appear on the taskbar.  This icon can be right clicked to access more options as well as quitting.
+
+- Default options are fine but if you want to here is the place to customize.[^1]
+- The only indication that the program has started is an icon that looks like an **X** will appear on the taskbar.  This icon can be right clicked to access more options as well as quitting.
+
  3. Leave the X11 program running while you connect with one of the methods below.
-  - Once you are done you can terminate the X11 program.
+
+- Once you are done you can terminate the X11 program.
   
 ##### Windows 10 with OpenSSH installed using Powershell
 
 This is my recommended way to use X11 on Windows 10.  Using X11 on Powershell with OpenSSH installed is the same as for Mac or Ubuntu but due to variations in commands I will repeat it here.
 
 1. Ensure the **DISPLAY** environment variable is set to *localhost:0*[^1] using the command `echo $env:DISPLAY`
- - If unset or incorrect set it using command `$Env:DISPLAY = "localhost:0"`
+
+- If unset or incorrect set it using command `$Env:DISPLAY = "localhost:0"`
+
 2. Enable X11 forwarding with your SSH command using option '-Y' `ssh -Y user@ssh.sdcc.bnl.gov`
- - ****Note(October 9, 2020):**** The option '-X' does not work possibly due to incompatibilities between certain Linux libraries running on Windows.  I may not sure if they this may cause security issues [see](#UbuntuSetupX11)
+
+- ****Note(October 9, 2020):**** The option '-X' does not work possibly due to incompatibilities between certain Linux libraries running on Windows.  I may not sure if they this may cause security issues [see](#UbuntuSetupX11)
+
 3. Finished: Any graphical interface will now be opened on the X-window display, you can also [display image files](#X11DisplayImage)
- - It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
+
+- It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
 
 ##### Windows Subsystem for Linux (WSL) Version 1 Ubuntu
 
@@ -101,10 +117,13 @@ Disclaimer: PuTTY is 3rd party telnet/ssh tool for Windows, however due to Windo
 1. Load your saved putty configuration for RCF connection
 2. On PuTTY Configuration side tab navigate to Connection->SSH->X11
 3. Click on icon labeled `Enable X11 forwarding`[^1]
- - *Optional* Save the configuration file
+
+- *Optional* Save the configuration file
+
 4. Click `Open` to start the connection.
 5. Finished: Any graphical interface will now be opened on the X-window display, you can also [display image files](#X11DisplayImage)
- - It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
+
+- It is a good idea to check that (not modify) **DISPLAY** environment variable is set to *localhost*[^1] on remote machine and `xeyes` runs.  If it is not set or `xeyes` doesn't run, then go back to beginning and try again.
 
 [^1]:The name **localhost** can be replaced with it's explicit form **127.0.0.1**.  The **:0** simply tells it which display number to use of which *0* is the default.  If you have manually set it to something else replace *0* with chosen display number.
 

@@ -2,8 +2,6 @@
 title: Publication process
 ---
 
-
-
 # How to get your results approved and published in STAR
 
 *Barbara Trzeciak*  
@@ -20,25 +18,9 @@ title: Publication process
 
 ## Links
 
-### STARt with
-
-- STAR web-page: <https://www.star.bnl.gov/>
-- Recent useful educational materials gathered by STAR Juniors: <https://drupal.star.bnl.gov/STAR/juniors/educational-materials>
-- Best place to check for updates, discuss issues and get help: Mattermost <https://www.sdcc.bnl.gov/services/mattermost-chat-service>  
-  *STAR → STAR Juniors, Software and Infrastructure, Scheduler, Production, Embedding & Simulations, ...*
 - STAR Physics Pages of Common Interest (mostly up-to-date information): <https://drupal.star.bnl.gov/STAR/pwg/common>
 - Check existing Analysis Notes and paper codes
 - Talk to your supervisor and colleagues from the group
-
-### General Links
-
-- STAR web-page: <https://www.star.bnl.gov/>
-- STAR mailing lists: <https://www.star.bnl.gov/central/lists/>
-- STAR drupal: <https://drupal.star.bnl.gov/STAR>
-- STAR Physics Pages of Common Interest: <https://drupal.star.bnl.gov/STAR/pwg/common>
-- Computing: <https://drupal.star.bnl.gov/STAR/comp/>
-- STAR Juniors: <https://drupal.star.bnl.gov/STAR/juniors>
-- Recent useful educational materials gathered by STAR Juniors: <https://drupal.star.bnl.gov/STAR/juniors/educational-materials>
 - Policies for the Publication and Presentation of STAR Results: <https://drupal.star.bnl.gov/STAR/system/files/PublicationPolicy101613_v2.html>
 
 ### Analysis Resources
@@ -77,19 +59,36 @@ title: Publication process
 
 ```mermaid
 flowchart TD
-    PAC[Physics Analysis Coordinators\nPAC\n\nSooraj Radhakrishnan\nBarbara Trzeciak deputy] --> PWG1
+    PAC[Physics Analysis Coordinators
+    PAC
+    Sooraj Radhakrishnan
+    Barbara Trzeciak deputy] --> PWG1
     PAC --> PWG2
     PAC --> PWG3
     PAC --> PWG4
     PAC --> PWG5
     
-    PWG1[Correlations and\nFluctuations] --- CONV1[Nu Xu\nHanna Zbroszczyk]
-    PWG2[Flow, Chirality\nand Vorticity] --- CONV2[Richard Seto\nSubhash Singha\nPrithwish Tribedy]
-    PWG3[Hard Probes] --- CONV3[Nihar Sahoo\nIsaac Mooney\nQian Yang]
-    PWG4[Light Flavor\nSpectra and UPC] --- CONV4[Yue Hang Leung\nGuannan Xie\nChun Yuen Tsang]
-    PWG5[Cold QCD\n Spin] --- CONV5[Jae D. Nam\nTing Lin\nXianxuan Chu]
+    PWG1[Correlations and
+    Fluctuations] --- CONV1[Nu Xu
+    Hanna Zbroszczyk]
+    PWG2[Flow, Chirality
+    and Vorticity] --- CONV2[Richard Seto
+    Subhash Singha
+    Prithwish Tribedy]
+    PWG3[Hard Probes] --- CONV3[Nihar Sahoo
+    Isaac Mooney
+    Qian Yang]
+    PWG4[Light Flavor
+    Spectra and UPC] --- CONV4[Yue Hang Leung
+    Guannan Xie
+    Chun Yuen Tsang]
+    PWG5[Cold QCD
+     Spin] --- CONV5[Jae D. Nam
+    Ting Lin
+    Xianxuan Chu]
     
-    NOTE[Current PAC and PWG conveners\nas of 31.1.2025]
+    NOTE[Current PAC and PWG conveners
+    as of 31.1.2025]
 ```
 
 <https://drupal.star.bnl.gov/STAR/pwg/common/pwg-conveners>
@@ -131,6 +130,8 @@ You can submit abstract when:
   - Data you intend to use is ready.
   - Bad run list and centrality calibration, if applicable, are finalized.
   - If your analysis requires official simulations, the production needs to be completed or at least vetted.
+
+  ![alt text](img/preliminary.png)
 
 ### Abstract Submission Process
 
@@ -174,6 +175,8 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
   - Information about the dataset used for the preliminary figure, such as year, collision system, collision energy, centrality if applicable, needs to be displayed.
   - Other key information, such as the kinematic cuts, legend, etc, should be added as well.
   - Font size should be reasonably large such that audience can clearly see them.
+
+  ![alt text](img/star_pic_prelim.png)
 
 - Guidance and template (example): <https://drupal.star.bnl.gov/STAR/pwg/common/Preliminary-figures>
 - Archive of STAR preliminary plots: <https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive>

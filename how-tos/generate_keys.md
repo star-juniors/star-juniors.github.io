@@ -17,10 +17,9 @@ The public and private keys are paired in that they are unique "hashes".  I will
 The authentication happens when the server you are logging into checks the hash of the public key against your private key.  Since no one but you knows the password to your private key this ensures that the one logging in is in fact the person who created the public key.
 **So don't share your private key password or private key it is the only thing that tells the remote machine you are you and not someone else**
 
-Linux and Windows 10 machines that have OpenSSH installed
 -----------------------------------------------------------
 
-1. Open a terminal window (Powershell recommended on Windows) on the desktop machine or laptop that you will be using to login to the RCF/SDCC.
+1. Open a terminal window  on the desktop machine or laptop that you will be using to login to the RCF/SDCC.
 
 2. At the prompt, type: `ssh-keygen -t rsa`
  - You will see output similar to the following: "Generating public/private rsa key pair."
@@ -63,44 +62,3 @@ Linux and Windows 10 machines that have OpenSSH installed
  - `ssh -i ~/.ssh/id_rsa/ username@ssh.sdcc.bnl.gov`
  
 12. In order to prevent having to type the password every time you can add the key to the *ssh-agent*  [see here](ssh_agent.md)
-
-Most Windows versions using PuTTY
-----------------------------------
-
-**This assumes you have downloaded all PuTTY tools from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/)**
-
-Disclaimer: PuTTY is 3rd party telnet/ssh tool for Windows, however due to Windows 10 adding Linux capabilities I no longer advise this route but leave it here for legacy and backward compatibility reasons.
-
-1. Run the executable `puttygen.exe`
- - Default options when starting are fine
-2. Press *Generate*
- - Follow instructions from program to generate key
-3. Once key is generated you will see the key fingerprint as [above](#KeyFingerprint)
-4. Enter a pass-phrase for the key in the box labeled as such
-5. <a name="SavePuttyKey"></a>**Important** Click *Save public key* and give name and location (keep .pub extension [see](#KeyFingerprint)) Click *Save private key* and give name and location same as public key without *.pub* extension.
-6. Finished: you can use this key to login into SDCC using `putty.exe` go [here](placeholder) to see how to do so.
-
-### Convert keys from Linux to Windows PuTTY keys
-
-I leave this here in case you had a public private key pair generated with Linux and now want to use it on Windows with PuTTY or vice versa.
-
-**Important: This is only for private keys.  The public key doesn't need to be converted and should be left unchanged since it is already sitting at the remote machine.  To use a different public key generate a new key pair and upload that.**
-
-#### Linux to Windows
-
-1. Run the executable `puttygen.exe`
-2. Click *Load* follow prompts to select **Linux private key** and enter pass-phrase
-2. On top bar click *Conversions* then *Import key*
-3. Select Linux key you want to convert and follow instructions from prompts to enter pass-phrase
- - This will load the key into the program
-4. You will see output similar to [above](#KeyFingerprint)
-5. Follow these [instructions](#SavePuttyKey)
-
-#### Windows to Linux
-
-1. Run the executable `puttygen.exe`
-2. Click *Load* follow prompts to select **PuTTY private key (.ppk)** key and enter pass-phrase
-3. On top bar click *Conversions* then *Export OpenSSH key*
- - There might be several "Export" options just select the first one and it it doesn't work then go back and try the others.
-4. Give the key a name with no extensions
-5. Move the converted private key to your Linux machine to use.

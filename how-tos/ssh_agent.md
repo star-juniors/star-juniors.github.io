@@ -14,16 +14,14 @@ Once a key is loaded into the ssh-agent you will no longer be prompted for a pas
 
 **Important: On most machines if the ssh-agent is running and you ssh with some private key then it will automatically add that key.  These instructions can help to debug some of those issues**
 
-<a name="LinuxSshAgent"></a>Linux and Windows 10 machines that have OpenSSH installed
+<a name="LinuxSshAgent"></a>
 -----------------------------------------------------------
 
 On most Linux OS the ssh-agent starts by default when you turn on the computer.
-On Windows this is not the case [see here]() to check how to start ssh-agent on Windows 10 that has OpenSSH installed
 
 - To explicitly check or run the agent use `ssh-agent [command [args ...]]`
   - Where command is an optional application to run that will have access to the agent.
   - This will print out information on the started *ssh-agent*
-    - Note: On Windows this output may be different or nonexistent (This may have to do with Windows still not having 100% support for OpenSSH programs. perhaps this may be fixed with time (Last date this was checked September 28, 2020)
 
  ****WARNING: Running `ssh-agent` may create multiple instances it is better to use the method below****
 
@@ -35,7 +33,7 @@ On Windows this is not the case [see here]() to check how to start ssh-agent on 
   - Where *\[file ...\]* is any private key file you want to load into the agent and then type your password into the prompt
   - If no file name is provided, then an attempt is made to load the default files, otherwise the named private key file will be loaded. You will be prompted for the pass phrase for the private key file.
 
-Windows 10 running subsystem for Linux (WSL) version 1
+Windows 10 running subsystem for Linux (WSL2)
 -------------------------------------------------------
 
 Ref:[Source](https://unix.stackexchange.com/questions/132065/how-do-i-get-ssh-agent-to-work-in-all-terminals)
@@ -61,24 +59,3 @@ For WSL the exact same commands can be used as [here](#LinuxSshAgent).  Rather t
 5. Finished: Any new WSL terminal will have the keys already loaded as before and only one instance of ssh-agent will be running
 
 - To check all running processes on Linux use `ps -elf`
-
-Most Windows versions using PuTTY
-----------------------------------
-
-**This assumes you have downloaded all PuTTY tools from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/)**
-
-Disclaimer: PuTTY is 3rd party telnet/ssh tool for Windows, however due to Windows 10 adding Linux capabilities I no longer advise this route but leave it here for legacy and backward compatibility reasons.
-
-1. Start the ssh-agent for PuTTY `pageant.exe`
-
-- At first it might seem like nothing happened but check your taskbar icons.  There should be an icon that looks like a computer wearing a hat.
-- This simply indicates that the ssh-agent exclusively to be used with PuTTY has started.
-
-2. To actually open the program *right click* the icon you found in *step 1*
-
-- Several options pop up I will only discuss the most relevant ones.
-- *View Keys* will open the main *pageant* interface where you can see, add, and remove keys
-- *Add Key* will open a file explorer so you can select your private key
-
-3. Once you add a private key you will be prompted for the password and once you enter it the key will be loaded
-4. Finished: You must log in with `putty.exe` in order for the loaded key to work properly
