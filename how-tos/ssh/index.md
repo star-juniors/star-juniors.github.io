@@ -1,4 +1,5 @@
 ---
 title: SSH
+parent: How-to's
 ---
-Some useful information about SSH at BNL.
+All you wnated to know about SSH for STAR
