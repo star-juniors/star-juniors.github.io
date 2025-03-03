@@ -1,3 +1,9 @@
+---
+title: Juniors Intro Manual
+nav_order: 2
+---
+
+
 # STAR Juniors Intro Manual
 
 ## Contents

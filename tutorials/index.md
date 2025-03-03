@@ -1,4 +1,4 @@
 ---
 title: Tutorials
+nav_order: 3
 ---
-This is a collection of helpful tutorials.
