@@ -12,12 +12,6 @@ permalink: /
 
 
 <span class="fs-5">
-[star juniours]([https://www.star.bnl.gov/](https://drupal.star.bnl.gov/STAR/juniors/)){: .btn .btn-blue }
-</span>
-
-
-
-<span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
 </span>
 <span class="fs-5">
