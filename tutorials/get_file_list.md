@@ -58,11 +58,11 @@ get_file_list.pl -keys 'path,filename' -cond 'production=P11id,filetype=daq_reco
 
 ## Restoring files from HPSS
 
-- Check if the files exist by using the get_file_list.pl command. Note to put storage=hpss option.
+- Check if the files exist by using the `get_file_list.pl` command. Note to put storage=hpss option.
 - Check the  STAR RunLog Browser to select a good run
-- Check the number of events in the file by using the option 'events' as in get_file_list.pl -keys 'path,filename,events'
+- Check the number of events in the file by using the option 'events' as in `get_file_list.pl` -keys 'path,filename,events'
 - This shows various MuDst files relevant to your request
 - Create a directory in your local system or your pwg disk where you want the MuDst files
-- Requests for getting files from hpss are submitted by using the 'hpss_user.pl' command. Use the -h option to look at the different options.
-- Submit a request for getting a particular MuDst file by doing 'hpss_user.pl HPSSFilePath/ TargetFilePath/ '
+- Requests for getting files from hpss are submitted by using the `hpss_user.pl` command. Use the -h option to look at the different options.
+- Submit a request for getting a particular MuDst file by doing `hpss_user.pl HPSSFilePath/ TargetFilePath/`
 - Request Status can be viewed [here](https://www.star.bnl.gov/devcgi/display_accnt.cgi) for the relevant username. Files will be made available to the TargetFilePath/
