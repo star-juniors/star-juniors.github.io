@@ -192,7 +192,7 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ![Get file list](/img/12-get_file_list.png)
 
-[Generating File List for STAR Data](/software/how-tos/get_file_list)
+[Generating File List for STAR Data](/software/get_file_list)
 
 ## get_file_list.pl - Documentation
 

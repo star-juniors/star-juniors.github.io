@@ -1,6 +1,7 @@
 ---
 title: How-to's
 parent: Software
+nav_order: 999
 ---
 
 STAR How-Tos
