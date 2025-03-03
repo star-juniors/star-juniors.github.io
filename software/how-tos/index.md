@@ -1,7 +1,6 @@
 ---
 title: How-to's
 parent: Software
-permalink: /how-tos/
 ---
 
 STAR How-Tos

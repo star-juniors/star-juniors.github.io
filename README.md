@@ -2,14 +2,13 @@
 layout: home
 title: Home
 nav_order: 1
-permalink: /
 ---
 
 # STAR Main Web Sites
+
 <span class="fs-8">
 [Timetable for current collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/70578){: .btn .btn-green }
 </span>
-
 
 <span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
@@ -80,14 +79,12 @@ Informative talks and videos from Junior Meetings, providing insights into speci
 
 - [Time of Flight Detector (TOF)](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/stars-time-flight-detector) (Frank Geurts, March 2021)
 
-
 ### NIM Papers - each subdetector paper
 
 Deep dive into technical papers on STAR detectors:
 
 - [NIM papers for all STAR detectors](https://www.star.bnl.gov/public/tpc/NimPapers/index.htm)
 - [STAR PID NIM Paper](https://arxiv.org/abs/nucl-ex/0505026v2)
- 
 
 # Learn About STAR Data Analysis
 
@@ -150,7 +147,6 @@ Deep dive into technical papers on STAR detectors:
 - [Disc Quota and Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/) — monitoring GPFS
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
 - [STAR Github Repository](https://github.com/star-bnl)
-
 
 <!-- [https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf) -->
 
