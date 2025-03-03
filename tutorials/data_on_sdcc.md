@@ -48,7 +48,7 @@ parent: Tutorials
 
 ## Directory for data-related things
 
-![Directory](img/1-rozcestnik.png)
+![Directory](/img/1-rozcestnik.png)
 
 [Production (drupal page)](https://drupal.star.bnl.gov/STAR/comp/prod)
 
@@ -56,7 +56,7 @@ Directory containing links to pages where information about individual data can 
 
 ## Data for Physical Analysis - Overview
 
-![Production datasets](img/2-production_datasets.png)
+![Production datasets](/img/2-production_datasets.png)
 
 [Production Datasets for Physics Analysis](https://www.star.bnl.gov/public/comp/prod/ProdList.html)
 
@@ -64,7 +64,7 @@ List and brief description of datasets. Contains information about detectors use
 
 ## Data for Physical Analysis - Example
 
-![Dataset example](img/3-dataset_example.png)
+![Dataset example](/img/3-dataset_example.png)
 
 [Production Datasets for Physics Analysis](https://www.star.bnl.gov/public/comp/prod/ProdList.html)
 
@@ -76,7 +76,7 @@ List and brief description of datasets. Contains information about detectors use
 
 ## List of Triggers - Overview
 
-![Triggers](img/4-triggers.png)
+![Triggers](/img/4-triggers.png)
 
 [Trigger 2017](https://www.star.bnl.gov/protected/common/common2017/trigger2017/streams.html)
 
@@ -90,7 +90,7 @@ E.g., BHT1 (energetic hit in the calorimeter) * VPD30 (vertex placed within 30 c
 
 ## List of Triggers - Physics
 
-![Physics triggers](img/5-physics.png)
+![Physics triggers](/img/5-physics.png)
 
 [Trigger 2017](https://www.star.bnl.gov/protected/common/common2017/trigger2017/streams.html)
 
@@ -108,19 +108,19 @@ E.g., BHT1 (energetic hit in the calorimeter) * VPD30 (vertex placed within 30 c
 
 ## STAR Online
 
-![STAR Online](img/I1-online.png)
+![STAR Online](/img/I1-online.png)
 
 [STAR Online](https://online.star.bnl.gov/)
 
 ## RunLog Browser - Introduction
 
-![Run overview](img/I2-run_overview.png)
+![Run overview](/img/I2-run_overview.png)
 
 [STAR RunLog Browser](https://online.star.bnl.gov/RunLog/)
 
 ## RunLog Browser - Triggers
 
-![RunLog Triggers](img/I3-triggers.png)
+![RunLog Triggers](/img/I3-triggers.png)
 
 [STAR RunLog Browser](https://online.star.bnl.gov/RunLog/)
 
@@ -156,29 +156,29 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ## How to Access Luminosity 1/4
 
-![Trigger stream address](img/6-trigger_stream_address.png)
+![Trigger stream address](/img/6-trigger_stream_address.png)
 
 ↓
 
-![Trigger address](img/7-trigger_address.png)
+![Trigger address](/img/7-trigger_address.png)
 
 ## How to Access Luminosity 2/4
 
-![Tree structure](img/8-tree_structure.png)
+![Tree structure](/img/8-tree_structure.png)
 
 ## How to Access Luminosity 3/4
 
-![Luminosities](img/9-lumis.png)
+![Luminosities](/img/9-lumis.png)
 
 ## How to Access Luminosity 4/4
 
-![Per day](img/10-perday.png)
+![Per day](/img/10-perday.png)
 
 ## We Have Luminosity!
 
-![Luminosity example](img/11-lumi_example.png)
+![Luminosity example](/img/11-lumi_example.png)
 
-![Luminosity per day BHT1 VPD30](img/lum_perday_BHT1%20VPD30.png)
+![Luminosity per day BHT1 VPD30](/img/lum_perday_BHT1%20VPD30.png)
 
 ## Conclusion
 
@@ -186,12 +186,12 @@ L = \frac{kN^2f}{4\pi \sigma_x^2 \sigma_y^2}
 
 ## get_file_list.pl - Briefly
 
-![Get file list](img/12-get_file_list.png)
+![Get file list](/img/12-get_file_list.png)
 
 [Generating File List for STAR Data](/how-tos/get_file_list.html)
 
 ## get_file_list.pl - Documentation
 
-![Get file list documentation](img/13-get_file_list_doc.png)
+![Get file list documentation](/img/13-get_file_list_doc.png)
 
 [The command line interface to the FileCatalog](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)

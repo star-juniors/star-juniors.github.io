@@ -6,7 +6,7 @@ parent: Software
 # WSL2 Install on Windows
 
 
-![alt text](img/mywsl.png)
+![alt text](/img/mywsl.png)
 
 
 It is strongly suggested to use WSL2 if you are using Windows. It is somewhat similar to Virtual Machine but with much better optimization and incorporation into Windows. Not Dual boot, not VM, not powershell, just WSL2.

@@ -5,9 +5,9 @@ parent: Remote Development
 
 
 ---
-![alt text](img/nomachine2.png)
+![alt text](/img/nomachine2.png)
 
-![alt text](img/no_machine.png)
+![alt text](/img/no_machine.png)
 
 - Do remote work on servers in your browser (from mobile?)
 - Better then X11 option in `ssh`

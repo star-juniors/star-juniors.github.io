@@ -36,7 +36,7 @@ sudo apt install -y apptainer
 How to partially clone STAR repository git
 [star git tools](https://github.com/star-bnl/star-git-tools)
 
-![alt text](img/container.png)
+![alt text](/img/container.png)
 
 ## On **SDCC** for your own progams
 
@@ -46,4 +46,4 @@ More info here - [quick_start](https://apptainer.org/docs/user/main/quick_start.
 singularity pull docker://rootproject/root
 singularity shell --bind /gpfs01/star/pwg:/gpfs01/star/pwg root_latest.sif 
 ```
-![alt text](img/singularity_sdcc.png)
+![alt text](/img/singularity_sdcc.png)

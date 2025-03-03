@@ -3,7 +3,7 @@ title: Mounting SDCC on you laptop
 parent: Remote Development
 ---
 
-![alt text](img/sshfs.png)
+![alt text](/img/sshfs.png)
 
 Replace your account name in example below:
 
@@ -14,4 +14,4 @@ alias starmount='sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3
 starmount
 ```
 
-![alt text](img/explorer.png)
+![alt text](/img/explorer.png)

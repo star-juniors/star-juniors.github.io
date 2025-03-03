@@ -132,7 +132,7 @@ You can submit abstract when:
   - Bad run list and centrality calibration, if applicable, are finalized.
   - If your analysis requires official simulations, the production needs to be completed or at least vetted.
 
-  ![alt text](img/preliminary.png)
+  ![alt text](/img/preliminary.png)
 
 ### Abstract Submission Process
 
@@ -177,7 +177,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
   - Other key information, such as the kinematic cuts, legend, etc, should be added as well.
   - Font size should be reasonably large such that audience can clearly see them.
 
-  ![alt text](img/star_pic_prelim.png)
+  ![alt text](/img/star_pic_prelim.png)
 
 - Guidance and template (example): <https://drupal.star.bnl.gov/STAR/pwg/common/Preliminary-figures>
 - Archive of STAR preliminary plots: <https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive>
