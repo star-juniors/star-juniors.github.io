@@ -12,7 +12,8 @@ As stated here: "Think of the hours I have saved!" - by not typing passwords tho
 flowchart LR
     A[Your Laptop] -->|Direct SSH| B[ssh.sdcc.bnl.gov]
     B -->|rterm -i| C[rcas6016.rcf.bnl.gov]
-    A -.->|Configured Single Command| C
+    A -.->| Single Command 
+    without password| C
 
 ```
 
@@ -119,10 +120,10 @@ Host rcas60*  # specific rcas machine  from rcas6005 to rcas6016
     IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
 ```
 
-Now, you can access `rcas6016` and `star` directly from your laptop with a single command:
+Now, you can access `rcas60xx` and `star` directly from your laptop with a single command:
 
 ```bash
-ssh rcas6016 # or star
+ssh rcas60xx # or star
 ```
 
 ## Conclusion

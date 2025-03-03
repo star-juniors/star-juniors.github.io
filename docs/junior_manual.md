@@ -1,11 +1,9 @@
 # STAR Juniors Intro Manual
 
-## October 9, 2022
-
 ## Contents
 
 1. [Introduction](#introduction)
-2. [RACF](#racf)
+2. [SDCC](#sdcc)
    - [Running your analysis](#running-your-analysis)
 3. [Publishing Analysis](#publishing-analysis)
 4. [Physics Working Groups](#physics-working-groups)
@@ -15,27 +13,29 @@
 
 ## Introduction
 
-Welcome to STAR! This manual is intended to help STAR juniors who have just entered the collaboration. The manual covers various topics and materials needed to start your analysis and navigate RACF.
+Welcome to STAR! This manual is intended to help STAR juniors who have just entered the collaboration. The manual covers various topics and materials needed to start your analysis and navigate SDCC.
 
-## RACF
+## SDCC
 
-Once you have obtained your life number and other credentials, you can use them to log in to RACF. To obtain these credentials, visit this link and follow the steps:  
+Once you have obtained your life number and other credentials, you can use them to log in to SDCC. To obtain these credentials, visit this link and follow the steps:  
 <https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/general-access>
 
 ### Basic Commands for Logging in
 
-```sh
+```bash
 ssh -AX xxx@sssh.sdcc.bnl.gov
 rterm -i
 ```
 
-Replace `xxx` with your username. You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your RACF password.
+Replace `xxx` with your username. You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your SDCC password.
+
+However, it is highly recommended to use SSH keys folling tutorial [here](/software/ssh/index.md)
 
 ### Running Your Analysis
 
 To run your analysis, set up preliminary files. Here are some useful tutorials:
 
-- Set up your environment on RACF:  
+- Set up your environment on SDCC:  
   <https://drupal.star.bnl.gov/STAR/system/files/STAR_soft_BNL_LK_2015_6_1.pdf>
 - Data analysis:  
   <https://drupal.star.bnl.gov/STAR/system/files/RMa_ColMetg_Junior.pdf>
@@ -69,7 +69,27 @@ Additional resources:
 STAR has 5 PWGs for collaborative analysis. Find meeting links and past agendas here:
 
 - PWG meetings:  
-  <https://drupal.star.bnl.gov/STAR/pwg>
+
+```mermaid
+graph TD
+    PWG[PWG] --> HP[Hard Probes ]
+    PWG --> LFSUPC[Light Flavor
+Spectra and UPC]
+    PWG --> Spin[Cold QCD
+Spin]
+    PWG --> Correlations[Correlations 
+    and fluctuations]
+    PWG --> FCV[Flow, Chirality
+     and Vorticity]
+
+    click HP "https://drupal.star.bnl.gov/STAR/pwg/Hard-Probes/Weekly-HP-PWG-meeting" "Hard Probes weekly"
+    click LFSUPC "https://drupal.star.bnl.gov/STAR/pwg/light-flavor-spectra/lfs-upc-weekly-meeting" "LFSUPC weekly"
+    click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
+    click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
+    click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
+
+```
+
 - Events:  
   <https://drupal.star.bnl.gov/STAR/event>
 
@@ -85,10 +105,6 @@ Join the Mattermost channels to ask questions and get help from experts:
   <https://chat.sdcc.bnl.gov/star/channels/town-square>
 - Job running:  
   <https://chat.sdcc.bnl.gov/star/channels/scheduler>
-- Data production:  
-  <https://chat.sdcc.bnl.gov/star/channels/star-production>
-- HEPData uploading:  
-  <https://chat.sdcc.bnl.gov/star/channels/hepdata>
 
 ## STAR Collaboration Meetings
 
