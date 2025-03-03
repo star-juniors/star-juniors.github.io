@@ -29,7 +29,7 @@ rterm -i
 
 Replace `xxx` with your username. You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your SDCC password.
 
-However, it is highly recommended to use SSH keys folling tutorial [here](/software/ssh/index.md)
+However, it is highly recommended to use SSH keys folling tutorial [here](/software/ssh/)
 
 ### Running Your Analysis
 

@@ -41,4 +41,4 @@ starmount
 
 ## Using VSCode tunnel
 
-See [VSCode Remote Development](/software/vs-code-tunnel.md)
+See [VSCode Remote Development](/software/vs-code-tunnel)
