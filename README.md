@@ -27,15 +27,6 @@ permalink: /
 [Run Page](https://online.star.bnl.gov/){: .btn .btn-blue }
 </span>
 
-<!-- 
-## [Mattermost](https://chat.sdcc.bnl.gov/login)
-
-## [Run Page](https://online.star.bnl.gov/)
-
-## [Drupal](https://drupal.star.bnl.gov/STAR/comp/)
-
-## [Chatbot](https://starchat.streamlit.app/) -->
-
 ## Weekly meetings
 
 ```mermaid
@@ -55,7 +46,37 @@ Spin]
     click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
     click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
     click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
+```
 
+## Mailing lists
+
+<span class="fs-4">
+[starmail](https://lists.bnl.gov/sympa/arc/starmail-l){: .btn .btn-purple}
+</span>
+<span class="fs-4">
+[star-talks](https://lists.bnl.gov/sympa/arc/star-talks-l){: .btn .btn-purple }
+</span>
+<span class="fs-4">
+[star-juniors](https://lists.bnl.gov/sympa/arc/starjuniors-l/){: .btn .btn-purple }
+</span>
+
+```mermaid
+graph TD
+    HP[Hard Probes ]
+    LFSUPC[Light Flavor
+Spectra and UPC]
+    Spin[Cold QCD
+Spin]
+    Correlations[Correlations 
+    and fluctuations]
+    FCV[Flow, Chirality
+     and Vorticity]
+
+    click HP "https://lists.bnl.gov/sympa/arc/star-hp-l/" "Hard Probes weekly"
+    click LFSUPC "https://lists.bnl.gov/sympa/info/star-lfsupc-l" "LFSUPC mail"
+    click Spin "https://lists.bnl.gov/sympa/arc/star-spin-l" "Cold-QCD mail"
+    click FCV "https://lists.bnl.gov/sympa/arc/star-fcv-l" "Flow Chirality and Vorticity mail"
+    click Correlations "https://lists.bnl.gov/sympa/arc/star-cf-l" "Correlations and Fluctuations mail"
 ```
 
 # Learn About STAR Detectors
