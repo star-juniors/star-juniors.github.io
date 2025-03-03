@@ -1,7 +1,6 @@
 ---
 title: VS code tunnel
-parent: Remote Development
-grand_parent: Software
+parent: VS Code
 ---
 
 ## How to Make Use of Tunnels in Visual Code Studio

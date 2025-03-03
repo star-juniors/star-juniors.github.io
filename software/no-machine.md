@@ -1,7 +1,6 @@
 ---
 title: No-machine service for accessing
 parent: Remote Development
-grand_parent: Software
 ---
 
 

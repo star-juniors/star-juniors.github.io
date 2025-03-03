@@ -1,7 +1,6 @@
 ---
 title: Mounting SDCC on you laptop
 parent: Remote Development
-grand_parent: Software
 ---
 
 ![alt text](img/sshfs.png)
