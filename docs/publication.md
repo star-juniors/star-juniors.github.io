@@ -10,13 +10,21 @@ nav_order: 5
 
 ## Table of Contents
 
-- [Links](#links)
 - [Analysis within PWG](#analysis-within-pwg)
 - [Abstract](#abstract)
-- [Preliminary results](#preliminary-results)
-- [Presentation](#presentation)
-- [Publication](#publication)
-- [Policies](#policies)
+  - [Requirements for Abstract Submission](#requirements-for-abstract-submission)
+  - [Abstract Submission Process](#abstract-submission-process)
+- [Preliminary](#preliminary-results)
+
+  - [Requirements for Preliminary Results](#requirements-for-preliminary-results)
+  - [Preliminary Request](#preliminary-request)
+  - [Preliminary Plots](#preliminary-plots)
+- [Conference Presentation](#conference-presentation)
+
+- [Publication Process (in short)](#publication-process-in-short)
+  - [PWGC Preview Requirements](#pwgc-preview-requirements)
+- [STAR Publication and Presentation Policies](#star-publication-and-presentation-policies)
+  - [Responsibilities for GPC members](#responsibilities-for-gpc-members)
 - [Guidelines for preparing paper codes to be committed to CVS](#guidelines-for-preparing-paper-codes-to-be-committed-to-cvs)
 
 ### Preliminary and Presentation Resources
@@ -164,9 +172,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 - Guidance and template (example): [here](preliminary_figures)
 - Archive of STAR preliminary plots: <https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive>
 
-## Presentation
-
-### Conference Presentation
+## Conference Presentation
 
 1. Discuss your presentation with local group.
 2. Use high resolution plots.
@@ -180,9 +186,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 7. **Prepare conference proceedings!**
 8. Again, submit it to drupal and go via the approval procedure.
 
-## Publication
-
-### Publication Process (in short)
+## Publication Process (in short)
 
 1. Finalize all the open and preliminary aspects of your analysis. Discuss regularly in PWG.
 2. Once your results are ready for publication, request **PWGC preview**.
@@ -209,9 +213,7 @@ Required documents:
 - Analysis note: optional
 - Paper draft: optional
 
-## Policies
-
-### STAR Publication and Presentation Policies
+## STAR Publication and Presentation Policies
 
 - Policies for the Publication and Presentation of STAR Results:
   <https://drupal.star.bnl.gov/STAR/system/files/PublicationPolicy101613_v2.html>
@@ -251,11 +253,11 @@ For the definition and scope of the God-Parent Committee, see STAR publication p
 - Be able to reproduce the paper figures
 - A tip: one can run `cppcheck` on RCF to find potential mistakes. The syntax is `cppcheck --enable=all test.C` or `cppcheck --enable=all StRoot/StMyAnalysis`, where the former checks only the supplied macro while the latter checks all the codes in the directory
 
-# **Guidelines for preparing paper codes to be committed to CVS**
+## **Guidelines for preparing paper codes to be committed to CVS**
 
 - General guideline: people should be able to reproduce paper figures using provided instructions, codes and histograms
 
-## What should be included
+### What should be included
 
 - Analysis source code, such as analysis makers, job submission script, plotting macros, etc
 - Modified files of standard makers from STAR library
@@ -264,7 +266,7 @@ For the definition and scope of the God-Parent Committee, see STAR publication p
 - Final results based on a small amount (1-2) of input PicoDst/MuDst and/or embedding files. These results will naturally have large error bars, but code QA should be able to reproduce them exactly.
 - Input PicoDst/MuDst and/or embedding files used to generate the results above should be restored and saved on RCF, but not needed to be committed to CVS
 
-## What should not be included
+### What should not be included
 
 - Secondary files, such as library files (.o, .so), figures, etc, that can be produced from source code
 - Log files
