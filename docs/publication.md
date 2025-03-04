@@ -17,33 +17,14 @@ nav_order: 5
 - [Presentation](#presentation)
 - [Publication](#publication)
 - [Policies](#policies)
-
-## Links
-
-- STAR Physics Pages of Common Interest (mostly up-to-date information): <https://drupal.star.bnl.gov/STAR/pwg/common>
-- Check existing Analysis Notes and paper codes
-- Talk to your supervisor and colleagues from the group
-- Policies for the Publication and Presentation of STAR Results: <https://drupal.star.bnl.gov/STAR/system/files/PublicationPolicy101613_v2.html>
-
-### Analysis Resources
-
-- STAR analysis notes: <https://drupal.star.bnl.gov/STAR/starnotes>
-- STAR theses: <https://drupal.star.bnl.gov/STAR/theses>
-- STAR conference presentations: <https://drupal.star.bnl.gov/STAR/presentations/>
-- STAR papers: <https://drupal.star.bnl.gov/STAR/publications/>
-- GPC list: <https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml>
-- Run Log <https://online.star.bnl.gov/RunLog/>
-- List of STAR embedding requests: <https://drupal.star.bnl.gov/STAR/starsimrequest>
-- Production web-page: <https://drupal.star.bnl.gov/STAR/comp/prod>
-- PicoDsts on distributed disk: <https://www.star.bnl.gov/public/comp/prod/localdata/DDpicosize.html>
-- Production options: <https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl>
+- [Guidelines for preparing paper codes to be committed to CVS](#guidelines-for-preparing-paper-codes-to-be-committed-to-cvs)
 
 ### Preliminary and Presentation Resources
 
-- Guidance and template (example) for preliminary figures: <https://drupal.star.bnl.gov/STAR/pwg/common/Preliminary-figures>
+- Guidance and template (example) for preliminary figures: [here](preliminary_figures)
 - Preliminary request template: <https://drupal.star.bnl.gov/STAR/system/files/Prelim_Request_template.pdf>
 - Archive of STAR preliminary plots: <https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive>
-- Guidance for STAR talks and posters: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/guidances-star-presentations>
+- Guidance for STAR talks and posters:[here](guidance_presentations)
 
 ### Publication Resources
 
@@ -180,7 +161,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 
   ![alt text](/img/star_pic_prelim.png)
 
-- Guidance and template (example): <https://drupal.star.bnl.gov/STAR/pwg/common/Preliminary-figures>
+- Guidance and template (example): [here](preliminary_figures)
 - Archive of STAR preliminary plots: <https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive>
 
 ## Presentation
@@ -195,7 +176,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 4. Rehearse your talk in front of local STAR group.
    *For major conferences, such as Quark Matter, there is rehearsal before the collaboration.*
 5. Address all comments.
-6. Guidance for STAR presentations: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/guidances-star-presentations>
+6. Guidance for STAR presentations: [here](guidance_presentations)
 7. **Prepare conference proceedings!**
 8. Again, submit it to drupal and go via the approval procedure.
 
