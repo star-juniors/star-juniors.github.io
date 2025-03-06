@@ -7,7 +7,7 @@ parent: Tutorials
 
 *Ever wanted to have all STAR framework within your laptop?
 Or wanted to run your own programs with specific installation requirements on SDCC using batch system?*
-
+Reference - [D.Smirnov presentation](https://drupal.star.bnl.gov/STAR/system/files/smirnov_star_collaboration_meeging_2022.pdf)
 ## On **local** PC for star infrastructure
 
 Here is the README file for containers for star-software , read the section containers
