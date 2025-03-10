@@ -7,9 +7,11 @@ permalink: /
 
 # STAR Main Web Sites
 
+<!--
 <span class="fs-8">
 [Timetable for current collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/70578){: .btn .btn-green }
 </span>
+-->
 
 <span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
