@@ -32,3 +32,19 @@ Tunnels in VS Code allow remote access with fewer logins and better usability th
 - Seamlessly access remote files and terminals.  
 - Utilize VS Code extensions for enhanced coding.  
 - Open files directly in VS Code without additional tools.
+
+## ROOT File Viewer
+
+![alt text](/img/vscode_extension_announcement.gif)
+
+ROOT File Viewer allows you to see your ROOT Files directly in VS Code! This extension is for you if you want to view ROOT Files:
+- with just a click, without having to type anything on a terminal
+- anywhere, with no local ROOT installation required
+
+
+[VS Marketplace](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer)
+
+
+[Original blog page](https://root.cern/blog/vscode-extension-announcement/) 
+
+
