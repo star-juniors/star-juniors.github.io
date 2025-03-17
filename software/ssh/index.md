@@ -134,3 +134,19 @@ Using SSH keys with proper BNL configuration:
 - Improves security
 - Simplifies access to complex BNL networks
 - Saves time on repeated logins
+
+
+### Sidenote:
+
+Sometimes when using STAR scheduler without password it can throw a mistake about logging
+`We could not write to your log file. Please check that you have access to: /afs/rhic.bnl.gov/star/doc/www/html/tmp/pub/scheduler/prozorov.log .You may need to kinit and aklog to write to this area.
+java.lang.IllegalStateException: ManagerFactory [org.apache.logging.log4j.core.appender.FileManager$FileManagerFactory@3b2c72c2] unable to create manager for [/afs/rhic.bnl.gov/star/doc/www/html/tmp/pub/scheduler/prozorov.log] with data [org.apache.logging.log4j.core.appender.FileManager$FactoryData@491666ad]`
+
+
+To solve it, one should type a password using `kinit` and `aklog`.
+``` bash
+kinit
+aklog
+```
+
+
