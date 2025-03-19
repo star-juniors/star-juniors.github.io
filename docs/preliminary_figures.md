@@ -10,7 +10,11 @@ title: Preliminary figure guidances
 4. Other key information, such as the kinematic cuts, legend, etc., should be added as well.  
 5. The legend should not overlap with data points. Keep the legend organized and in one place if possible.  
 6. Font size should be reasonably large such that the audience can clearly see them.  
-7. Avoid invisible colors like Cyan, Green, and Yellow for markers and uncertainty boxes.  
+7. Avoid invisible colors like Cyan, Green, and Yellow for markers and uncertainty boxes.
+
+Archive with preliminaries:
+https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive
+
 
 ### 📌 **Template**  
 
