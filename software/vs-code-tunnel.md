@@ -5,7 +5,7 @@ parent: VS Code
 
 
 # SSH server
-If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. However, it will not save the state of the machine (not persistent) - use `tmux` fro background tasks.
+If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. However, it will not save the state of the machine (not persistent) - use `tmux` for background tasks.
 
 Some info here on [VS code remote SSH](https://code.visualstudio.com/docs/remote/ssh)
 
