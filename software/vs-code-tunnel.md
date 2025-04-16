@@ -5,7 +5,10 @@ parent: VS Code
 
 
 # SSH server
-If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. However, it will not save the state of the machine (not persistent) - use `tmux` for background tasks.
+If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. 
+You may proceed with [Step 5](Remote) using VS code Remote extension from you local machine 
+
+However, it will not save the state of the machine (not persistent) - use `tmux` for background tasks.
 
 Some info here on [VS code remote SSH](https://code.visualstudio.com/docs/remote/ssh)
 
@@ -25,11 +28,11 @@ Here’s how to set it up:
 1. **Log into SDCC**: Use [NoMachine](no-machine.md) to avoid repeated GitHub authentication.
 (or one can use ssh + tmux - needed for continous running of the tunnel)
 
-3.  ```bash
+2.  ```bash
     ssh starsub02.sdcc.bnl.gov
     ```
 
-4. **Download VS Code Client within SDCC**:  
+3. **Download VS Code Client within SDCC**:  
    - Navigate to your preferred directory (e.g., `~/Downloads/`) and run:  
 
      ```bash
@@ -37,7 +40,7 @@ Here’s how to set it up:
      tar -xf vscode_cli.tar.gz
      ```
 
-5. **Start the Tunnel**:  
+4. **Start the Tunnel**:  
    - Run 
      ```bash
      code tunnel
@@ -45,11 +48,12 @@ Here’s how to set it up:
       and accept the license terms.  
    - Log into GitHub on SDCC and authorize VS Code instance.  
    - Name your device, and get a `vscode.dev` URL for remote access.
-   -  
-6. **Connect Locally**:  
+
+5. **Connect Locally**: <a id="Remote"></a>  
    - Install [VS Code](https://visualstudio.microsoft.com/) on your local machine.  
-   - Install the "Remote-Tunnels" extension.  
-   - Use the Remote Explorer to connect to your tunnel.  
+   - Install the ["Remote-SSH"](vscode:extension/ms-vscode-remote.remote-ssh) extension and ["Remote-Tunnels"](vscode:extension/ms-vscode.remote-server)   
+   - Use the Remote Explorer to connect to your tunnel.
+   - Or start an SSH connection to server in `~/.ssh/config`  
 
 ### Benefits
 
@@ -71,5 +75,3 @@ ROOT File Viewer allows you to see your ROOT Files directly in VS Code! This ext
 
 
 [Original blog page](https://root.cern/blog/vscode-extension-announcement/) 
-
-
