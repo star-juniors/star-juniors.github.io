@@ -3,15 +3,33 @@ title: VS code tunnel
 parent: VS Code
 ---
 
+
+# SSH server
+If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. However, it will not save the state of the machine (not persistent) - use `tmux` fro background tasks.
+
+Some info here on [VS code remote SSH](https://code.visualstudio.com/docs/remote/ssh)
+
+
 ## How to Make Use of Tunnels in Visual Code Studio
 
 These instructions will go over how to setup the tunnel with VS Code on your remote machine. [Source](https://code.visualstudio.com/docs/remote/tunnels)
 
-Tunnels in VS Code allow remote access with fewer logins and better usability than NoMachine. You can edit files directly and use all VS Code extensions, even through a browser. Here’s how to set it up:  
+Tunnels in VS Code allow remote access with fewer logins and better usability than NoMachine. You can edit files directly and use all VS Code extensions, even through a browser. 
+
+{: .highlight }
+**Important** : Login into new Alma9 machines (i.e. `ssh starsub0x.sdcc.bnl.gov`(where `x`= 1-7) instead of `ssh rcas60xx` or `rterm -i` ) 
+
+
+Here’s how to set it up:  
 
 1. **Log into SDCC**: Use [NoMachine](no-machine.md) to avoid repeated GitHub authentication.
-(or one can use ssh + tmux - needed for continous running of the tunnel) 
-3. **Download VS Code Client within SDCC**:  
+(or one can use ssh + tmux - needed for continous running of the tunnel)
+
+3.  ```bash
+    ssh starsub02.sdcc.bnl.gov
+    ```
+
+4. **Download VS Code Client within SDCC**:  
    - Navigate to your preferred directory (e.g., `~/Downloads/`) and run:  
 
      ```bash
@@ -19,15 +37,16 @@ Tunnels in VS Code allow remote access with fewer logins and better usability th
      tar -xf vscode_cli.tar.gz
      ```
 
-4. **Start the Tunnel**:  
+5. **Start the Tunnel**:  
    - Run 
      ```bash
      code tunnel
      ```
       and accept the license terms.  
    - Log into GitHub on SDCC and authorize VS Code instance.  
-   - Name your device, and get a `vscode.dev` URL for remote access.  
-5. **Connect Locally**:  
+   - Name your device, and get a `vscode.dev` URL for remote access.
+   -  
+6. **Connect Locally**:  
    - Install [VS Code](https://visualstudio.microsoft.com/) on your local machine.  
    - Install the "Remote-Tunnels" extension.  
    - Use the Remote Explorer to connect to your tunnel.  
@@ -37,6 +56,7 @@ Tunnels in VS Code allow remote access with fewer logins and better usability th
 - Seamlessly access remote files and terminals.  
 - Utilize VS Code extensions for enhanced coding.  
 - Open files directly in VS Code without additional tools.
+
 
 ## ROOT File Viewer
 
