@@ -11,7 +11,7 @@ As stated here: "Think of the hours I have saved!" - by not typing passwords tho
 ```mermaid
 flowchart LR
     A[Your Laptop] -->|Direct SSH| B[ssh.sdcc.bnl.gov]
-    B -->|rterm -i| C[rcas6016.rcf.bnl.gov]
+    B -->|ssh starsub02| C[starsub02.rcf.bnl.gov]
     A -.->| Single Command 
     without password| C
 
@@ -105,25 +105,38 @@ ForwardX11 yes # option -X in ssh command
 ForwardX11Trusted yes # option -Y in ssh command
 NoHostAuthenticationForLocalhost yes 
 
-Host star  #  any star server rcas60xx
+Host star #  star server starsub07 (or change to your preffered)
     User prozorov
-    HostName ssh.sdcc.bnl.gov
-    RemoteCommand rterm -i
+    HostName starsub07.sdcc.bnl.gov
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
-    IdentityFile ~/.ssh/id_rsa # your private key (without .pub) 
-
-Host rcas60*  # specific rcas machine  from rcas6005 to rcas6016
+    ForwardAgent yes
+    IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
+   
+Host rcas60*  # old rcas machines  from rcas6005 to rcas6016
     User prozorov
     HostName %h.rcf.bnl.gov # %h is replaced with the host name i.e. rcas*
     ProxyJump prozorov@ssh.sdcc.bnl.gov # use a middle jump host
     RequestTTY yes
     IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
+
+Host starsub0* # new Alma9 rcas machine from starsub01 to starsub07
+    User prozorov
+    HostName %h.sdcc.bnl.gov
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    ProxyJump prozorov@ssh.sdcc.bnl.gov
+    RequestTTY yes
+    ForwardAgent yes
+    IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
 ```
 
-Now, you can access `rcas60xx` and `star` directly from your laptop with a single command:
+Now, you can access `starsub0x` and `star` directly from your laptop with a single command:
 
 ```bash
-ssh rcas60xx # or star
+ssh starsub0x # or star
 ```
 
 ## Conclusion
