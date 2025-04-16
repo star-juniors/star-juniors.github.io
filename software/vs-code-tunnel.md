@@ -6,7 +6,7 @@ parent: VS Code
 
 # SSH server
 If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new Alma9 machines and it will start server automatically for you, no need for the tunnel. 
-You may proceed with [Step 5](Remote) using VS code Remote extension from you local machine 
+You may proceed with [Step 5](#step5) using VS code Remote extension from you local machine 
 
 However, it will not save the state of the machine (not persistent) - use `tmux` for background tasks.
 
@@ -49,7 +49,7 @@ Here’s how to set it up:
    - Log into GitHub on SDCC and authorize VS Code instance.  
    - Name your device, and get a `vscode.dev` URL for remote access.
 
-5. **Connect Locally**: <a id="Remote"></a>  
+5.  <a id="step5">**Connect Locally**:</a>  
    - Install [VS Code](https://visualstudio.microsoft.com/) on your local machine.  
    - Install the ["Remote-SSH"](vscode:extension/ms-vscode-remote.remote-ssh) extension and ["Remote-Tunnels"](vscode:extension/ms-vscode.remote-server)   
    - Use the Remote Explorer to connect to your tunnel.
