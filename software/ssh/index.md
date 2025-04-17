@@ -11,7 +11,7 @@ As stated here: "Think of the hours I have saved!" - by not typing passwords tho
 ```mermaid
 flowchart LR
     A[Your Laptop] -->|Direct SSH| B[ssh.sdcc.bnl.gov]
-    B -->|ssh starsub02| C[starsub02.rcf.bnl.gov]
+    B -->|ssh starsub02| C[starsub03.rcf.bnl.gov]
     A -.->| Single Command 
     without password| C
 
