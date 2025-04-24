@@ -13,7 +13,7 @@ title: Preliminary figure guidances
 7. Avoid invisible colors like Cyan, Green, and Yellow for markers and uncertainty boxes.
 
 Archive with preliminaries:
-https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive
+[https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive](https://drupal.star.bnl.gov/STAR/pwg/common/star-preliminary-results-archive)
 
 
 ### 📌 **Template**  
