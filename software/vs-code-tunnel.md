@@ -20,7 +20,7 @@ These instructions will go over how to setup the tunnel with VS Code on your rem
 Tunnels in VS Code allow remote access with fewer logins and better usability than NoMachine. You can edit files directly and use all VS Code extensions, even through a browser. 
 
 {: .highlight }
-**Important** : Login into new Alma9 machines (i.e. `ssh starsub0x.sdcc.bnl.gov`(where `x`= 1-7) instead of `ssh rcas60xx` or `rterm -i` ) 
+**Important** : Login into new [Alma 9](/software/a9) machines (i.e. `ssh starsub0x.sdcc.bnl.gov`(where `x`= 1-7) instead of `ssh rcas60xx` or `rterm -i` ) 
 
 
 Here’s how to set it up:  
