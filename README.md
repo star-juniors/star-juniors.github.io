@@ -13,6 +13,9 @@ permalink: /
 </span>
 -->
 
+{: .highlight }
+April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)
+
 <span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
 </span>
