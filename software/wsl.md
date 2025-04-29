@@ -62,9 +62,13 @@ source ~/install/root/bin/thisroot.sh # ROOT
 alias starmount='sshfs -o allow_root prozorov@sftp.sdcc.bnl.gov:/gpfs01/star/pwg/prozorov ~/mount' # alias for mounting STAR 
 ```
 
+When you use [VS Code](/software/vscode) also add the following for your configuration in `settings.json` to use SSH configurations from WSL.
+```json
+  "remote.SSH.configFile": "\\\\wsl.localhost\\Ubuntu\\home\\prozorov\\.ssh\\config",
+```
 
-### Open terminal by shortcut Ctrl + Alt +T
 
-https://bishwas.medium.com/use-the-ctrl-alt-t-shortcut-to-open-the-terminal-in-windows-11-bbbfeac9cb85
+
+### [Open terminal by shortcut Ctrl + Alt +T](https://bishwas.medium.com/use-the-ctrl-alt-t-shortcut-to-open-the-terminal-in-windows-11-bbbfeac9cb85)
 
 
