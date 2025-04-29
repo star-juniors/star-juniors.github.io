@@ -3,7 +3,6 @@ title: SSH
 parent: Software
 ---
 
-
 # SDCC access without password
 
 As stated here: "Think of the hours I have saved!" - by not typing passwords thousands of times.
@@ -21,20 +20,6 @@ flowchart LR
 
 SSH is essential for secure remote system access to BNL (Brookhaven National Laboratory) networks, but typing passwords repeatedly is inefficient and less secure. This tutorial shows how to set up passwordless SSH using SSH keys and the SSH agent.
 
-## Understanding SSH Keys
-
-SSH keys use public-key cryptography with two components:
-
-- **Public Key**: Shared with servers, used to encrypt data
-- **Private Key**: Kept secret, used to decrypt data
-
-## Why SSH Keys are Better than Passwords
-
-- No reusable credentials transmitted over the network
-- Can be used with SSH agent to avoid repeated typing
-- Different keys can be used for different services
-- Much more resistant to brute-force attacks
-
 ## Quick Setup Guide
 
 ### 1. Generate SSH Keys
@@ -42,7 +27,6 @@ SSH keys use public-key cryptography with two components:
 ```bash
 ssh-keygen -b 4096 -t rsa
 ```
-
 Enter a strong passphrase when prompted.
 
 ### 2. Upload Your Public Key to SDCC
@@ -52,7 +36,6 @@ Enter a strong passphrase when prompted.
    ```bash
    ssh-keygen -l -E md5 -f ~/.ssh/id_rsa.pub
    ```
-
 2. Upload your public key at: <https://web.SDCC.bnl.gov/Facility/SshKeys/UploadSshKey.php>
 
 ### 3. Copy Public Key to SDCC Machines
@@ -64,13 +47,13 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ```
 
-Your home directory is shared between all `rcas` machines (but NOT the gateways `ssh`)
+Your home directory is shared between all `starsub` machines (but NOT the gateways `ssh`)
 
 ```bash
 scp ~/.ssh/id_rsa.pub username@rftpexp.rhic.bnl.gov:.ssh/authorized_keys
 ```
 
-Or, if `scp` is not available, one can directly paste the content of your home machine `~/.ssh/id_rsa.pub` into `~/.ssh/authorized_keys` on the SDCC machine.
+Or, if `scp` is not available, one can directly paste the content of your home machine `~/.ssh/id_rsa.pub` into `~/.ssh/authorized_keys` on the SDCC machine. Simple copy-paste with nano/vim.
 
 Then on a SDCC machine:
 
@@ -100,37 +83,40 @@ An example of my `~/.ssh/config`:
 
 ```bash
 # Global settings
-ForwardAgent yes # enable agent forwarding - optin -A in ssh command
-ForwardX11 yes # option -X in ssh command
-ForwardX11Trusted yes # option -Y in ssh command
-NoHostAuthenticationForLocalhost yes 
+# enable agent forwarding - optin -A in ssh command
+ForwardAgent yes
+# option -X in ssh command 
+ForwardX11 yes
+# option -Y in ssh command 
+ForwardX11Trusted yes 
+NoHostAuthenticationForLocalhost yes
+# your private key (without .pub)
+IdentityFile ~/.ssh/id_rsa
 
-Host star #  star server starsub07 (or change to your preffered)
+#  star server starsub07 (or change to your preffered)
+Host star 
     User prozorov
     HostName starsub07.sdcc.bnl.gov
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedAlgorithms +ssh-rsa
     ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
     ForwardAgent yes
-    IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
-   
-Host rcas60*  # old rcas machines  from rcas6005 to rcas6016
-    User prozorov
-    HostName %h.rcf.bnl.gov # %h is replaced with the host name i.e. rcas*
-    ProxyJump prozorov@ssh.sdcc.bnl.gov # use a middle jump host
-    RequestTTY yes
-    IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
 
-Host starsub0* # new Alma9 rcas machine from starsub01 to starsub07
+# old rcas machines  from rcas6005 to rcas6016   
+Host rcas60*  
     User prozorov
-    HostName %h.sdcc.bnl.gov
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostName %h.rcf.bnl.gov 
     ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
     ForwardAgent yes
-    IdentityFile ~/.ssh/id_rsa # your private key (without .pub)
+
+# new Alma9 rcas machine from starsub01 to starsub07
+Host starsub0* 
+    User prozorov
+    # %h is replaced with the host name i.e. starsub0{*}
+    HostName %h.sdcc.bnl.gov
+    ProxyJump prozorov@ssh.sdcc.bnl.gov
+    RequestTTY yes
+    ForwardAgent yes
 ```
 
 Now, you can access `starsub0x` and `star` directly from your laptop with a single command:
@@ -138,6 +124,21 @@ Now, you can access `starsub0x` and `star` directly from your laptop with a sing
 ```bash
 ssh starsub0x # or star
 ```
+
+
+## Understanding SSH Keys
+
+SSH keys use public-key cryptography with two components:
+
+- **Public Key**: Shared with servers, used to encrypt data
+- **Private Key**: Kept secret, used to decrypt data
+
+## Why SSH Keys are Better than Passwords
+
+- No reusable credentials transmitted over the network
+- Can be used with SSH agent to avoid repeated typing
+- Different keys can be used for different services
+- Much more resistant to brute-force attacks
 
 ## Conclusion
 
@@ -161,5 +162,3 @@ To solve it, one should type a password using `kinit` and `aklog`.
 kinit
 aklog
 ```
-
-
