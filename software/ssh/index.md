@@ -114,6 +114,17 @@ Host starsub0*
     ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
     ForwardAgent yes
+
+# === Alma9-Based EIC Subnodes (eicsub01 , eicsub02) ===
+
+Host eicsub
+    User alpro
+    HostName eicsub02.sdcc.bnl.gov
+    ProxyJump alpro@ssh.sdcc.bnl.gov
+    RequestTTY yes
+    ForwardAgent yes
+
+
 ```
 
 Now, you can access `starsub0x` and `star` directly from your laptop with a single command:
@@ -122,6 +133,7 @@ Now, you can access `starsub0x` and `star` directly from your laptop with a sing
 ssh star
 ssh starsub05
 ssh rcas6013
+ssh eicsub
 ```
 
 
