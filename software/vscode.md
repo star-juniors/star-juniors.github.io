@@ -13,7 +13,7 @@ Then open a terminal (Ubuntu) and test it:
 `code .`
 I suggest also to install some additional extensions for easier work as well as login into github account inside VS Code.
 
-### VS code extensions (inside WSL2)
+### Install VS code extensions (run inside Linux/Mac Terminal)
 
 ``` bash
 code --install-extension albertopdrf.root-file-viewer  # root trees explorer
