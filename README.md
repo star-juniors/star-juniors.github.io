@@ -71,6 +71,10 @@ style Correlations fill:#0d6efd,color:#ffffff;
 <span class="fs-4">
 [star-juniors](https://lists.bnl.gov/sympa/arc/starjuniors-l/){: .btn .btn-purple }
 </span>
+<span class="fs-4">
+[starsoft](https://lists.bnl.gov/sympa/arc/starsoft-l/){: .btn .btn-purple }
+</span>
+
 
 ```mermaid
 graph TD
