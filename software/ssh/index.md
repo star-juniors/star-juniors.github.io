@@ -103,6 +103,8 @@ Host rcas60*
     User prozorov
     HostName %h.rcf.bnl.gov
     ProxyJump prozorov@ssh.sdcc.bnl.gov
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedKeyTypes +ssh-rsa
     RequestTTY yes
     ForwardAgent yes
 
