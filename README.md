@@ -1,4 +1,3 @@
-![изображение](https://github.com/user-attachments/assets/13057d66-80f8-4c4e-9030-359be04a1181)---
 layout: home
 title: Home
 nav_order: 1
