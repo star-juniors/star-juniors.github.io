@@ -1,4 +1,4 @@
----
+![изображение](https://github.com/user-attachments/assets/13057d66-80f8-4c4e-9030-359be04a1181)---
 layout: home
 title: Home
 nav_order: 1
@@ -159,6 +159,7 @@ Deep dive into technical papers on STAR detectors:
 - FileCatalog `get_file_list.pl` [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
 
 # Selected Junior Meetings on physics
+## STAR Juniors [https://www.youtube.com/@starjuniors6947/videos](youtube channel)
 
 - [Relativistic hydrodynamics for heavy ion collisions](https://drupal.star.bnl.gov/STAR/event/2020/06/17/star-juniors-meeting-hydrodynamical-evolution) (Iurii Karpenko, June 2020)
 - [Handling Systematic Errors](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/handling-systematic-errors) (Roger Barlow, March 2021)
@@ -186,6 +187,5 @@ Deep dive into technical papers on STAR detectors:
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
 - [STAR Github Repository](https://github.com/star-bnl)
 
-<!-- [https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf](https://drupal.star.bnl.gov/STAR/system/files/userfiles/6359/STAR_Juniors_Intro-3.pdf) -->
 
 <!-- The webpage was inspired by [UCR RHIC's GitHub Page](https://github.com/ucr-rhic/ucr-rhic.github.io/) -->
