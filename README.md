@@ -158,7 +158,7 @@ Deep dive into technical papers on STAR detectors:
 - FileCatalog `get_file_list.pl` [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
 
 # Selected Junior Meetings on physics
-## STAR Juniors [youtube channe](https://www.youtube.com/@starjuniors6947/videos)
+## STAR Juniors [youtube channel](https://www.youtube.com/@starjuniors6947/videos)
 
 - [Relativistic hydrodynamics for heavy ion collisions](https://drupal.star.bnl.gov/STAR/event/2020/06/17/star-juniors-meeting-hydrodynamical-evolution) (Iurii Karpenko, June 2020)
 - [Handling Systematic Errors](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/handling-systematic-errors) (Roger Barlow, March 2021)
