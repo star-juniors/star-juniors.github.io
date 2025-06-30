@@ -45,6 +45,10 @@ Here’s how to set it up:
      ```bash
      code tunnel
      ```
+     or
+     ```bash
+     ./code tunnel
+     ```
       and accept the license terms.  
    - Log into GitHub on SDCC and authorize VS Code instance.  
    - Name your device, and get a `vscode.dev` URL for remote access.
