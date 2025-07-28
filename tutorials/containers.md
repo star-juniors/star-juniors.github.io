@@ -39,7 +39,7 @@ How to partially clone STAR repository git
 
 ![alt text](/img/container.png)
 
-## On remote **SDCC** for your own progams
+# On remote **SDCC** for your own progams
 
 An example of usage of latest ROOT 6 to run a bash sell inside the container.
 More info here - [quick_start](https://apptainer.org/docs/user/main/quick_start.html)
