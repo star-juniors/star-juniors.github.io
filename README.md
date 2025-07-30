@@ -7,11 +7,11 @@ permalink: /
 
 # STAR Main Web Sites
 
-<!--
+
 <span class="fs-8">
-[Timetable for current collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/70578){: .btn .btn-green }
+[Timetable for current(August 2025) collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/71991){: .btn .btn-green }
 </span>
--->
+
 
 {: .highlight }
 April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)
