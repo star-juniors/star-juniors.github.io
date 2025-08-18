@@ -1,5 +1,5 @@
 ---
-title: ROOT interactive tutorial
+title: Root (CERN)
 parent: Tutorials
 ---
 
