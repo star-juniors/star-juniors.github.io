@@ -1,6 +1,6 @@
 ---
 title: Singularity(Apptainer) containers
-parent: Tutorials
+parent: Software
 ---
 
 # How to use Singularity (Apptainer)
