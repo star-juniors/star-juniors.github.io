@@ -1,6 +1,6 @@
 ---
 title:  get_file_list.pl 
-parent: Tutorials
+parent: Software
 ---
 
 Generating File List for STAR Data
