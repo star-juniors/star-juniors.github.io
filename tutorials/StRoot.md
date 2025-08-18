@@ -1,10 +1,10 @@
 ---
-title: StRoot tutorial (beta)
+title: StRoot (beta)
 parent: Tutorials
 ---
 
 # STAR Tutorial [![Github Codespace](https://img.shields.io/badge/open-GH_Codespaces-blue?logo=github)](https://codespaces.new/aprozo/star-tutorial?quickstart=1)
-
+click on the upper link
 
 This is an example analysis of [`StPicoDst`](https://www.star.bnl.gov/webdata/dox/html/classStPicoDstMaker.html):
 - `St` stands for STAR, [all classes](https://www.star.bnl.gov/webdata/dox/html/annotated.html) start from it 
