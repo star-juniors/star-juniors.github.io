@@ -3,7 +3,7 @@ title: StRoot (beta)
 parent: Tutorials
 ---
 
-# STAR Tutorial [![Github Codespace](https://img.shields.io/badge/open-GH_Codespaces-blue?logo=github)](https://codespaces.new/aprozo/star-tutorial?quickstart=1) <- click
+# [STAR Tutorial](https://github.com/aprozo/star-tutorial) [![Github Codespace](https://img.shields.io/badge/open-GH_Codespaces-blue?logo=github)](https://codespaces.new/aprozo/star-tutorial?quickstart=1) <- click
 
 For successfull running one can submit an application for [Free Github Education](https://github.com/education) benefits.
 
