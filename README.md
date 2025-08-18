@@ -13,8 +13,12 @@ permalink: /
 </span>
 -->
 
-{: .highlight }
-August 2025 - New   [StRoot tutorial (beta)](/tutorial/StRoot) in your browser!
+{: .note-title }
+> New Tutorial
+>
+> August 2025 - [StRoot tutorial (beta)](/tutorials/StRoot) in your browser!
+
+
 
 {: .highlight }
 April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)
