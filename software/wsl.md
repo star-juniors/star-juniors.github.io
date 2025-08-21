@@ -66,6 +66,7 @@ When you use [VS Code](/software/vscode) also add the following for your configu
 ```json
   "remote.SSH.configFile": "\\\\wsl.localhost\\Ubuntu\\home\\prozorov\\.ssh\\config",
 ```
+Also, try follow [this guide](https://zitseng.com/archives/23322) for running `ssh` from WSL.
 
 
 
