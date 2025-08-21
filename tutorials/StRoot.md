@@ -63,7 +63,7 @@ root -l -b -q macros/readMyTreeEvent.C+
 
 
 
-## Remark: Running in your own laptop
+## Remark: Running on your own laptop
 In case you want to enter and run STAR container on your own laptop:
 
 - You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
@@ -75,10 +75,24 @@ sudo add-apt-repository -y ppa:apptainer/ppa
 sudo apt update
 sudo apt install -y apptainer
 ```
-And then run commands:
+ - And then run commands:
 ```bash
 git clone https://github.com/aprozo/star-tutorial.git
 cd star-tutorial
 apptainer run docker://ghcr.io/star-bnl/star-sw:main-root5-gcc485 bash -l
 ```
+### Important! 
+Do not forget to comment in your `~/.bashrc` sourcing your local Root installation (`source /path/thisroot.sh`), otherwise there will be a conflict of 2 ROOT versions: one - from your local installation, another - from STAR container.
+
+- You may also create a shortcut for `star-shell` using code below:
+```bash
+mkdir -p ~/.local/bin && cat >~/.local/bin/star-shell <<'EOF'
+#!/usr/bin/env bash
+apptainer run  docker://ghcr.io/star-bnl/star-sw:main-root5-gcc485 "$@"
+EOF
+chmod +x ~/.local/bin/star-shell
+grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bashrc
+export PATH="$HOME/.local/bin:$PATH"
+```
+
 
