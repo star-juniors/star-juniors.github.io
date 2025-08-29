@@ -5,6 +5,8 @@ parent: Tutorials
 
 # [STAR Tutorial](https://github.com/aprozo/star-tutorial) [![Github Codespace](https://img.shields.io/badge/open-GH_Codespaces-blue?logo=github)](https://codespaces.new/aprozo/star-tutorial?quickstart=1) <- click
 
+_Alexandr Prozorov_
+
 For successfull running on Github Codespaces one can submit an application for Free [Github Education](https://github.com/education) benefits.
 
 This is an example analysis of [`StPicoDst`](https://www.star.bnl.gov/webdata/dox/html/classStPicoDstMaker.html):
