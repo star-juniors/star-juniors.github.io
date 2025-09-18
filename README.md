@@ -194,14 +194,16 @@ Deep dive into technical papers on STAR detectors:
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
 - [STAR Github](https://github.com/star-bnl)
 
-## Trigger Streams for Data Production:
+## [Trigger Streams for Data Production](https://www.star.bnl.gov/protected/common/triggerPages.html):
 
 |||||
 |---|---|---|---|
-| [2004](https://www.star.bnl.gov/protected/common/common2004/trigger2004/triggers2004.html)| [2005](https://www.star.bnl.gov/protected/common/common2005/trigger2005/ppDetails/thrSum.dat) | [2006](https://www.star.bnl.gov/protected/common/common2006/trigger2006/triggers2006.html) | [2007](https://www.star.bnl.gov/protected/common/common2007/trigger2007/triggers2007.html)|
+| [2004](https://www.star.bnl.gov/protected/common/common2004/trigger2004/triggers2004.html)| [2005](https://www.star.bnl.gov/protected/common/common2005/trigger2005/CuFAQ.html) | [2006](https://www.star.bnl.gov/protected/common/common2006/trigger2006/triggers2006.html) | [2007](https://www.star.bnl.gov/protected/common/common2007/trigger2007/triggers2007.html)|
 | [2008](https://www.star.bnl.gov/protected/common/common2008/trigger2008/triggers2008.html)| [2009](https://www.star.bnl.gov/protected/common/common2009/trigger2009/streams_2009.html) | [2010](https://www.star.bnl.gov/protected/common/common2010/trigger2010/streams.html)| [2011](https://www.star.bnl.gov/protected/common/common2011/trigger2011/streams.html)|
 | [2012](https://www.star.bnl.gov/protected/common/common2012/trigger2012/streams.html)| [2013](https://www.star.bnl.gov/protected/common/common2013/trigger2013/streams.html)| [2014](https://www.star.bnl.gov/protected/common/common2014/trigger2014/streams.html)| [2015](https://www.star.bnl.gov/protected/common/common2015/trigger2015/streams.html)|
 | [2016](https://www.star.bnl.gov/protected/common/common2016/trigger2016/streams.html)| [2017](https://www.star.bnl.gov/protected/common/common2017/trigger2017/streams.html)| [2018](https://www.star.bnl.gov/protected/common/common2018/trigger2018/streams.html)| [2019](https://www.star.bnl.gov/protected/common/common2019/trigger2019/streams.html)|
+|[2021](https://www.star.bnl.gov/cadaccess/common/common2021/trigger2021/streams.html)|[2024](https://www.star.bnl.gov/cadaccess/common/common2024/trigger2024/streams.html)|||
+
 
 
 <!-- The webpage was inspired by [UCR RHIC's GitHub Page](https://github.com/ucr-rhic/ucr-rhic.github.io/) -->
