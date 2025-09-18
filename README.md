@@ -186,13 +186,13 @@ Deep dive into technical papers on STAR detectors:
 # Additional Resources
 
 - [STAR Theses](https://drupal.star.bnl.gov/STAR/theses) — Collection of STAR theses with detailed detector insights.
-- [STAR Notes Drupal Page](https://drupal.star.bnl.gov/STAR/starnotes) — Access technical notes and internal documents.
+- [STAR Analysis Notes](https://drupal.star.bnl.gov/STAR/starnotes) — Access technical notes and internal documents.
 - [Presentations](https://drupal.star.bnl.gov/STAR/presentations/) — abstracts / talks / posters / proceedings
 - [Real Data Summary Production](https://www.star.bnl.gov/public/comp/prod/ProdList.html) — Overview of data production summaries.
 - [BFC Production Options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl) — Configurations for dst, [git](https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx)
 - [Disc Quota and Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/) — monitoring GPFS
 - [GPC Information](https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml) — `.xml` file with all details on God-Parent Committees  (GPC).
-- [STAR Github Repository](https://github.com/star-bnl)
+- [STAR Github](https://github.com/star-bnl)
 
 ## Trigger Streams for Data Production:
 
