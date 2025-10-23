@@ -28,9 +28,9 @@ The `cons` command will:
 
 ## What this tutorial about?
 - It will show how `StRoot` folder is used to compile your project.
-- The [analysis macro](/macros/runPicoDstAnalysisMaker.C) will create a file with user `TTree` and `QA Histograms`
-- The user defined `TTree` actually consists of classes [MyTreeEvent.h](/StRoot/StPicoDstAnalysisMaker/MyTreeEvent.h) and [MyTrack.h](/StRoot/StPicoDstAnalysisMaker/MyTrack.h)
-- There is a second [standalone macro](/macros/readMyTreeEvent.C) which does not need any STAR infrastructure - only meantioned header files [MyTreeEvent.h](/StRoot/StPicoDstAnalysisMaker/MyTreeEvent.h) and [MyTrack.h](/StRoot/StPicoDstAnalysisMaker/MyTrack.h) and can be further used for analysis on personal latptop or batchfarm.
+- The [analysis macro](https://github.com/aprozo/star-tutorial/macros/runPicoDstAnalysisMaker.C) will create a file with user `TTree` and `QA Histograms`
+- The user defined `TTree` actually consists of classes [MyTreeEvent.h](https://github.com/aprozo/star-tutorial/StRoot/StPicoDstAnalysisMaker/MyTreeEvent.h) and [MyTrack.h](https://github.com/aprozo/star-tutorial/StRoot/StPicoDstAnalysisMaker/MyTrack.h)
+- There is a second [standalone macro](https://github.com/aprozo/star-tutorial/macros/readMyTreeEvent.C) which does not need any STAR infrastructure - only meantioned header files [MyTreeEvent.h](https://github.com/aprozo/star-tutorial/StRoot/StPicoDstAnalysisMaker/MyTreeEvent.h) and [MyTrack.h](https://github.com/aprozo/star-tutorial/StRoot/StPicoDstAnalysisMaker/MyTrack.h) and can be further used for analysis on personal latptop or batchfarm.
  
 ## Run instructions:
 1. First, you'll need to enter the STAR container, for that, type:
