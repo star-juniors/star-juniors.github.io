@@ -160,6 +160,8 @@ Deep dive into technical papers on STAR detectors:
 
 ### Other
 
+- [StRoot doxygen documentation](https://www.star.bnl.gov/webdata/dox/html/files.html) - source code for all STAR classes and Makers
+
 - CVS in STAR
  [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
 
