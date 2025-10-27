@@ -59,12 +59,12 @@ flowchart TD
     
     PWG1[Correlations and
     Fluctuations] --- CONV1[Nu Xu
-    Hanna Zbroszczyk]
+    Xin Dong]
     PWG2[Flow, Chirality
     and Vorticity] --- CONV2[Richard Seto
     Subhash Singha
     Prithwish Tribedy]
-    PWG3[Hard Probes] --- CONV3[Nihar Sahoo
+    PWG3[Hard Probes] --- CONV3[Jana Bielcikova
     Isaac Mooney
     Qian Yang]
     PWG4[Light Flavor
@@ -74,10 +74,10 @@ flowchart TD
     PWG5[Cold QCD
      Spin] --- CONV5[Jae D. Nam
     Ting Lin
-    Xianxuan Chu]
+    Zilong Chang]
     
     NOTE[Current PAC and PWG conveners
-    as of 31.1.2025]
+    as of 27.10.2025]
 ```
 
 <https://drupal.star.bnl.gov/STAR/pwg/common/pwg-conveners>
