@@ -206,6 +206,11 @@ Deep dive into technical papers on STAR detectors:
 | [2016](https://www.star.bnl.gov/protected/common/common2016/trigger2016/streams.html)| [2017](https://www.star.bnl.gov/protected/common/common2017/trigger2017/streams.html)| [2018](https://www.star.bnl.gov/protected/common/common2018/trigger2018/streams.html)| [2019](https://www.star.bnl.gov/protected/common/common2019/trigger2019/streams.html)|
 |[2021](https://www.star.bnl.gov/cadaccess/common/common2021/trigger2021/streams.html)|[2024](https://www.star.bnl.gov/cadaccess/common/common2024/trigger2024/streams.html)|||
 
+If you want to access luminosity then remove `streams.html` from web address, e.g. 
+
+```https://www.star.bnl.gov/protected/common/common2012/trigger2012/streams.html``` to 
+
+```https://www.star.bnl.gov/protected/common/common2012/trigger2012/```
 
 
-<!-- The webpage was inspired by [UCR RHIC's GitHub Page](https://github.com/ucr-rhic/ucr-rhic.github.io/) -->
+and then search for `lumi` folder
