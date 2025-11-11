@@ -58,17 +58,6 @@ Connecting to BNL can be done using SSH or NoMachine. The NoMahcine is the prefe
  - __IMPORTANT:Do not work on the nx gateway. You must ssh into the computing nodes even from NoMachine__
  - `display` can be used to view *png* files for *pdf* installing a pdf reader is recommended.
 
-#### Transfer Files using sftp to and from RCF ([tutorial](transfer_files_rcf.md))
-
-__*IMPORTANT:Either make sure ssh-agent has key loaded or use option '-i' to give private key explicitly*__
-
-These commands should be executed on the machine you want to upload/download files to/from the RCF nodes
-*Note:* wildcard expansions are not processed by sftp unless used inside double quotes [see examples here](transfer_files_rcf.md)
-
-- Download: `sftp "username@sftp.sdcc.bnl.gov:/rcf/path/to/file /local/path/to/copy/to/`
-- Upload: `echo "put <Source File>" | sftp <username>@sftp.sdcc.bnl.gov:<Full Path>/`
-- *Interactive session*: `sftp username@sftp.sdcc.bnl.gov`
-
 ### Long Summary
 
 Logging into BNL consists of several steps.  Before starting one must fill out a request form to get a valid account with BNL Scientific Data and Computing Center (SDCC) otherwise or perhaps formerly called RHIC Computing Facility (RCF). Requesting a new account can be done with the link above. Once you get an email confirming your account you are ready to log in.
