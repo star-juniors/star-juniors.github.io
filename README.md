@@ -70,16 +70,19 @@ style Correlations fill:#0d6efd,color:#ffffff;
 ## Mailing lists
 
 <span class="fs-4">
-[starmail](https://lists.bnl.gov/sympa/arc/starmail-l){: .btn .btn-purple}
+[starmail](https://lists.bnl.gov/sympa/subscribe/starmail-l){: .btn .btn-purple}
 </span>
 <span class="fs-4">
-[star-talks](https://lists.bnl.gov/sympa/arc/star-talks-l){: .btn .btn-purple }
+[star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l){: .btn .btn-purple }
 </span>
 <span class="fs-4">
-[star-juniors](https://lists.bnl.gov/sympa/arc/starjuniors-l/){: .btn .btn-purple }
+[star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/){: .btn .btn-purple }
 </span>
 <span class="fs-4">
-[starsoft](https://lists.bnl.gov/sympa/arc/starsoft-l/){: .btn .btn-purple }
+[starpapers](https://lists.bnl.gov/sympa/subscribe/starpapers-l){: .btn .btn-purple}
+</span>
+<span class="fs-4">
+[starsoft](https://lists.bnl.gov/sympa/subscribe/starsoft-l/){: .btn .btn-purple }
 </span>
 
 
