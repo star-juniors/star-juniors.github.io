@@ -20,12 +20,14 @@ Syntax:
 - `filetype` is  `daq_reco_event`, `daq_reco_muDst` or `daq_reco_picoDst` depending on whether you want to use DST, Micro DST or Pico DST reconstruted files.
   - PicoDst page is [here](https://drupal.star.bnl.gov/STAR/blog/gnigmat/picodst-format)
 - `production` and `library` can be found on data production options [page](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl).
-- `trgsetupname` can be found on production options [page](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl), summary [page](https://www.star.bnl.gov/public/comp/prod/DataSummary.html) or production [page](https://drupal.star.bnl.gov/STAR/comp/prod).
+- `trgsetupname` can be found on summary [page](https://www.star.bnl.gov/public/comp/prod/DataSummary.html) or production [page](https://drupal.star.bnl.gov/STAR/comp/prod).
 
 A frequently used use case is
 
 ```bash
-get_file_list.pl -keys 'path,filename' -cond 'storage!=hpss,filetype=daq_reco_muDst,filename~st_physics,production=P11id,trgsetupname=AuAu19_production' -limit 10 -distinct -delim '/'
+get_file_list.pl -keys 'path,filename' \
+-cond 'storage!=hpss,filetype=daq_reco_picoDst,filename~st_physics,production=P12id,trgsetupname=pp200_production_2012' \
+-limit 10 -distinct -delim '/'
 ```
 
 Use `storage=local` to search file locally.
@@ -33,13 +35,24 @@ Use `storage=local` to search file locally.
 More examples are:
 
 ```bash
-get_file_list.pl -keys 'path,filename' -cond 'storage=hpss,filetype=daq_reco_muDst,filename~st_physics,production=P11id,trgsetupname=AuAu19_production' -limit 10 -distinct -delim '/' 
-
-get_file_list.pl -keys path,filename -cond storage=local,trgsetupname=production_pp200trans_2015,filetype=daq_reco_mudst,filename~st_fms_16 -delim '/' 
-
-get_file_list.pl -keys 'fdid,storage,site,node,path,filename,events' -cond 'trgsetupname=AuAu19_production, filetype=daq_reco_MuDst, filename~st_physics, storage!=hpss' -limit 60 -delim '/'. 
-
-get_file_list.pl -keys 'path,filename' -cond 'production=P11id,filetype=daq_reco_MuDst,trgsetupname=AuAu19_production,tpx=1,filename~st_physics,sanity=1,storage!=HPSS' -limit 60 -delim '/'
+get_file_list.pl -keys 'path,filename'\
+-cond 'storage=hpss,filetype=daq_reco_muDst,filename~st_physics,production=P11id,trgsetupname=AuAu19_production'\
+-limit 10 -distinct -delim '/'
+```
+```bash
+get_file_list.pl -keys path,filename \
+-cond storage=local,trgsetupname=production_pp200trans_2015,filetype=daq_reco_mudst,filename~st_fms_16 \
+-delim '/' 
+```
+```bash
+get_file_list.pl -keys 'fdid,storage,site,node,path,filename,events' \
+-cond 'trgsetupname=AuAu19_production, filetype=daq_reco_MuDst, filename~st_physics, storage!=hpss' \
+-limit 60 -delim '/'.
+``` 
+```bash
+get_file_list.pl -keys 'path,filename' \
+-cond 'production=P11id,filetype=daq_reco_MuDst,trgsetupname=AuAu19_production,tpx=1,filename~st_physics,sanity=1,storage!=HPSS' \
+-limit 60 -delim '/'
 ```
 
 **Note:**
