@@ -8,9 +8,9 @@ parent: VS Code
 If you follow this [SSH guide](/software/ssh) and configure your SSH, then you could automatically connect to new [Alma 9](/software/a9) machines and it will start server automatically for you, no need for the tunnel. 
 You may proceed with [Step 5](#step5) using VS code Remote extension from you local machine 
 
-However, it will not save the state of the machine (not persistent) - use `tmux` for background tasks.
+However, it will not save the state of the machine (not persistent) - use persistent terminal/session manager like [`tmux`](https://www.redhat.com/en/blog/introduction-tmux-linux) for background tasks.
 
-Some info here on [VS code remote SSH](https://code.visualstudio.com/docs/remote/ssh)
+Some source info here on [VS code remote SSH](https://code.visualstudio.com/docs/remote/ssh)
 
 
 ## How to Make Use of Tunnels in Visual Code Studio
