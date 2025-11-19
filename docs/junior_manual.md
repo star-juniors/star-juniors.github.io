@@ -19,7 +19,7 @@ nav_order: 2
 
 ## Introduction
 
-Welcome to STAR! This manual is intended to help STAR juniors who have just entered the collaboration. The manual covers various topics and materials needed to start your analysis and navigate SDCC.
+Welcome to STAR! This manual is intended to help STAR juniors who have just entered the collaboration. The manual covers various topics and materials needed to start your analysis and navigate SDCC (Scientific Data and Computing Center).
 
 ## SDCC
 
@@ -29,13 +29,17 @@ Once you have obtained your life number and other credentials, you can use them 
 ### Basic Commands for Logging in
 
 ```bash
-ssh -AX xxx@sssh.sdcc.bnl.gov
+ssh -AX username@sssh.sdcc.bnl.gov
 rterm -i
 ```
 
-Replace `xxx` with your username. You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your SDCC password.
+You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your SDCC password.
 
 However, it is highly recommended to use SSH keys folling tutorial [here](/software/ssh/)
+
+and take a look into [Remote Development](software/remote-development.html) instructions.
+
+A very efficient start is to use modern IDE like [VS Code](https://star-juniors.github.io/software/vscode.html) for working with SDCC - [see complete instruction](https://star-juniors.github.io/software/vs-code-tunnel.html)
 
 ### Running Your Analysis
 
@@ -63,7 +67,7 @@ STAR Papers are documented with analysis notes. Find them here:
 
 Additional resources:
 
-- List of God Parent Committees:  
+- List of God Parent Committees (Paper Analysis-Review Team)):  
   <https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml>
 - Publication steps:  
   <https://drupal.star.bnl.gov/STAR/system/files/20220916_PACreport.pdf>
