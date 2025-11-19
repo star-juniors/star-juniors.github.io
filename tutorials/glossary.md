@@ -9,7 +9,7 @@ A practical dictionary of STAR terms for new students working at SDCC/RCF.
 
 ---
 
-## Preface
+## **P**reface
 
 If you are reading this, you are probably a new student who has recently joined the STAR collaboration and are still trying to understand how things work: what people are talking about, which tools you should use, and where to look for help. This glossary was created to make your first steps easier.
 
@@ -30,21 +30,21 @@ The glossary is not perfect or complete. Expect gaps and occasional mistakes. Fe
 
 ---
 
-### 2FA (MFA) – Two-Factor(Multi-Factor) Authentication
+### **2FA (MFA) – Two-Factor(Multi-Factor) Authentication**
 
 Two-Factor Authentication is an extra security layer used for logging in to services such as the STAR web pages (Drupal) and sometimes SDCC services.
 Instead of only `username + password`, you also enter a one-time code from an authenticator app on your phone. 2FA has been mandatory for STAR Drupal since 2020.
 
 ---
 
-## A
+## **A**
 
-### Abstract
+### **Abstract**
 
 A short text (usually up to half a page) summarizing the content and main results of a talk or paper.
 For conferences, you must submit an abstract first through the STAR Drupal interface; it is reviewed by your supervisor, your PWG conveners, and then by the STAR Talks Committee. Only after sign-off can you submit it to the conference.
 
-### Analysis Meeting
+### **Analysis Meeting**
 
 A shorter, more focused meeting than a full Collaboration Meeting. Usually only PWG sessions, often online or a few days long. Used to:
 
@@ -52,7 +52,7 @@ A shorter, more focused meeting than a full Collaboration Meeting. Usually only 
 * prepare for major conferences,
 * coordinate within a PWG.
 
-### Analysis Note (AN)
+### **Analysis Note (AN)**
 
 An internal document (often ~100+ pages) that fully documents an analysis. It should:
 
@@ -62,7 +62,7 @@ An internal document (often ~100+ pages) that fully documents an analysis. It sh
 
 It is used during PWG, GPC, and collaboration review stages. It is not a journal publication, so formatting rules are looser, but it must be clear and reproducible. You should start your AN early and keep it updated.
 
-### Azimuth / Azimuthal Angle (φ)
+### **Azimuth / Azimuthal Angle (φ)**
 
 The angle in the plane perpendicular to the beam axis. At STAR:
 
@@ -73,9 +73,9 @@ Because the detector and collisions are approximately symmetric in φ, most resu
 
 ---
 
-## B
+## **B**
 
-### Bad Run List
+### **Bad Run List**
 
 A list of run numbers that should be excluded from the analysis. Reasons include:
 
@@ -87,19 +87,19 @@ A list of run numbers that should be excluded from the analysis. Reasons include
 
 Bad run lists are usually dataset-specific and are often prepared by someone else already. You should reuse the recommended list for your dataset.
 
-### BBC – Beam–Beam Counter
+### **BBC – Beam–Beam Counter**
 
 Beam-Beam Counter (BBC) array for the Solenodial Tracker at RHIC (STAR) is a very versatile tool for polarized proton beam diagnostics. 
 he BBC setup provides an excellent minimum bias trigger; and for hits on the inner annuli of six hexagonal scintillator tiles the BBC coincidence trigger with a suitable algorithm 
 has a quite large single spin analyzing power ˜8×10-3 for 100 GeV polarized proton -100 GeV polarized proton collisions. 
 The STAR BBC is a very effective local polarimeter at these energies. 
 
-### BEMC – Barrel Electromagnetic Calorimeter
+### **BEMC – Barrel Electromagnetic Calorimeter**
 
 The main barrel EM calorimeter at STAR. Key points:
 
 * 4800 towers (40 in pseudorapidity × 120 in azimuth),
-* covers full azimuth and |η| < 1,
+* covers full azimuth and \|η\| < 1,
 * built from layers of lead and plastic scintillator,
 * used for EM energy measurement (electrons, photons),
 * supports High Tower triggers (online selection of high-energy signals) like BHT{0,1,2} or JetPatch JP{0,1,2}.
@@ -108,9 +108,9 @@ Electrons deposit almost all their energy → E/p ≈ 1, while hadrons have E/p 
 
 ---
 
-## C
+## **C**
 
-### Centrality
+### **Centrality**
 
 A measure of how “head-on” a nucleus–nucleus collision is (how much the two nuclei overlap). Determined experimentally via some proxy, at STAR typically:
 
@@ -123,7 +123,7 @@ Examples:
 
 Events above ~80% are usually not used because their geometry and participant number are poorly constrained.
 
-### Collaboration Meeting
+### **Collaboration Meeting**
 
 A ~5-day meeting of the whole STAR collaboration, usually every ~6 months, often in person. March meetings happen at BNL. Typical structure:
 
@@ -134,7 +134,7 @@ A ~5-day meeting of the whole STAR collaboration, usually every ~6 months, often
 
 Students should attend if possible; it is important for visibility and for understanding what the collaboration is doing.
 
-### Collaboration Review
+### **Collaboration Review**
 
 The final STAR internal review of an analysis before journal submission. After:
 
@@ -143,7 +143,7 @@ The final STAR internal review of an analysis before journal submission. After:
 
 the draft paper and AN are reviewed by members of several institutions. They provide comments and questions; the analysis team must address them before sending the paper to a journal.
 
-### Compilation
+### **Compilation**
 
 Translating your C/C++ source code into machine instructions. At STAR:
 
@@ -156,7 +156,7 @@ Compiled code runs much faster than interpreted macros, which matters for large 
 root -l myMacro.C+
 ```
 
-### Condor (HTCondor)
+### **Condor (HTCondor)**
 
 The job scheduler used at SDCC for batch jobs. Key commands:
 
@@ -165,7 +165,7 @@ The job scheduler used at SDCC for batch jobs. Key commands:
 
 Jobs are submitted by scripts or wrappers; Condor handles where and when they run.
 
-### Conveners
+### **Conveners**
 
 Physicists who coordinate the work of a PWG. They:
 
@@ -176,7 +176,7 @@ Physicists who coordinate the work of a PWG. They:
 
 There are usually 2–3 conveners per PWG. They are good contact points for questions about analysis standards and PWG expectations.
 
-### Coordinates
+### **Coordinates**
 
 Ways to describe positions and directions.
 
@@ -198,7 +198,7 @@ For momenta we often use:
 * pseudorapidity η,
 * sometimes rapidity y.
 
-### Council
+### **Council**
 
 The STAR Council is the governing body of the collaboration. It:
 
@@ -206,7 +206,7 @@ The STAR Council is the governing body of the collaboration. It:
 * makes major decisions (e.g. electing the Spokesperson(s) every three years),
 * sets collaboration policies.
 
-### Cut
+### **Cut**
 
 A selection criterion in an analysis, used to:
 
@@ -216,7 +216,7 @@ A selection criterion in an analysis, used to:
 Examples:
 
 * event cuts: vertex z position, trigger, centrality,
-* track cuts: pT range, |η| range, number of TPC hits, DCA limits.
+* track cuts: pT range, \|η\| range, number of TPC hits, DCA limits.
 
 Cuts can be applied directly in code:
 
@@ -226,7 +226,7 @@ if (variable < lowerCut) continue;
 
 For complicated logic, it is better to put them into utility functions (e.g. `bool isGoodTrack(...)`).
 
-### CVS – Concurrent Versions System
+### **CVS – Concurrent Versions System**
 
 A version control system used historically to store official STAR software. Many old codes still live in CVS. You can:
 
@@ -237,9 +237,9 @@ Newer development tends to be elsewhere (e.g. Git), but many core packages remai
 
 ---
 
-## D
+## **D**
 
-### DAQ – Data Acquisition
+### **DAQ – Data Acquisition**
 
 The system that reads the detector signals and converts them into digital data stored on disk. It includes:
 
@@ -250,7 +250,7 @@ The system that reads the detector signals and converts them into digital data s
 
 The output of DAQ is later reconstructed into higher-level objects like tracks and vertices.
 
-### Data-Driven Method
+### **Data-Driven Method**
 
 A method that uses real data rather than simulation or models as the main input. Benefits:
 
@@ -259,7 +259,7 @@ A method that uses real data rather than simulation or models as the main input.
 
 Example: measuring detector matching efficiency directly from data instead of relying on GEANT simulation.
 
-### Dataset
+### **Dataset**
 
 A collection of data files belonging together and described by:
 
@@ -271,7 +271,7 @@ A collection of data files belonging together and described by:
 
 At STAR, dataset composition and file lists are documented on production pages; file lists can be generated with `get_file_list.pl`.
 
-### DCA – Distance of Closest Approach
+### **DCA – Distance of Closest Approach**
 
 The smallest distance between:
 
@@ -283,7 +283,7 @@ Used heavily in:
 * vertexing and decay reconstruction,
 * separating primary tracks (small DCA to PV) from decay products or background (larger DCA).
 
-### Decay Length
+### **Decay Length**
 
 The distance a particle travels before decaying in the lab frame. On average:
 
@@ -294,11 +294,11 @@ In analyses, decay length distributions are used to:
 * reconstruct short-lived particles (e.g. D⁰, Λ, etc.),
 * separate prompt and non-prompt components.
 
-### Distributed Disk
+### **Distributed Disk**
 
 A disk system where data are spread over many servers but accessed as if it were one logical storage. In STAR/SDCC context, large picoDst samples on “local” storage accessed via xrootd are an example. See also **GPFS** and **HPSS** for other storage types.
 
-### Drupal
+### **Drupal**
 
 A web content management framework. STAR uses a large Drupal instance as the main collaboration portal:
 
@@ -312,16 +312,16 @@ Most content is behind login and 2FA.
 
 ---
 
-## E
+## **E**
 
-### EEMC – Endcap Electromagnetic Calorimeter
+### **EEMC – Endcap Electromagnetic Calorimeter**
 
 Forward EM calorimeter at STAR, covering high pseudorapidity on one side of the detector. It:
 
 * measures electromagnetic showers (photons, electrons),
 * is used in certain forward physics analyses.
 
-### Embedding
+### **Embedding**
 
 A technique to study detector acceptance and reconstruction efficiency in realistic environments. Steps:
 
@@ -332,7 +332,7 @@ A technique to study detector acceptance and reconstruction efficiency in realis
 
 Used widely for heavy-ion and jet analyses.
 
-### EPD – Event Plane Detector
+### **EPD – Event Plane Detector**
 
 Forward detector on both sides of STAR used to:
 
@@ -342,7 +342,7 @@ Forward detector on both sides of STAR used to:
 
 Built from scintillator tiles; essential for flow analyses and some triggers.
 
-### ETOF – Endcap Time-of-Flight Detector
+### **ETOF – Endcap Time-of-Flight Detector**
 
 Forward time-of-flight detector, an extension of the barrel TOF system. It:
 
@@ -350,7 +350,7 @@ Forward time-of-flight detector, an extension of the barrel TOF system. It:
 * improves PID at forward rapidities,
 * serves as a prototype for CBM at FAIR.
 
-### Event
+### **Event**
 
 One recorded collision. Each event has:
 
@@ -362,9 +362,9 @@ Analyses usually loop over events and then over tracks in each event.
 
 ---
 
-## F
+## **F**
 
-### FastSim
+### **FastSim**
 
 “Fast Simulation”: a simplified simulation approach that approximates detector response without a full GEANT run. Often:
 
@@ -373,7 +373,7 @@ Analyses usually loop over events and then over tracks in each event.
 
 Used for quick studies or feasibility checks.
 
-### Flow
+### **Flow**
 
 Collective motion of particles in the transverse plane, often quantified by Fourier coefficients v₁, v₂, … of the azimuthal distribution. Important for:
 
@@ -384,9 +384,9 @@ Measured using correlations with the event plane (e.g. from EPD) or multi-partic
 
 ---
 
-## G
+## **G**
 
-### GEANT
+### **GEANT**
 
 A widely used toolkit for simulating particle passage through matter and detectors. STAR uses GEANT-based simulations to:
 
@@ -394,11 +394,11 @@ A widely used toolkit for simulating particle passage through matter and detecto
 * simulate energy loss, showers, and detector signals,
 * generate realistic simulated events for embedding and other studies.
 
-### Getter
+### **Getter**
 
 A C++ method used to read (get) a value from a class or object, usually named like `GetX()` or `x()` and declared `const`. Used heavily in STAR classes (e.g. `track->gMom()`) to access internal data safely.
 
-### Glauber Model
+### **Glauber Model**
 
 A model of nuclear geometry used to describe heavy-ion collisions. It:
 
@@ -411,7 +411,7 @@ A model of nuclear geometry used to describe heavy-ion collisions. It:
 
 Used to define centrality and normalize quantities like R_AA and R_CP.
 
-### GPC – Godparent Committee
+### **GPC – Godparent Committee**
 
 A committee that oversees the review of a given analysis during the PWG → paper pipeline. GPC members:
 
@@ -419,7 +419,7 @@ A committee that oversees the review of a given analysis during the PWG → pape
 * ask detailed questions,
 * ensure analysis quality before collaboration review.
 
-### GPFS – General Parallel File System
+### **GPFS – General Parallel File System**
 
 A distributed parallel filesystem used at SDCC, usually visible as `gpfs01`. Characteristics:
 
@@ -431,14 +431,14 @@ Most production analyses store data and output on GPFS.
 
 ---
 
-## H
+## **H**
 
-### Hadronic Correction (Towers)
+### **Hadronic Correction (Towers)**
 
 Procedure to avoid double-counting charged hadrons when combining TPC tracks and calorimeter towers (BEMC/EEMC).
 Tracks pointing to a tower are matched, their expected energy contribution is subtracted from the raw tower energy, and the corrected tower energy (clipped at ≥ 0) is then used. After this, tracks represent charged energy, corrected towers represent mostly neutral energy.
 
-### Hard Processes
+### **Hard Processes**
 
 Partonic scatterings involving large momentum transfer Q², calculable in perturbative QCD. They:
 
@@ -446,7 +446,7 @@ Partonic scatterings involving large momentum transfer Q², calculable in pertur
 * happen early in the collision,
 * are important for QGP probes (energy loss, modification).
 
-### Heavy Flavor
+### **Heavy Flavor**
 
 Quarks heavier than up/down/strange: charm (c) and bottom (b). In STAR:
 
@@ -456,14 +456,14 @@ Quarks heavier than up/down/strange: charm (c) and bottom (b). In STAR:
   * D and B mesons,
   * heavy-flavor electrons and muons.
 
-### Heavy Flavor Tracker (HFT)
+### **Heavy Flavor Tracker (HFT)**
 
 A high-resolution silicon vertex detector formerly used at STAR (now decommissioned). It:
 
 * improved impact parameter and secondary vertex resolution,
 * enabled precise reconstruction of charm hadron decays.
 
-### HIJING
+### **HIJING**
 
 A Monte Carlo event generator for high-energy nuclear collisions. It:
 
@@ -472,7 +472,7 @@ A Monte Carlo event generator for high-energy nuclear collisions. It:
 
 Used to generate simulated heavy-ion events.
 
-### HPSS – High Performance Storage System
+### **HPSS – High Performance Storage System**
 
 Tape-based long-term storage at SDCC. Features:
 
@@ -480,15 +480,15 @@ Tape-based long-term storage at SDCC. Features:
 * slower access (staging from tape),
 * used for older or less frequently accessed datasets.
 
-### HyperNews
+### **HyperNews**
 
 An older web-based discussion and mailing interface used in many HEP experiments. In STAR, most communication has moved to Mattermost and “normal” mailing lists, but you may still see references to HyperNews in old notes.
 
 ---
 
-## I
+## **I**
 
-### Institution
+### **Institution**
 
 A university or lab that is a member of the STAR Collaboration. Each institution:
 
@@ -496,11 +496,11 @@ A university or lab that is a member of the STAR Collaboration. Each institution
 * may have local STAR group leaders,
 * is associated with its students’ and postdocs’ affiliation and disk quotas.
 
-### Inverse Barn (1/b, 1/nb, 1/pb)
+### **Inverse Barn (1/b, 1/nb, 1/pb)**
 
 Unit of integrated luminosity. A barn (b) is a unit of cross section; “inverse barn” measures how much collision exposure the experiment has collected. Higher integrated luminosity means more events and better statistics for rare processes.
 
-### iTPC – Inner TPC Upgrade
+### **iTPC – Inner TPC Upgrade**
 
 An upgrade of the inner sectors of the TPC:
 
@@ -510,16 +510,16 @@ An upgrade of the inner sectors of the TPC:
 
 ---
 
-## J
+## **J**
 
-### Jet
+### **Jet**
 
 A collimated spray of hadrons originating from a high-energy quark or gluon. In analyses:
 
 * reconstructed with jet algorithms (anti-kT, etc.),
 * used as probes of parton energy loss and QCD dynamics.
 
-### Job
+### **Job**
 
 A unit of work submitted to the batch system (Condor) at RCF. A job typically:
 
@@ -527,11 +527,11 @@ A unit of work submitted to the batch system (Condor) at RCF. A job typically:
 * processes events,
 * writes output histograms or trees.
 
-### Journal
+### **Journal**
 
 A scientific journal where papers are submitted (e.g. PRL, PRC, PLB, JHEP, etc.). After STAR’s internal reviews, the final analysis paper is sent to a journal for external peer review and publication.
 
-### Junior
+### **Junior**
 
 Informal term for early-career members: students and postdocs. STAR Juniors is a community focused on:
 
@@ -541,9 +541,9 @@ Informal term for early-career members: students and postdocs. STAR Juniors is a
 
 ---
 
-## L
+## **L**
 
-### Library
+### **Library**
 
 A named version of the STAR software stack used to produce or analyze data, e.g.:
 
@@ -551,7 +551,7 @@ A named version of the STAR software stack used to produce or analyze data, e.g.
 
 The library version is tied to specific productions; you must use a compatible library for analyses to avoid mismatches.
 
-### Luminosity
+### **Luminosity**
 
 Quantity describing how many collisions happen per unit time and area:
 
@@ -562,9 +562,9 @@ Integrated luminosity is crucial for estimating yields of rare processes and nor
 
 ---
 
-## M
+## **M**
 
-### Macro
+### **Macro**
 
 A small C++ (or ROOT C++) script, often with extension `.C` and possibly a `+` for compilation. Used for:
 
@@ -574,7 +574,7 @@ A small C++ (or ROOT C++) script, often with extension `.C` and possibly a `+` f
 
 ROOT can interpret or compile macros.
 
-### Mailing Lists
+### **Mailing Lists**
 
 Email lists used for communication within STAR. Examples:
 
@@ -584,7 +584,7 @@ Email lists used for communication within STAR. Examples:
 
 You must subscribe to the relevant lists (via STAR web pages) to receive important announcements.
 
-### Maker
+### **Maker**
 
 In STAR’s framework, a **Maker** is a C++ class derived from `StMaker` that performs a specific task in the analysis chain:
 
@@ -594,7 +594,7 @@ In STAR’s framework, a **Maker** is a C++ class derived from `StMaker` that pe
 
 Your main analysis code is usually implemented as a custom Maker.
 
-### Mattermost
+### **Mattermost**
 
 The primary chat system for STAR:
 [https://chat.sdcc.bnl.gov/](https://chat.sdcc.bnl.gov/)
@@ -607,29 +607,29 @@ Used for:
 
 Login is via SDCC account.
 
-### Minimum-Bias (MB)
+### **Minimum-Bias (MB)**
 
 A trigger configuration designed to record as unbiased a sample of inelastic collisions as possible. MB data:
 
 * are used as reference distributions,
 * often serve as embedding backgrounds.
 
-### Mixed Events
+### **Mixed Events**
 
 A technique to estimate combinatorial background by combining tracks or objects from different events. Because mixed events have no true correlations, they approximate purely random combinations and help remove background from signal distributions.
 
-### MTD – Muon Telescope Detector
+### **MTD – Muon Telescope Detector**
 
 A detector system at STAR used for muon identification, located outside the magnet and steel. It:
 
 * detects penetrating muons,
 * is used in quarkonium and heavy-flavor muon analyses.
 
-### MuDst
+### **MuDst**
 
 An older, more detailed data format at STAR, storing reconstructed objects. Heavier than picoDst but containing more information. Many modern analyses use picoDst instead, but older ones may still rely on MuDst.
 
-### Multiplicity
+### **Multiplicity**
 
 Number of particles in an event, usually:
 
@@ -643,20 +643,20 @@ Used for:
 
 ---
 
-## N
+## **N**
 
-### NFS – Network File System
+### **NFS – Network File System**
 
 A shared disk system mounted as a normal filesystem on SDCC machines. Files on NFS appear under regular paths; access is straightforward but capacity and performance can be more limited than GPFS for huge datasets.
 
-### nHitsFit
+### **nHitsFit**
 
 Number of TPC hits used in the track fit. A higher nHitsFit generally means a better-quality track. Analyses often require:
 
 * minimum nHitsFit,
 * ratio `nHitsFit / nHitsPossible` above some threshold.
 
-### Normalization
+### **Normalization**
 
 The process of scaling histograms or yields to a common basis, such as:
 
@@ -667,21 +667,21 @@ The process of scaling histograms or yields to a common basis, such as:
 
 Correct normalization is essential for comparing different datasets or systems.
 
-### nSigma
+### **nSigma**
 
 Number of standard deviations a measured PID variable (e.g. dE/dx in TPC) is away from the expected value for a given particle species, e.g. `nSigma_e`, `nSigma_pi`. Used for particle identification:
 
-* |nSigma| < cut → candidate of a given type.
+\|nSigma\| < cut → candidate of a given type.
 
 ---
 
-## P
+## **P**
 
-### PA – Paper Author 
+### **PA – Paper Author **
 
 Within STAR documents, “PA” often refers to the main analysis paper contact person
 
-### Paper
+### **Paper**
 
 The final journal publication describing an analysis. Before submission:
 
@@ -690,11 +690,11 @@ The final journal publication describing an analysis. Before submission:
 
 must approve the content. Papers are often accompanied by an internal Analysis Note.
 
-### PHENIX
+### **PHENIX**
 
 Another experiment at RHIC. PHENIX results are frequently compared with STAR’s to understand systematics and cross-check measurements.
 
-### PicoDst
+### **PicoDst**
 
 A compact data format at STAR optimized for analysis. Compared to MuDst:
 
@@ -703,13 +703,13 @@ A compact data format at STAR optimized for analysis. Compared to MuDst:
 
 Most modern analyses use picoDst.
 
-### Pile-up
+### **Pile-up**
 
 Multiple collisions recorded on top of each other in a single readout window (due to high ~80ns TPC window). More than one vertex in the same event (“multiple PVs”), or extra tracks from earlier/later bunch crossings drifting through the TPC during the readout.
 Pile-up distorts multiplicities, vertex distributions, and detector occupancies, and can fake or dilute physics signals. Analyses usually suppress pile-up with vertex selection (choosing a single “good” PV), event-quality cuts, and consistency checks between different multiplicity or timing detectors (e.g. TPC vs. TOF/VPD).
 BBC detector (flat) distribution can depict pile-up. Resolved by using |v_z(tpc) - v_z(vpd)| < cut, global DCA cut, or using fast detecros such as BEMS and TOF which have ps resolution.
 
-### Preliminary
+### **Preliminary**
 
 Label for results that are not yet final or published. Preliminary results:
 
@@ -718,7 +718,7 @@ Label for results that are not yet final or published. Preliminary results:
 
 Final, published results should not be labeled “preliminary”.
 
-### Presentation
+### **Presentation**
 
 A talk (usually slides) given at:
 
@@ -728,7 +728,7 @@ A talk (usually slides) given at:
 
 STAR internal presentations are usually uploaded to Drupal as “Blog entry” or STAR Contribution entries.
 
-### Primary Vertex (PV)
+### **Primary Vertex (PV)**
 
 The reconstructed point in space where the main collision happened. Tracks associated with the PV are called:
 
@@ -736,11 +736,11 @@ The reconstructed point in space where the main collision happened. Tracks assoc
 
 Short-lived particles decay away from the PV, generating secondary vertices.
 
-### Proceedings
+### **Proceedings**
 
 Written summary of a conference contribution, usually a short paper associated with a talk or poster. Often required by conference organizers; must be approved within STAR similarly to other outputs.
 
-### Production
+### **Production**
 
 A specific reconstruction campaign of raw data into higher-level formats (e.g. picoDst). Characterized by:
 
@@ -749,11 +749,11 @@ A specific reconstruction campaign of raw data into higher-level formats (e.g. p
 
 When you say “Run14 Au+Au P18ih picoDst”, you specify both dataset and production.
 
-### protected
+### **protected**
 
 A [special password](https://drupal.star.bnl.gov/STAR/comp/sofi/web-access#comment-897) combination for accessing certain internal STAR web pages (e.g. CVS web viewer). The credentials are confidential and must not be shared publicly. In order to see it, user has to be logged in.
 
-### Pseudorapidity (η)
+### **Pseudorapidity (η)**
 
 A coordinate related to the polar angle θ with respect to the beam axis:
 
@@ -761,7 +761,7 @@ A coordinate related to the polar angle θ with respect to the beam axis:
 
 Useful because many distributions are approximately flat in η; also convenient for relativistic kinematics. Detector coverage is often expressed in terms of η.
 
-### PWG – Physics Working Group
+### **PWG – Physics Working Group**
 
 Group of collaborators focusing on a specific physics area (e.g. jets, heavy flavor, flow). For each PWG:
 
@@ -771,7 +771,7 @@ Group of collaborators focusing on a specific physics area (e.g. jets, heavy fla
 
 Your analysis belongs to one (or a few) PWGs.
 
-### PWGC – PWG Conveners’ Committee
+### **PWGC – PWG Conveners’ Committee**
 
 A body coordinating across PWGs:
 
@@ -779,7 +779,7 @@ A body coordinating across PWGs:
 * discusses conflicts or cross-group issues,
 * interfaces with STAR management on analysis matters.
 
-### [PYTHIA](https://pythia.org/)
+### **[PYTHIA](https://pythia.org/)**
 
 A general-purpose event generator for proton–proton and  simple related collisions. Used for:
 
@@ -790,9 +790,9 @@ A general-purpose event generator for proton–proton and  simple related collis
 
 ---
 
-## Q
+## **Q**
 
-### QA – Quality Assurance
+### **QA – Quality Assurance**
 
 Procedures and plots used to ensure data quality and stable detector performance. QA often includes:
 
@@ -800,15 +800,15 @@ Procedures and plots used to ensure data quality and stable detector performance
 * identifying problematic runs or periods,
 * defining bad run lists.
 
-### Quark Matter
+### **Quark Matter**
 
 A major international conference series on heavy-ion physics. STAR frequently submits results to Quark Matter; internal review timelines are often aligned with QM deadlines.
 
 ---
 
-## R
+## **R**
 
-### R_AA
+### **R_AA**
 
 Nuclear modification factor:
 
@@ -816,11 +816,11 @@ Nuclear modification factor:
 
 Measures how particle production in nucleus–nucleus collisions differs from a scaled expectation based on p+p. Values significantly below 1 indicate suppression (e.g. from energy loss in QGP).
 
-### Rapidity (y)
+### **Rapidity (y)**
 
 A kinematic variable related to energy and momentum along the beam direction. For particles with mass, rapidity is more natural than pseudorapidity in some analyses. It transforms additively (Lorentz-invariant) under boosts along the beam.
 
-### RCF – RHIC Computing Facility
+### **RCF – RHIC Computing Facility**
 
 The main computing center at BNL for STAR and other RHIC experiments. You:
 
@@ -830,7 +830,7 @@ The main computing center at BNL for STAR and other RHIC experiments. You:
 
 Sometimes “RCF” and “SDCC” are used interchangeably in informal speech.
 
-### R_CP
+### **R_CP**
 
 Central-to-peripheral nuclear modification factor:
 
@@ -838,7 +838,7 @@ Central-to-peripheral nuclear modification factor:
 
 Compares central and peripheral heavy-ion collisions without explicit p+p reference.
 
-### ROOT
+### **ROOT**
 
 A data analysis framework from CERN, used heavily in STAR. It provides:
 
@@ -848,11 +848,11 @@ A data analysis framework from CERN, used heavily in STAR. It provides:
 
 Almost all STAR analysis code is ROOT-based.
 
-### run (lowercase)
+### **run (lowercase)**
 
 A single data-taking segment, typically ~30 minutes long, with its own **run number** (e.g. 17319001). Used to organize data, bad run lists, and QA.
 
-### Run (capital R)
+### **Run (capital R)**
 
 A data-taking campaign at RHIC lasting several months. Example:
 
@@ -862,9 +862,9 @@ Each Run has multiple subsystems, energies, and datasets.
 
 ---
 
-## S
+## **S**
 
-### [Scheduler (SUMS)](https://www.star.bnl.gov/public/comp/Grid/scheduler/manual.htm)
+### **[Scheduler (SUMS)](https://www.star.bnl.gov/public/comp/Grid/scheduler/manual.htm)**
 
 Software responsible for managing batch jobs on a cluster. At SDCC, this is Condor. It:
 
@@ -872,7 +872,7 @@ Software responsible for managing batch jobs on a cluster. At SDCC, this is Cond
 * distributes them to worker nodes,
 * handles priorities and resource usage.
 
-### Script
+### **Script**
 
 A small program (often in shell, Python, or similar) written to automate tasks:
 
@@ -882,26 +882,26 @@ A small program (often in shell, Python, or similar) written to automate tasks:
 
 Scripts are essential for managing large analyses.
 
-### Secondary Vertex (SV)
+### **Secondary Vertex (SV)**
 
 A reconstructed point where a particle decays away from the primary vertex. SV reconstruction is crucial for:
 
 * identifying charm and strange hadron decays,
 * separating prompt and non-prompt components.
 
-### Setter
+### **Setter**
 
 A C++ method used to set (change) a value in an object, typically named `SetX(...)`. In STAR code, setters are used to configure Maker parameters, object fields, etc.
 
-### Shifts
+### **Shifts**
 
 Operational duties taken by collaborators to monitor the experiment (during running) or offline systems. Even if you are remote, you may be asked to perform “offline shifts” (e.g. monitoring QA).
 
-### Signed DCA (Tracks)
+### **Signed DCA (Tracks)**
 
-DCA is the shortest distance between a track and a reference point (usually the primary vertex). Signed DCA keeps the magnitude of this distance but adds a sign based on track geometry relative to a chosen reference (e.g. vertex, jet axis, magnetic field). This preserves “which side” information, allowing better separation of different track topologies than |DCA| alone.
+DCA is the shortest distance between a track and a reference point (usually the primary vertex). Signed DCA keeps the magnitude of this distance but adds a sign based on track geometry relative to a chosen reference (e.g. vertex, jet axis, magnetic field). This preserves “which side” information, allowing better separation of different track topologies than \|DCA\| alone.
 
-### Slow Controls
+### **Slow Controls**
 
 Systems that monitor and control detector conditions that change slowly:
 
@@ -911,7 +911,7 @@ Systems that monitor and control detector conditions that change slowly:
 
 Slow controls ensure detectors operate safely and within specifications.
 
-### Small System
+### **Small System**
 
 Collisions involving at least one small projectile, e.g.:
 
@@ -922,7 +922,7 @@ Collisions involving at least one small projectile, e.g.:
 
 Used to study initial-state effects and compare with large systems like Au+Au.
 
-### Source Code
+### **Source Code**
 
 Human-readable code written in a programming language (C++, Python, …). At STAR:
 
@@ -931,7 +931,7 @@ Human-readable code written in a programming language (C++, Python, …). At STA
 
 Source code is compiled (C++) or interpreted (Python, ROOT macros) to perform analyses.
 
-### Spectrum
+### **Spectrum**
 
 Distribution of a physical quantity, commonly:
 
@@ -941,7 +941,7 @@ Distribution of a physical quantity, commonly:
 
 Spectra are typically shown as histograms and used to extract yields or compare with models.
 
-### Spokesperson
+### **Spokesperson**
 
 The elected scientific leader of the STAR Collaboration. Responsibilities include:
 
@@ -949,14 +949,14 @@ The elected scientific leader of the STAR Collaboration. Responsibilities includ
 * coordinating collaboration-level decisions,
 * working with Council and management on strategy.
 
-### Starsim
+### **Starsim**
 
 STAR’s simulation framework built on top of GEANT and STAR software. Used to:
 
 * simulate detector response,
 * produce simulated data samples for embedding and standalone studies.
 
-### StarSoft
+### **StarSoft**
 
 The collective name for official STAR software packages:
 
@@ -966,7 +966,7 @@ The collective name for official STAR software packages:
 
 Most of StarSoft is stored in CVS.
 
-### StarTalks
+### **StarTalks**
 
 The STAR Talks Committee and associated infrastructure reviewing and coordinating:
 
@@ -976,7 +976,7 @@ The STAR Talks Committee and associated infrastructure reviewing and coordinatin
 
 Abstracts and slides go through StarTalks as part of the internal approval process.
 
-### STAR Library (SLxx)
+### **STAR Library (SLxx)**
 
 The compiled STAR software release used for reconstruction and analysis, e.g.:
 
@@ -984,7 +984,7 @@ The compiled STAR software release used for reconstruction and analysis, e.g.:
 
 Different productions are tied to specific SL versions.
 
-### StRoot
+### **StRoot**
 
 Top-level directory in your STAR working area containing:
 
@@ -994,11 +994,11 @@ Top-level directory in your STAR working area containing:
 
 When you add a new Maker, you place its code under `StRoot`.
 
-### Submitter
+### **Submitter**
 
 A person who uploads an abstract, talk, poster, or proceedings to Drupal on behalf of an analysis. Often the main analyst or presenter.
 
-### Systematic Errors / Systematic Uncertainties
+### **Systematic Errors / Systematic Uncertainties**
 
 Uncertainties in a measurement that arise from:
 
@@ -1010,9 +1010,9 @@ Unlike statistical errors, systematics do not decrease simply by adding more dat
 
 ---
 
-## T
+## **T**
 
-### TMVA
+### **TMVA**
 
 Toolkit for Multivariate Data Analysis, part of ROOT. Provides machine-learning methods:
 
@@ -1022,7 +1022,7 @@ Toolkit for Multivariate Data Analysis, part of ROOT. Provides machine-learning 
 
 used for classification/regression in physics analyses (e.g. signal vs. background).
 
-### TPC – Time Projection Chamber
+### **TPC – Time Projection Chamber**
 
 The main tracking detector at STAR. It:
 
@@ -1030,14 +1030,14 @@ The main tracking detector at STAR. It:
 * provides dE/dx for particle identification,
 * covers large pseudorapidity and full azimuth.
 
-### TOF – Time-of-Flight Detector
+### **TOF – Time-of-Flight Detector**
 
 Detector surrounding the TPC, measuring particle arrival times. Combined with track length and momentum, TOF provides:
 
 * particle mass,
 * improved PID over a wide pT range.
 
-### Tower
+### **Tower**
 
 Basic cell of an EM calorimeter (BEMC, EEMC). Each tower:
 
@@ -1046,7 +1046,7 @@ Basic cell of an EM calorimeter (BEMC, EEMC). Each tower:
 
 Tower energies are used for triggers, jet reconstruction, and electron/photon identification.
 
-### Track
+### **Track**
 
 Reconstructed trajectory of a charged particle passing through tracking detectors (TPC, iTPC). Tracks have:
 
@@ -1057,7 +1057,7 @@ Reconstructed trajectory of a charged particle passing through tracking detector
 
 Most analyses loop over tracks inside each event.
 
-### Transverse Momentum (pT)
+### **Transverse Momentum (pT)**
 
 Component of a particle’s momentum perpendicular to the beam axis. pT is central in:
 
@@ -1065,11 +1065,11 @@ Component of a particle’s momentum perpendicular to the beam axis. pT is centr
 * jet physics,
 * nuclear modification factors.
 
-### Transverse Energy (ET)
+### **Transverse Energy (ET)**
 
 Energy component associated with the transverse plane. Defined in various ways (depending on context), often ET = E sinθ or sum over particle transverse energies.
 
-### Trigger
+### **Trigger**
 
 Online decision logic deciding which events to record. Combines detector signals to select:
 
@@ -1081,9 +1081,9 @@ Each trigger has a name (e.g. BHT1*VPD30, BHT2*BBCMB) and specific conditions.
 
 ---
 
-## V
+## **V**
 
-### Vertex
+### **Vertex**
 
 A point where tracks intersect, usually representing:
 
@@ -1092,7 +1092,7 @@ A point where tracks intersect, usually representing:
 
 Vertexing is crucial for reconstructing decays and understanding event geometry.
 
-### VPD – Vertex Position Detector
+### **VPD – Vertex Position Detector**
 
 Forward detector providing precise timing signals. Used for:
 
@@ -1102,9 +1102,9 @@ Forward detector providing precise timing signals. Used for:
 
 ---
 
-## X
+## **X**
 
-### Xrootd
+### **Xrootd**
 
 A high-performance, scalable data access system used to read files stored on distributed disks. At STAR:
 
@@ -1113,14 +1113,12 @@ A high-performance, scalable data access system used to read files stored on dis
 
 ---
 
-## Z
+## **Z**
 
-### ZDC – Zero Degree Calorimeter
+### **ZDC – Zero Degree Calorimeter**
 
 Very forward calorimeter located at zero degrees relative to the beam (along the beam line), on both sides of STAR. Main roles:
 
 * detects **neutral spectators** (mainly neutrons) from heavy-ion collisions,
 * used for **centrality determination** and **event characterization**,
 * provides **fast trigger signals** and can help reject non-collision background (beam–gas, noise).
-
-
