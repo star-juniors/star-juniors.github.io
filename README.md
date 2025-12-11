@@ -167,7 +167,8 @@ Deep dive into technical papers on STAR detectors:
 
 - CVS in STAR
  [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
-
+web $CVSROOT <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offline/paper/>  
+ 
 - FileCatalog [`get_file_list.pl`](https://star-juniors.github.io/software/get_file_list.html) [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
 
 # Selected Junior Meetings on physics
