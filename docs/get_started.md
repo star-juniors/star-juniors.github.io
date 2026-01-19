@@ -1,9 +1,9 @@
 ---
-title: Juniors Intro Manual
+title: Get Started
 nav_order: 2
 ---
 
-# Getting Started
+# Get Started
 *Alexandr Prozorov*  
 
 ## Introduction
