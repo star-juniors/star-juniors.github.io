@@ -11,6 +11,7 @@ nav_order: 2
 Welcome to STAR! This is a checklist and starting point for new users joining the collaboration.
 
 ## Main Steps Checklist:
+
 1) Join [Mattermost Software channel](https://chat.sdcc.bnl.gov/star/channels/star-software-and-infrastructure)
 2) Make a [Drupal](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/drupal-access) 2FA access via [Dmitry Arkhipkin](https://chat.sdcc.bnl.gov/bnl/messages/@dmarkh) or [Jerome Lauret](https://chat.sdcc.bnl.gov/bnl/messages/@jeromel)
 3) Subscribe to mailing lists:
@@ -21,7 +22,7 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
   
 4) Add yourself/Check for STAR [**Phone Book**](https://www.star.bnl.gov/central/collaboration/phonebook.php) entry by writing to <a href="mailto:mogavero@bnl.gov?subject=Phonebook entry&body=Hi Liz,%0D%0A could you please add me to STAR Phonebook as %0D%0A <YOUR NAME> from %0D%0A <YOUR INSTITUTION>%0D%0A Thanks!">Liz Mogavero</a>
 
-# Software Setup (Linux/MacOS + Windows user via WSL2):
+# Software Setup (Linux/MacOS + Windows via WSL2):
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
 
 ## VS Code Remote Development on SDCC
