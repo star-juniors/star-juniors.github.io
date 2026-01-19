@@ -27,13 +27,12 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
 # Software Setup (Linux/MacOS + Windows via WSL2):
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
 
-## VS Code Remote Development on SDCC
-### 0) Preconditions
+## 0) Preconditions
 * SDCC account working with password login (first-time users must [set up their account](https://useraccount.sdcc.bnl.gov/new-user) and [add their SSH key](https://useraccount.sdcc.bnl.gov/ssh-key) manually)
 * Local [OpenSSH](https://documentation.ubuntu.com/server/how-to/security/openssh-server/) client (`ssh`, `ssh-keygen`)
 * Local [VS Code](https://code.visualstudio.com/download) + extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh)
----
-### 1) Generate an SSH key (local) and upload `.pub` to SDCC
+
+## 1) Generate an SSH key (local) and upload `.pub` to SDCC
 Use RSA-4096 for generation of the key pair (if you don't have one already):
 
 ```bash
@@ -41,7 +40,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
 ```
----
+
 ### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
 
@@ -92,15 +91,14 @@ if [ -n "${SSH_AUTH_SOCK:-}" ]; then
   ssh-add ${YOUR_KEY}
 fi
 ```
----
-#### Test: passwordless login
+
+### Test: passwordless login
 
 ```bash
 ssh star
 # or
 ssh starsub05
 ```
----
 
 ## 2) VS Code: Remote-SSH
 1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html)
@@ -108,8 +106,8 @@ ssh starsub05
 3. Select `star`.
 4. VS Code installs the remote server on first connect; then open your folder on SDCC, e.g. `/gpfs01/star/pwg/${SDCC_USERNAME}/`
 Persistence note: the node state is not persistent; use [`tmux`](https://www.redhat.com/en/blog/introduction-tmux-linux) for long-running terminal sessions.
----
-## 3) Mount SDCC :
+
+## 3) Mount SDCC
 If you need to download files from SDCC (like ROOT Trees) I recommend [mounting](https://star-juniors.github.io/software/remote-development.html#mounting-sdcc-on-your-laptop) SDCC filesystem via `sshfs`:
 
 ```bash
@@ -122,7 +120,7 @@ source ~/.bashrc
 starmount
 ```
 
-## 4) Running STAR software locally (optional):
+## 4) Running STAR software locally (optional)
 In case you want to enter and run STAR container on your own laptop:
 
 - You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
