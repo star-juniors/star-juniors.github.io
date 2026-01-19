@@ -13,7 +13,9 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
 ## Main Steps Checklist:
 
 1) Join [Mattermost Software channel](https://chat.sdcc.bnl.gov/star/channels/star-software-and-infrastructure)
+
 2) Make a [Drupal](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/drupal-access) 2FA access via [Dmitry Arkhipkin](https://chat.sdcc.bnl.gov/bnl/messages/@dmarkh) or [Jerome Lauret](https://chat.sdcc.bnl.gov/bnl/messages/@jeromel)
+
 3) Subscribe to mailing lists:
   * [starmail](https://lists.bnl.gov/sympa/subscribe/starmail-l)
   * [star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l)
