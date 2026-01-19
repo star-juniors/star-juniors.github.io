@@ -1,6 +1,5 @@
 ---
 title: Juniors Intro Manual
-nav_order: 3
 ---
 
 
