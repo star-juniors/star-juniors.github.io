@@ -8,7 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 repository: star-juniors/star-juniors.github.io # for github-metadata
 
 # Color scheme
-color_scheme: light
+color_scheme: dark
 
 # Makes Aux links open in a new tab
 aux_links_new_tab: true
