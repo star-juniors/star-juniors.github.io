@@ -18,6 +18,7 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
   * [star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l)
   * [star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/)
   * [your physics working group](https://star-juniors.github.io/#mailing-lists)
+  
 4) Add yourself/Check for STAR [**Phone Book**](https://www.star.bnl.gov/central/collaboration/phonebook.php) entry by writing to <a href="mailto:mogavero@bnl.gov?subject=Phonebook entry&body=Hi Liz,%0D%0A could you please add me to STAR Phonebook as %0D%0A <YOUR NAME> from %0D%0A <YOUR INSTITUTION>%0D%0A Thanks!">Liz Mogavero</a>
 
 # Software Setup (Linux/MacOS + Windows user via WSL2):
@@ -31,6 +32,7 @@ All following instructions are for Linux/MacOS users. Windows users are asked to
 ---
 ### 1) Generate an SSH key (local) and upload `.pub` to SDCC
 Use RSA-4096 for generation of the key pair (if you don't have one already):
+
 ```bash
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
@@ -39,6 +41,7 @@ ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
 ---
 ### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
+
 ```bash
 YOUR_KEY="${HOME}/.ssh/id_rsa"  # replace with your key path if different
 SDCC_USERNAME=$(whoami) # replace with your SDCC username if different from local
@@ -105,6 +108,7 @@ Persistence note: the node state is not persistent; use [`tmux`](https://www.red
 ---
 ## 3) Mount SDCC :
 If you need to download files from SDCC (like ROOT Trees) I recommend [mounting](https://star-juniors.github.io/software/remote-development.html#mounting-sdcc-on-your-laptop) SDCC filesystem via `sshfs`:
+
 ```bash
 sudo apt install sshfs #linux
 # brew install sshfs # for MacOS use Homebrew
@@ -120,6 +124,7 @@ In case you want to enter and run STAR container on your own laptop:
 
 - You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
 For simplier Apptainer (singularity) installation:
+
 ```bash
 sudo apt update
 sudo apt install -y software-properties-common
@@ -128,11 +133,13 @@ sudo apt update
 sudo apt install -y apptainer
 ```
  - And then run commands:
+ 
 ```bash
 apptainer run docker://ghcr.io/star-bnl/star-sw:main-root5-gcc485 bash -l
 ```
 
 - You may also create a shortcut for `star-shell` using code below:
+
 ```bash
 mkdir -p ~/.local/bin && cat >~/.local/bin/star-shell <<'EOF'
 #!/usr/bin/env bash
