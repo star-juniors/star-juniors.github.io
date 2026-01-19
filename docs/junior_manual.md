@@ -1,6 +1,6 @@
 ---
 title: Juniors Intro Manual
-nav_order: 2
+nav_order: 3
 ---
 
 
@@ -8,14 +8,17 @@ nav_order: 2
 
 ## Contents
 
-1. [Introduction](#introduction)
-2. [SDCC](#sdcc)
-   - [Running your analysis](#running-your-analysis)
-3. [Publishing Analysis](#publishing-analysis)
-4. [Physics Working Groups](#physics-working-groups)
-5. [Mattermost channels](#mattermost-channels)
-6. [STAR Collaboration Meetings](#star-collaboration-meetings)
-7. [STAR Mailing Lists](#star-mailing-lists)
+- [STAR Juniors Intro Manual](#star-juniors-intro-manual)
+  - [Contents](#contents)
+  - [Introduction](#introduction)
+  - [SDCC](#sdcc)
+    - [Basic Commands for Logging in](#basic-commands-for-logging-in)
+    - [Running Your Analysis](#running-your-analysis)
+  - [Publishing Analysis](#publishing-analysis)
+  - [Physics Working Groups](#physics-working-groups)
+  - [Mattermost Channels](#mattermost-channels)
+  - [STAR Collaboration Meetings](#star-collaboration-meetings)
+  - [STAR Mailing Lists](#star-mailing-lists)
 
 ## Introduction
 

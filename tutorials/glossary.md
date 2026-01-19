@@ -9,7 +9,7 @@ A practical dictionary of STAR terms for new students working at SDCC/RCF.
 
 ---
 
-## **P**reface
+## Preface
 
 If you are reading this, you are probably a new student who has recently joined the STAR collaboration and are still trying to understand how things work: what people are talking about, which tools you should use, and where to look for help. This glossary was created to make your first steps easier.
 
