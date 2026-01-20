@@ -24,7 +24,7 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
   
 4) Add yourself/Check for STAR [**Phone Book**](https://www.star.bnl.gov/central/collaboration/phonebook.php) entry by writing to <a href="mailto:mogavero@bnl.gov?subject=Phonebook entry&body=Hi Liz,%0D%0A could you please add me to STAR Phonebook as %0D%0A <YOUR NAME> from %0D%0A <YOUR INSTITUTION>%0D%0A Thanks!">Liz Mogavero</a>
 
-# Software Setup (Linux/MacOS + Windows via WSL2):
+# Software Setup:
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
 
 ## 0) Preconditions
@@ -44,6 +44,15 @@ After generating, [upload](https://useraccount.sdcc.bnl.gov/ssh-key) it to SDCC 
 
 ### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
+
+```mermaid
+flowchart LR
+    A[Your Laptop] -->|ssh using web uploaded key| B[ssh.sdcc.bnl.gov]
+    B -->|ssh starsub03 with password| C[starsub03.sdcc.bnl.gov]
+    A -.->| Single Command 
+    without password| C
+
+```
 
 ```bash
 YOUR_KEY="${HOME}/.ssh/id_rsa"  # replace with your key path if different
@@ -102,6 +111,9 @@ ssh starsub05
 ```
 
 ## 2) VS Code: Remote-SSH
+
+![Screenshot 2026-01-20 100729](https://github.com/user-attachments/assets/d982e274-9f33-40d7-b308-b8fa6dfd01c0)
+
 1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html)
 2. Open Command Palette (`Ctrl+Shift+P`) → start typing `Remote-SSH: Connect to Host...`
 3. Select `star`.
@@ -109,6 +121,8 @@ ssh starsub05
 Persistence note: the node state is not persistent; use [`tmux`](https://www.redhat.com/en/blog/introduction-tmux-linux) for long-running terminal sessions.
 
 ## 3) Mount SDCC
+
+
 If you need to download files from SDCC (like ROOT Trees) I recommend [mounting](https://star-juniors.github.io/software/remote-development.html#mounting-sdcc-on-your-laptop) SDCC filesystem via `sshfs`:
 
 ```bash
