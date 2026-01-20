@@ -114,7 +114,7 @@ ssh starsub05
 
 ![Screenshot 2026-01-20 100729](https://github.com/user-attachments/assets/d982e274-9f33-40d7-b308-b8fa6dfd01c0)
 
-1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html)
+1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html) like [ROOT File viewer](vscode:extension/albertopdrf.root-file-viewer)
 2. Open Command Palette (`Ctrl+Shift+P`) → start typing `Remote-SSH: Connect to Host...`
 3. Select `star`.
 4. VS Code installs the remote server on first connect; then open your folder on SDCC, e.g. `/gpfs01/star/pwg/${SDCC_USERNAME}/`
@@ -122,6 +122,7 @@ Persistence note: the node state is not persistent; use [`tmux`](https://www.red
 
 ## 3) Mount SDCC
 
+<img width="2190" height="596" alt="mounting" src="https://github.com/user-attachments/assets/5642884a-724b-4ff7-a6aa-1fca30b1828a" />
 
 If you need to download files from SDCC (like ROOT Trees) I recommend [mounting](https://star-juniors.github.io/software/remote-development.html#mounting-sdcc-on-your-laptop) SDCC filesystem via `sshfs`:
 
