@@ -40,6 +40,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
 ```
+After generating, [upload](https://useraccount.sdcc.bnl.gov/ssh-key) it to SDCC in order to connect to `ssh.sdcc.bnl.gov` gateway if it has not been done.
 
 ### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
