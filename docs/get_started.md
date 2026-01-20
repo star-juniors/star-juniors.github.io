@@ -4,7 +4,6 @@ nav_order: 2
 ---
 
 # Get Started
-*Alexandr Prozorov*  
 
 ## Introduction
 
