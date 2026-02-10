@@ -3,7 +3,15 @@ title: Get Started
 nav_order: 2
 ---
 
+
 # Get Started
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Introduction
 
@@ -23,13 +31,13 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
   
 4) Add yourself/Check for STAR [**Phone Book**](https://www.star.bnl.gov/central/collaboration/phonebook.php) entry by writing to <a href="mailto:mogavero@bnl.gov?subject=Phonebook entry&body=Hi Liz,%0D%0A could you please add me to STAR Phonebook as %0D%0A <YOUR NAME> from %0D%0A <YOUR INSTITUTION>%0D%0A Thanks!">Liz Mogavero</a>
 
-# Software Setup:
+## Software Setup:
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
 
 ## 0) Preconditions
 * SDCC account working with password login (first-time users must [set up their account](https://useraccount.sdcc.bnl.gov/new-user) and [add their SSH key](https://useraccount.sdcc.bnl.gov/ssh-key) manually)
 * Local [OpenSSH](https://documentation.ubuntu.com/server/how-to/security/openssh-server/) client (`ssh`, `ssh-keygen`)
-* Local [VS Code](https://code.visualstudio.com/download) + extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh)
+* Local [VS Code](https://code.visualstudio.com/download)
 
 ## 1) Generate an SSH key (local) and upload `.pub` to SDCC
 Use RSA-4096 for generation of the key pair (if you don't have one already):
