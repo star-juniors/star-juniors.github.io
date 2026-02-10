@@ -55,7 +55,42 @@ flowchart LR
 
 ```bash
 YOUR_KEY="${HOME}/.ssh/id_rsa"  # replace with your key path if different
-SDCC_USERNAME=$(whoami) # replace with your SDCC username if different from local
+LOCAL_USER="$(whoami)"
+
+# Ask whether SDCC username matches local username
+read -r -p "Is your SDCC username the same as your local username (${LOCAL_USER})? [Y/n] " ans
+case "${ans:-Y}" in
+  [Yy]|[Yy][Ee][Ss])
+    SDCC_USERNAME="${LOCAL_USER}"
+    ;;
+  *)
+    read -r -p "Enter your SDCC username: " SDCC_USERNAME
+    SDCC_USERNAME="${SDCC_USERNAME//[[:space:]]/}"
+    if [ -z "${SDCC_USERNAME}" ]; then
+      echo "ERROR: Empty SDCC username. Exiting."
+      exit 1
+    fi
+    ;;
+esac
+
+if [ ! -f "${YOUR_KEY}" ]; then
+  echo "ERROR: Private key not found: ${YOUR_KEY}"
+  exit 1
+fi
+
+read -r -p "Is your SDCC username the same as your local user ('$LOCAL_USER')? [Y/n] " reply
+reply="${reply:-Y}"
+case "$reply" in
+  [Nn]*)
+    read -r -p "Enter your SDCC username: " SDCC_USERNAME
+    SDCC_USERNAME="$(echo "$SDCC_USERNAME" | tr -d '[:space:]')"
+    if [ -z "$SDCC_USERNAME" ]; then
+      echo "Error: SDCC username cannot be empty." >&2
+      exit 1
+    fi
+    ;;
+esac
+
 
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
@@ -107,6 +142,7 @@ fi
 ssh star
 # or
 ssh starsub05
+ssh rcas6015
 ```
 
 ## 2) VS Code: Remote-SSH
@@ -148,6 +184,9 @@ sudo add-apt-repository -y ppa:apptainer/ppa
 sudo apt update
 sudo apt install -y apptainer
 ```
+### Important! 
+Do not forget to comment in your `~/.bashrc` sourcing your local Root installation (`source /path/thisroot.sh`), otherwise there will be a conflict of 2 ROOT versions: one - from your local installation, another - from STAR container on startup.
+
  - And then run commands:
  
 ```bash
