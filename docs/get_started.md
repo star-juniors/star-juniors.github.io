@@ -201,10 +201,6 @@ export PATH="$HOME/.local/bin:$PATH"
 ```
 ### MacOS
 
-**TL;DR** (role: HPC / DevOps engineer): On **macOS**, the simplest way is to use **Docker** to run the STAR container. If you really want **Apptainer**, run it *inside a small Linux VM* via **Lima**.
-
-### MacOS
-
 Install **Docker Desktop** 
 ```bash
 brew install --cask docker-desktop
