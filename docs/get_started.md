@@ -86,20 +86,6 @@ if [ ! -f "${YOUR_KEY}" ]; then
   exit 1
 fi
 
-read -r -p "Is your SDCC username the same as your local user ('$LOCAL_USER')? [Y/n] " reply
-reply="${reply:-Y}"
-case "$reply" in
-  [Nn]*)
-    read -r -p "Enter your SDCC username: " SDCC_USERNAME
-    SDCC_USERNAME="$(echo "$SDCC_USERNAME" | tr -d '[:space:]')"
-    if [ -z "$SDCC_USERNAME" ]; then
-      echo "Error: SDCC username cannot be empty." >&2
-      exit 1
-    fi
-    ;;
-esac
-
-
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 b64="$(base64 < ${YOUR_KEY}.pub | tr -d '\n')"
