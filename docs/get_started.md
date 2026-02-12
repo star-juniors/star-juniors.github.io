@@ -131,6 +131,7 @@ Host rcas60*
     HostName %h.rcf.bnl.gov
     User ${SDCC_USERNAME}
     ProxyJump ${SDCC_USERNAME}@ssh.sdcc.bnl.gov
+    IdentityFile ${YOUR_KEY}
     HostKeyAlgorithms +ssh-rsa
     PubkeyAcceptedKeyTypes +ssh-rsa
     RequestTTY yes
@@ -183,7 +184,7 @@ starmount
 In case you want to enter and run STAR container on your own laptop:
 
 - You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
-For simplier Apptainer (singularity) installation:
+For Linux simplier Apptainer (singularity) installation:
 
 ```bash
 sudo apt update
@@ -211,4 +212,57 @@ EOF
 chmod +x ~/.local/bin/star-shell
 grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bashrc
 export PATH="$HOME/.local/bin:$PATH"
+```
+### MacOS
+
+**TL;DR** (role: HPC / DevOps engineer): On **macOS**, the simplest way is to use **Docker** to run the STAR container. If you really want **Apptainer**, run it *inside a small Linux VM* via **Lima**.
+
+### MacOS
+
+Install **Docker Desktop** 
+```bash
+brew install --cask docker-desktop
+```
+Then start Docker Desktop once (so the Docker daemon is running), and enter the STAR container with your **current folder** available inside the container:
+
+```bash
+docker run --rm -it \
+  --platform linux/amd64 \
+  -v "$PWD":/work -w /work \
+  ghcr.io/star-bnl/star-sw:main-root5-gcc485 \
+  bash -l
+```
+
+**Important (ROOT conflict on macOS):** macOS usually uses **zsh**, so your ROOT init might be in `~/.zshrc` or `~/.zprofile` (not `~/.bashrc`). Comment out any `source /path/thisroot.sh` there, for the same reason you wrote above (avoid two ROOTs fighting on startup).
+
+
+This is the Docker equivalent of your Linux `star-shell`. It mounts the current directory into `/work` and drops you into `bash -l` unless you pass your own command.
+
+```bash
+mkdir -p ~/.local/bin && cat >~/.local/bin/star-shell <<'EOF'
+#!/usr/bin/env bash
+IMAGE="ghcr.io/star-bnl/star-sw:main-root5-gcc485"
+
+# If no args provided -> interactive login shell
+if [ $# -eq 0 ]; then
+  set -- bash -l
+fi
+
+docker run -it --rm \
+  --platform linux/amd64 \
+  -v "$PWD":/work -w /work \
+  "$IMAGE" "$@"
+EOF
+
+chmod +x ~/.local/bin/star-shell
+
+# Add ~/.local/bin to PATH for zsh (default on macOS)
+grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.zshrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Now you can do:
+
+```bash
+star-shell
 ```
