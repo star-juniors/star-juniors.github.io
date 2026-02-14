@@ -1,5 +1,5 @@
 ---
-title: StRoot (beta)
+title: StRoot
 parent: Tutorials
 ---
 
