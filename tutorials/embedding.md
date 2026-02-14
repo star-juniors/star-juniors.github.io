@@ -13,18 +13,14 @@ parent: Tutorials
 {: .no_toc .text-delta }
 
 1. TOC
-   {:toc}
+{:toc}
 
-
-* **STARsim** is STAR’s simulation environment: generate particles, propagate them through STAR geometry with **GEANT3**, and write out MC “detector hits” (typically `*.fzd`), then run **BFC** to digitize + reconstruct into analysis-ready `*.MuDst.root`. 
-* **Embedding** is “simulation inside real data”: you mix simulated detector signals into **real DAQ backgrounds** and reconstruct with the **same production chain** as data → realistic occupancy, noise, run-by-run conditions “for free”.  
-* To get embedding produced, you prepare the request details in your PWG, then a PWG convener submits the request on the STAR embedding request page.  
-
-
----
 
 ## What is STARsim?
-
+* **STARsim** is STAR’s simulation environment: generate particles, propagate them through STAR geometry with **GEANT3**, and write out MC “detector hits” (typically `*.fzd`), then run **BFC** to digitize + reconstruct into analysis-ready `*.MuDst.root`. 
+* **Embedding** is “simulation inside real data”: you mix simulated detector signals into **real DAQ backgrounds** and reconstruct with the **same production chain** as data → realistic occupancy, noise, run-by-run conditions “for free”.  
+* To get embedding produced, you prepare the request details in your PWG, then a PWG convener submits the request on the STAR embedding request page.
+  
 **STARsim** is the STAR simulation framework built around **GEANT3**, integrated into the standard STAR software (“big full chain”). In practice, you run a ROOT macro (via `root4star`) that:
 
 1. generates your MC particles/events (single-particle “kinematics”, **Pythia**, **HIJING**, etc.),
