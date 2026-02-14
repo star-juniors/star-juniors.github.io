@@ -16,7 +16,7 @@ permalink: /
 {: .note-title }
 > New Tutorial
 >
-> August 2025 - [StRoot tutorial (beta)](/tutorials/StRoot) in your browser!
+> August 2025 - [StRoot](/tutorials/StRoot) tutorial in your browser!
 
 
 
