@@ -6,7 +6,7 @@ parent: Tutorials
 # STARsim and embedding in STAR
 {: .no_toc }
 
-* Alexandr Prozorov, Monika Robotkova*
+*Alexandr Prozorov, Monika Robotkova*
 {: .fs-4 .fw-300 }
 
 * **STARsim** is STAR’s simulation environment: generate particles, propagate them through STAR geometry with **GEANT3**, and write out MC “detector hits” (typically `*.fzd`), then run **BFC** to digitize + reconstruct into analysis-ready `*.MuDst.root`. 
@@ -14,7 +14,6 @@ parent: Tutorials
 * To get embedding produced, you prepare the request details in your PWG, then a PWG convener submits the request on the STAR embedding request page.  
 
 ## Table of contents
-
 {: .no_toc .text-delta }
 
 1. TOC
