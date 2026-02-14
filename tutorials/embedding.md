@@ -4,6 +4,7 @@ parent: Tutorials
 ---
 
 # STAR Embedding 
+{: .no_toc .text-delta }
  _Monika Robotkova_
 
 
