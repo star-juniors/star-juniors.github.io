@@ -159,9 +159,9 @@ If you need to download files from SDCC (like ROOT Trees) I recommend [mounting]
 ```bash
 sudo apt install sshfs #linux
 # brew install sshfs # for MacOS use Homebrew
-mkdir ~/star
+mkdir ~/starmount
 SDCC_USERNAME=$(whoami) # replace with your SDCC username if different from local
-echo "alias starmount='sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3  ${SDCC_USERNAME}@sftp.sdcc.bnl.gov:/gpfs01/star/pwg/${SDCC_USERNAME} ~/star'" >> ~/.bashrc
+echo "alias starmount='sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3  ${SDCC_USERNAME}@sftp.sdcc.bnl.gov:/gpfs01/star/pwg/${SDCC_USERNAME} ~/starmount'" >> ~/.bashrc
 source ~/.bashrc
 starmount
 ```
