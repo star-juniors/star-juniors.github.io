@@ -215,10 +215,9 @@ docker run --rm -it \
   bash -l
 ```
 
-**Important (ROOT conflict on macOS):** macOS usually uses **zsh**, so your ROOT init might be in `~/.zshrc` or `~/.zprofile` (not `~/.bashrc`). Comment out any `source /path/thisroot.sh` there, for the same reason you wrote above (avoid two ROOTs fighting on startup).
+**Important (ROOT conflict on macOS):** macOS usually uses **zsh**, so your ROOT init might be in `~/.zshrc` or `~/.zprofile` (not `~/.bashrc`). Comment out any `source /path/thisroot.sh`
 
-
-This is the Docker equivalent of your Linux `star-shell`. It mounts the current directory into `/work` and drops you into `bash -l` unless you pass your own command.
+This is the Docker equivalent of your Linux `star-shell`. It mounts the current directory into `/work`
 
 ```bash
 mkdir -p ~/.local/bin && cat >~/.local/bin/star-shell <<'EOF'
@@ -243,7 +242,7 @@ grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.zshrc || echo 'export PATH="
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-Now you can do:
+Now can do:
 
 ```bash
 star-shell
