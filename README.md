@@ -7,11 +7,10 @@ permalink: /
 
 # STAR Main Web Sites
 
-<!---
+
 <span class="fs-8">
-[Timetable for current(August 2025) collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/71991){: .btn .btn-green }
+[Timetable for current(March 2026) collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/73324){: .btn .btn-green }
 </span>
--->
 
 {: .note-title }
 > New Tutorial
