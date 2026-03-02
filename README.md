@@ -10,7 +10,6 @@ permalink: /
 
 <span class="fs-8">
 [Timetable for current(March 2026) collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/73324){: .btn .btn-green }
-    [Zoom](https://bnl.zoomgov.com/j/1612489426?pwd=SJIIImBZUEu5Hzcvqf5XGEUoGvYtb2.1)
 </span>
 
 {: .note-title }
