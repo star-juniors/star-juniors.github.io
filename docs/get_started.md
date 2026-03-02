@@ -45,7 +45,7 @@ Use RSA-4096 for generation of the key pair (if you don't have one already):
 ```bash
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
-ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
+ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa_sdcc
 ```
 After generating, [upload](https://useraccount.sdcc.bnl.gov/ssh-key) it to SDCC in order to connect to `ssh.sdcc.bnl.gov` gateway if it has not been done.
 
@@ -62,7 +62,7 @@ flowchart LR
 ```
 
 ```bash
-YOUR_KEY="${HOME}/.ssh/id_rsa"  # replace with your key path if different
+YOUR_KEY="${HOME}/.ssh/id_rsa_sdcc"  # replace with your key path if different
 LOCAL_USER="$(whoami)"
 
 # Ask whether SDCC username matches local username
