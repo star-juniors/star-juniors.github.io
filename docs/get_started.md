@@ -150,6 +150,8 @@ ssh rcas6015
 4. VS Code installs the remote server on first connect; then open your folder on SDCC, e.g. `/gpfs01/star/pwg/${SDCC_USERNAME}/`
 Persistence note: the node state is not persistent; use [`tmux`](https://www.redhat.com/en/blog/introduction-tmux-linux) for long-running terminal sessions.
 
+*Remark*: for WSL2 it is necessary to [change Windows SSH config to work with VS Code](https://zitseng.com/archives/23322)
+
 ## 3) Mount SDCC
 
 <img width="2190" height="596" alt="mounting" src="https://github.com/user-attachments/assets/5642884a-724b-4ff7-a6aa-1fca30b1828a" />
