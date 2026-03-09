@@ -25,6 +25,9 @@ The presenter is **_required_** to add the following:
 
 _These also apply to posters_
 
+<img width="1251" height="702" alt="image" src="https://github.com/user-attachments/assets/4cb3b6d7-257d-46d6-a63b-cbcaeba191f0" />
+
+
 ## Footer
 
 It is **_suggested_** to add:
@@ -32,7 +35,9 @@ It is **_suggested_** to add:
 - Speaker name
 - Conference name and date
 - Slide number
-- STAR logo  
+- STAR logo
+  <img width="1251" height="702" alt="image" src="https://github.com/user-attachments/assets/c57dfd11-c78e-4eeb-a8c0-506ee0ae02fa" />
+
 
 **Institution name or logo _should not_ be added.**
 
