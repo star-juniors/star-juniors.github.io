@@ -46,6 +46,8 @@ A very common workflow is:
 You typically copy an example macro and run it with `root4star`. For example (HIJING / kinematics / pythia8 style workflows): 
 
 ```bash
+setup 64b
+starver pro
 ls $STAR/StRoot/StarGenerator/macros
 cp $STAR/StRoot/StarGenerator/macros/starsim.hijing.C .
 ln -s starsim.hijing.C starsim.C
