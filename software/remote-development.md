@@ -30,7 +30,7 @@ starmount
 
 ## No-machine
 See instruction:
-https://www.sdcc.bnl.gov/information/nxnomachine-service-sdcc 
+<https://www.sdcc.bnl.gov/information/nxnomachine-service-sdcc>
 Advatages are:
 - Do remote work on servers in your browser (from mobile?)
 - Better(faster) then X11 option in `ssh`
