@@ -112,17 +112,6 @@ Host star
     IdentityFile ${YOUR_KEY}
     ForwardAgent yes
     RequestTTY yes
-# legacy RCAS nodes
-Host rcas60*
-    HostName %h.rcf.bnl.gov
-    User ${SDCC_USERNAME}
-    ProxyJump ${SDCC_USERNAME}@ssh.sdcc.bnl.gov
-    IdentityFile ${YOUR_KEY}
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedKeyTypes +ssh-rsa
-    RequestTTY yes
-    ForwardAgent yes
-EOF
 
 # Load your key into the SSH agent (local)
 if [ -n "${SSH_AUTH_SOCK:-}" ]; then
@@ -137,7 +126,6 @@ fi
 ssh star
 # or
 ssh starsub05
-ssh rcas6015
 ```
 
 ## 2) VS Code: Remote-SSH
