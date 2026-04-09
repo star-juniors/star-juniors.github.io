@@ -95,38 +95,20 @@ Host star
     HostName starsub07.sdcc.bnl.gov
     ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
-    ForwardAgent yes
-
-# === Legacy RCAS Machines (rcas6005 to rcas6016) ===
-
-Host rcas60*
-    User prozorov
-    HostName %h.rcf.bnl.gov
-    ProxyJump prozorov@ssh.sdcc.bnl.gov
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedKeyTypes +ssh-rsa
-    RequestTTY yes
-    ForwardAgent yes
 
 # === Alma9-Based STAR Subnodes (starsub01 to starsub07) ===
-
 Host starsub0*
     User prozorov
     HostName %h.sdcc.bnl.gov
     ProxyJump prozorov@ssh.sdcc.bnl.gov
     RequestTTY yes
-    ForwardAgent yes
 
 # === Alma9-Based EIC Subnodes (eicsub01 , eicsub02) ===
-
 Host eicsub
     User alpro
     HostName eicsub02.sdcc.bnl.gov
     ProxyJump alpro@ssh.sdcc.bnl.gov
     RequestTTY yes
-    ForwardAgent yes
-
-
 ```
 
 Now, you can access `starsub0x` and `star` directly from your laptop with a single command:
@@ -134,7 +116,6 @@ Now, you can access `starsub0x` and `star` directly from your laptop with a sing
 ```bash
 ssh star
 ssh starsub05
-ssh rcas6013
 ssh eicsub
 ```
 
