@@ -15,20 +15,19 @@ nav_order: 2
 
 ## Introduction
 
-Welcome to STAR! This is a checklist and starting point for new users joining the collaboration.
+Welcome to STAR! This page is a checklist for new collaboration members. Work through it top to bottom — the onboarding steps have hard dependencies, so order matters.
 
 ## New Member Onboarding — Do These IN ORDER
 
-**Do not skip steps.** Most Drupal login / quota / author-list problems come from missing one of these. Do **not** start working until all 5 are done.
+**Do not skip steps.** Most Drupal login, quota, and author-list problems trace back to a missed step here. 
 
 ```mermaid
 flowchart LR
-    A([1 - Get ORCID]) --> B([2 - BNL Guest<br/>Appointment])
-    B --> C([3 - SDCC Account])
-    C --> D{{"4 - Email BOTH<br/>SDCC + ORCID<br/>to Phonebook keeper"}}
+    A(["1 - Get ORCID"]) --> B(["2 - BNL Guest Appointment"])
+    B --> C(["3 - SDCC Account"])
+    C --> D{{"4 - Email BOTH SDCC + ORCID to Phonebook keeper"}}
     A --> D
-    D --> E([5 - Start Working])
-
+    D --> E(["5 - Start Working"])
     style A fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
     style B fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
     style C fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
@@ -38,28 +37,29 @@ flowchart LR
 
 | # | Step | Link |
 |---|------|------|
-| 1 | **Get ORCID** — required for STAR publications & author list | [orcid.org/register](https://orcid.org/register) |
-| 2 | **BNL guest appointment** — your home institution's BNL liaison or STAR advisor sponsors. Required before SDCC account | [BNL Guest Registration](https://www.bnl.gov/guv/) |
-| 3 | **SDCC account** — needed for Drupal login, computing, disk quota | [SDCC new user](https://useraccount.sdcc.bnl.gov/new-user) |
-| 4 | **Email BOTH SDCC username AND ORCID** to **Rachel** (current STAR Phonebook keeper) | <a href="mailto:irachel@bnl.gov?subject=STAR Phonebook entry - new member&body=Hi Rachel,%0D%0A%0D%0APlease add me to the STAR Phonebook:%0D%0A  Name: <YOUR NAME>%0D%0A  Institution: <YOUR INSTITUTION>%0D%0A  SDCC account: <YOUR SDCC USERNAME>%0D%0A  ORCID: <YOUR ORCID iD>%0D%0A%0D%0AThanks!">Send email to Rachel</a> &nbsp; [Phone Book](https://www.star.bnl.gov/central/collaboration/phonebook.php) |
-| 5 | **Start working** — continue with checklist below | — |
+| 1 | **Get ORCID** — required for STAR publications and the author list | [orcid.org/register](https://orcid.org/register) |
+| 2 | **BNL guest appointment** — sponsored by your home institution's BNL liaison or your STAR advisor. Required before the SDCC account | [BNL Guest Registration](https://www.bnl.gov/guv/) |
+| 3 | **SDCC account** — needed for Drupal login, computing, and disk quota | [SDCC new user](https://useraccount.sdcc.bnl.gov/new-user) |
+| 4 | **Email BOTH your SDCC username AND ORCID** to **Rachel** (current STAR Phonebook keeper) — see the prefilled template | <a href="mailto:irachel@bnl.gov?subject=STAR Phonebook entry - new member&body=Hi Rachel,%0D%0A%0D%0APlease add me to the STAR Phonebook:%0D%0A  Name: <YOUR NAME>%0D%0A  Institution: <YOUR INSTITUTION>%0D%0A  SDCC account: <YOUR SDCC USERNAME>%0D%0A  ORCID: <YOUR ORCID iD>%0D%0A%0D%0AThanks!">Send email to Rachel</a> &nbsp;·&nbsp; [Phone Book](https://www.star.bnl.gov/central/collaboration/phonebook.php) |
+| 5 | **Start working** — proceed to the setup checklist below | — |
 
-> **Why step 4 matters:** missing SDCC entry in Phonebook breaks Drupal login (~99% of new-user login issues). Missing ORCID breaks the author list. Send both together.
+> **Why step 4 matters:** a missing SDCC entry in the Phonebook breaks Drupal login (~99% of new-user login issues), and a missing ORCID breaks the author list. Always send both in one email.
 
-## Main Steps Checklist:
+## Getting Set Up to Work
 
-1) Join [Mattermost Software channel](https://chat.sdcc.bnl.gov/star/channels/star-software-and-infrastructure)
+Once your Phonebook entry is live, wire yourself into the collaboration:
 
-2) Make a [Drupal](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/drupal-access) 2FA access for first login; if failed - ask [Dmitry Arkhipkin](https://chat.sdcc.bnl.gov/bnl/messages/@dmarkh) or [Jerome Lauret](https://chat.sdcc.bnl.gov/bnl/messages/@jeromel)
-
-3) Subscribe to mailing lists:
-  * [starmail](https://lists.bnl.gov/sympa/subscribe/starmail-l)
-  * [star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l)
-  * [star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/)
-  * [your physics working group](https://star-juniors.github.io/#mailing-lists)
+1. **Join Mattermost** — the [Software & Infrastructure channel](https://chat.sdcc.bnl.gov/star/channels/star-software-and-infrastructure) is the main place to ask technical questions.
+2. **Set up [Drupal](https://drupal.star.bnl.gov/STAR/comp/sofi/facility-access/drupal-access) 2FA** on first login. If it fails, ping [Dmitry Arkhipkin](https://chat.sdcc.bnl.gov/bnl/messages/@dmarkh) or [Jerome Lauret](https://chat.sdcc.bnl.gov/bnl/messages/@jeromel).
+3. **Subscribe to mailing lists:**
+   - [starmail](https://lists.bnl.gov/sympa/subscribe/starmail-l)
+   - [star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l)
+   - [star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/)
+   - [Your physics working group](https://star-juniors.github.io/#mailing-lists)
+   
 
 ## Software Setup:
-All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
+All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsystem integrated into Windows
 
 ## 0) Preconditions
 * SDCC account working with password login (first-time users must [set up their account](https://useraccount.sdcc.bnl.gov/new-user) and [add their SSH key](https://useraccount.sdcc.bnl.gov/ssh-key) manually)
