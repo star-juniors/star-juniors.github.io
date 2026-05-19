@@ -17,6 +17,35 @@ nav_order: 2
 
 Welcome to STAR! This is a checklist and starting point for new users joining the collaboration.
 
+## New Member Onboarding — Do These IN ORDER
+
+**Do not skip steps.** Most Drupal login / quota / author-list problems come from missing one of these. Do **not** start working until all 5 are done.
+
+```mermaid
+flowchart LR
+    A([1 - Get ORCID]) --> B([2 - BNL Guest<br/>Appointment])
+    B --> C([3 - SDCC Account])
+    C --> D{{"4 - Email BOTH<br/>SDCC + ORCID<br/>to Phonebook keeper"}}
+    A --> D
+    D --> E([5 - Start Working])
+
+    style A fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
+    style B fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
+    style C fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:3px
+    style E fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
+
+| # | Step | Link |
+|---|------|------|
+| 1 | **Get ORCID** — required for STAR publications & author list | [orcid.org/register](https://orcid.org/register) |
+| 2 | **BNL guest appointment** — your home institution's BNL liaison or STAR advisor sponsors. Required before SDCC account | [BNL Guest Registration](https://www.bnl.gov/guv/) |
+| 3 | **SDCC account** — needed for Drupal login, computing, disk quota | [SDCC new user](https://useraccount.sdcc.bnl.gov/new-user) |
+| 4 | **Email BOTH SDCC username AND ORCID** to **Rachel** (current STAR Phonebook keeper) | <a href="mailto:irachel@bnl.gov?subject=STAR Phonebook entry - new member&body=Hi Rachel,%0D%0A%0D%0APlease add me to the STAR Phonebook:%0D%0A  Name: <YOUR NAME>%0D%0A  Institution: <YOUR INSTITUTION>%0D%0A  SDCC account: <YOUR SDCC USERNAME>%0D%0A  ORCID: <YOUR ORCID iD>%0D%0A%0D%0AThanks!">Send email to Rachel</a> &nbsp; [Phone Book](https://www.star.bnl.gov/central/collaboration/phonebook.php) |
+| 5 | **Start working** — continue with checklist below | — |
+
+> **Why step 4 matters:** missing SDCC entry in Phonebook breaks Drupal login (~99% of new-user login issues). Missing ORCID breaks the author list. Send both together.
+
 ## Main Steps Checklist:
 
 1) Join [Mattermost Software channel](https://chat.sdcc.bnl.gov/star/channels/star-software-and-infrastructure)
@@ -28,8 +57,6 @@ Welcome to STAR! This is a checklist and starting point for new users joining th
   * [star-talks](https://lists.bnl.gov/sympa/subscribe/star-talks-l)
   * [star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/)
   * [your physics working group](https://star-juniors.github.io/#mailing-lists)
-  
-4) Add yourself/Check for STAR [**Phone Book**](https://www.star.bnl.gov/central/collaboration/phonebook.php) entry by writing to <a href="mailto:mogavero@bnl.gov?subject=Phonebook entry&body=Hi Liz,%0D%0A could you please add me to STAR Phonebook as %0D%0A <YOUR NAME> from %0D%0A <YOUR INSTITUTION>%0D%0A Thanks!">Liz Mogavero</a>
 
 ## Software Setup:
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsytem integrated into Windows
