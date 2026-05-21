@@ -23,17 +23,22 @@ Welcome to STAR! This page is a checklist for new collaboration members. Work th
 
 ```mermaid
 flowchart LR
-    A(["1 - Get ORCID"]) --> B(["2 - BNL Guest Appointment"])
-    B --> C(["3 - SDCC Account"])
-    C --> D{{"4 - Email BOTH SDCC + ORCID to Phonebook keeper"}}
-    A --> D
-    D --> E(["5 - Start Working"])
+    A[1 - Get ORCID] --> B[2 - BNL Guest Appointment]
+    B --> C[3 - SDCC Account]
+    C --> D[4 - Email SDCC and ORCID to Phonebook keeper]
+    A -.-> D
+    D --> E[5 - Start Working]
     style A fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
     style B fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
     style C fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
     style D fill:#fff3e0,stroke:#e65100,stroke-width:3px
     style E fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
 ```
+
+
+
+
+
 
 | # | Step | Link |
 |---|------|------|
