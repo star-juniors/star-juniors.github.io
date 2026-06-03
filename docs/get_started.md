@@ -19,8 +19,6 @@ Welcome to STAR! This page is a checklist for new collaboration members. Work th
 
 ## New Member Onboarding — Do These IN ORDER
 
-**Do not skip steps.** Most Drupal login, quota, and author-list problems trace back to a missed step here. 
-
 ```mermaid
 flowchart LR
     A[1 - Get ORCID] --> B[2 - BNL Guest Appointment]
@@ -36,19 +34,12 @@ flowchart LR
 ```
 
 
-
-
-
-
 | # | Step | Link |
 |---|------|------|
 | 1 | **Get ORCID** — required for STAR publications and the author list | [orcid.org/register](https://orcid.org/register) |
 | 2 | **BNL guest appointment** — sponsored by your home institution's BNL liaison or your STAR advisor. Required before the SDCC account | [BNL Guest Registration](https://www.bnl.gov/guv/) |
 | 3 | **SDCC account** — needed for Drupal login, computing, and disk quota | [SDCC new user](https://useraccount.sdcc.bnl.gov/new-user) |
 | 4 | **Email BOTH your SDCC username AND ORCID** to **Rachel** (current STAR Phonebook keeper) — see the prefilled template | <a href="mailto:irachel@bnl.gov?subject=STAR Phonebook entry - new member&body=Hi Rachel,%0D%0A%0D%0APlease add me to the STAR Phonebook:%0D%0A  Name: <YOUR NAME>%0D%0A  Institution: <YOUR INSTITUTION>%0D%0A  SDCC account: <YOUR SDCC USERNAME>%0D%0A  ORCID: <YOUR ORCID iD>%0D%0A%0D%0AThanks!">Send email to Rachel</a> &nbsp;·&nbsp; [Phone Book](https://www.star.bnl.gov/central/collaboration/phonebook.php) |
-| 5 | **Start working** — proceed to the setup checklist below | — |
-
-> **Why step 4 matters:** a missing SDCC entry in the Phonebook breaks Drupal login (~99% of new-user login issues), and a missing ORCID breaks the author list. Always send both in one email.
 
 ## Getting Set Up to Work
 
