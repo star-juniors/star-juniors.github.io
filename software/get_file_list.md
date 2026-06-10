@@ -1,28 +1,58 @@
 ---
-title:  get_file_list.pl 
+title:  get_file_list.pl
 parent: Software
 ---
 
-Generating File List for STAR Data
------------------------------------
 
-Full reference manual: [here](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
+# get_file_list.pl
 
-Use the utilit `get_file_list.pl` to find file and make a file list.
+`get_file_list.pl` queries the STAR **File Catalog** to find data files and build the
+file lists you feed to your analysis (or to the [Data Carousel](/software/carousel)).
 
-Syntax:
+Full reference: [File Catalog user manual](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
+
+
+## Syntax
 
 ```bash
- get_file_list.pl -keys 'path,filename' -cond 'storage=XX,filetype=XX,filename~XX, production=XX,trgsetupname=XX' -limit NN -distinct -delim '/'
+get_file_list.pl -keys 'path,filename' -cond 'storage=XX,filetype=XX,filename~XX,production=XX,trgsetupname=XX' -limit NN -distinct -delim '/'
 ```
 
-- `storage` can be `local (/home/starlib/…)`, `NFS (/star/dataXX/…)`, `HPSS (/home/starreco/reco/...)` (case insensitive)
-- `filetype` is  `daq_reco_event`, `daq_reco_muDst` or `daq_reco_picoDst` depending on whether you want to use DST, Micro DST or Pico DST reconstruted files.
-  - PicoDst page is [here](https://drupal.star.bnl.gov/STAR/blog/gnigmat/picodst-format)
-- `production` and `library` can be found on data production options [page](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl).
-- `trgsetupname` can be found on summary [page](https://www.star.bnl.gov/public/comp/prod/DataSummary.html) or production [page](https://drupal.star.bnl.gov/STAR/comp/prod).
+- `-cond` — what to select (see the table below). Use `~` for a substring match
+  (`filename~st_physics`) and `!=` to exclude (`storage!=hpss`). Keys are case-insensitive.
+- `-keys` — what to print for each match (see *Output*).
+- `-distinct` — drop duplicate rows.
+- `-limit NN` — cap the number of results; `-limit 0` returns **all** files.
+- `-delim '/'` — join the printed fields with `/` instead of the default `::`.
 
-A frequently used use case is
+
+## What to select (`-cond`)
+
+| Key | Selects | Where to find values |
+|------|---------|----------------------|
+| `storage` | `local` (`/home/starlib/…`), `NFS` (`/star/dataXX/…`), or `HPSS` (`/home/starreco/reco/…`) | — |
+| `filetype` | `daq_reco_event` (DST), `daq_reco_muDst` (MuDst), `daq_reco_picoDst` (PicoDst) | [PicoDst format](https://drupal.star.bnl.gov/STAR/blog/gnigmat/picodst-format) |
+| `filename` | filename substring, e.g. `filename~st_physics` | — |
+| `production` / `library` | production tag / software library | [production options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl) |
+| `trgsetupname` | trigger setup | [data summary](https://www.star.bnl.gov/public/comp/prod/DataSummary.html) · [production](https://drupal.star.bnl.gov/STAR/comp/prod) |
+
+
+## What to print (`-keys`)
+
+For a plain file list, use `-keys 'path,filename' -delim '/'`.
+
+To see *where* the data lives and how big it is, add more fields, e.g.
+`-keys 'fdid,storage,site,node,path,filename,events'`:
+
+- `storage` — `local`, `NFS`, or `HPSS` (handy to know if a file is still on tape)
+- `site`, `node` — where the file physically sits
+- `events` — event count, useful to check **before** you restore from tape
+- `fdid` — file descriptor ID
+
+
+## Most common query
+
+Find PicoDst files on disk (not tape):
 
 ```bash
 get_file_list.pl -keys 'path,filename' \
@@ -30,9 +60,10 @@ get_file_list.pl -keys 'path,filename' \
 -limit 10 -distinct -delim '/'
 ```
 
-Use `storage=local` to search file locally.
+Use `storage=local` to search only the distributed disks.
 
-More examples are:
+
+## More examples
 
 ```bash
 get_file_list.pl -keys 'path,filename'\
@@ -42,32 +73,30 @@ get_file_list.pl -keys 'path,filename'\
 ```bash
 get_file_list.pl -keys path,filename \
 -cond storage=local,trgsetupname=production_pp200trans_2015,filetype=daq_reco_mudst,filename~st_fms_16 \
--delim '/' 
+-delim '/'
 ```
 ```bash
 get_file_list.pl -keys 'fdid,storage,site,node,path,filename,events' \
 -cond 'trgsetupname=AuAu19_production, filetype=daq_reco_MuDst, filename~st_physics, storage!=hpss' \
--limit 60 -delim '/'.
-``` 
+-limit 60 -delim '/'
+```
 ```bash
 get_file_list.pl -keys 'path,filename' \
 -cond 'production=P11id,filetype=daq_reco_MuDst,trgsetupname=AuAu19_production,tpx=1,filename~st_physics,sanity=1,storage!=HPSS' \
 -limit 60 -delim '/'
 ```
 
-**Note:**
 
-- `-keys 'fdid,storage,site,node,path,filename,events'` and `-delim '/'` will dictate how (including what information) the output will be printed. Inclusion of `storage,site,node,events` will include fd (file descriptor) ID, storage (local, NFS or HPSS), node and site where the data is located and the number of events. If you do not specify `-delim` flag, theose information will be separated by `::`, other wise it will be delimited by your specification. For a typical filelist you want `-keys 'path,filename' -delim '/'`.
+## Tips
 
-- The basic idea is you always check it locally (on NFS directory) with `storage!=hpss`, if it is not available, then you try with `storage=hpss`. This is because you do not want to duplicate restoring file if it already exists. If you use, it will search under first `local`, and second under `NFS` directories.  If utility is designed to search local first, then NFS, then HPSS no matter what flag you use.
+- **Check disk first, tape last.** Query with `storage!=hpss` and only fall back to
+  `storage=hpss` if nothing comes back — no point restoring a file that's already on disk.
+  (The catalog searches `local` → `NFS` → `HPSS` in that order anyway.)
+- **`/home/starlib/…` is distributed disk (DD).** You can't browse it, but `root` can open
+  the files using the prefix `root://xrdstar.rcf.bnl.gov:1095/`.
+- **`/home/starreco/reco/…` is HPSS tape.** Those files can't be opened until you restore
+  them — see below.
 
-- Sometimes it is useful to enable the flag `-key 'storage, ...'` to understand if a file is really located under local, NFS or tape. Similarly, sometimes the `events` flag will tell you number of events before you restore that file.
-
-- Use `-limit 0` to get all files.
-
-- If the file path starts with `/home/starlib/`, then it means it is located on the distributed disk (aka DD). To access files (using `root`) located on the distributed disk, you need to use `root://xrdstar.rcf.bnl.gov:1095/` as the prefix. If the file path starts with `/home/stareco/reco/`, then it means the file is located on HPSS.
-
-- You can not navigate DD, but the file can be accessed using `root`. On the other hand, files on the HPSS can not be accessed until you restore it.
 
 ## Restoring files from HPSS
 
@@ -75,11 +104,9 @@ Once you have the HPSS paths, restore them through the **[Data Carousel](/softwa
 that page has the full `hpss_user.pl` walkthrough and request-list formats. Never pull MuDst
 straight off tape with `hsi`/`htar`; see [HPSS (Tape)](/software/hpss) for why. The short version:
 
-- Check if the files exist by using the `get_file_list.pl` command. Note to put storage=hpss option.
-- Check the  STAR RunLog Browser to select a good run
-- Check the number of events in the file by using the option 'events' as in `get_file_list.pl` -keys 'path,filename,events'
-- This shows various MuDst files relevant to your request
-- Create a directory in your local system or your pwg disk where you want the MuDst files
-- Requests for getting files from hpss are submitted by using the `hpss_user.pl` command. Use the -h option to look at the different options.
-- Submit a request for getting a particular MuDst file by doing `hpss_user.pl HPSSFilePath/ TargetFilePath/`
-- Request Status can be viewed [here](https://www.star.bnl.gov/devcgi/display_accnt.cgi) for the relevant username. Files will be made available to the TargetFilePath/
+1. **Find the files** with `get_file_list.pl` and `storage=hpss`.
+2. **Pick a good run** in the STAR RunLog Browser.
+3. **Check event counts** first by adding `events` to `-keys` (e.g. `-keys 'path,filename,events'`).
+4. **Make a target directory** on your local or PWG disk.
+5. **Submit the request:** `hpss_user.pl HPSSFilePath/ TargetFilePath/` (`hpss_user.pl -h` lists all options).
+6. **Track it** on the [accounting page](https://www.star.bnl.gov/devcgi/display_accnt.cgi); restored files land in your target directory.
