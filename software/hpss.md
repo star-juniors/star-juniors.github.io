@@ -49,8 +49,7 @@ flowchart LR
 
 # Step 0 — Log in (`kinit`)
 
-HPSS uses Kerberos. **Before** any `hsi`/`htar` command you need a valid ticket. Do this
-**on an SDCC `starsub` node** (e.g. `starsub01`):
+HPSS uses Kerberos. **Before** any `hsi`/`htar` command you need a valid ticket
 
 ```bash
 kinit                  # uses your default principal (prompts for your BNL password)
@@ -187,7 +186,6 @@ htar archives come as a **pair** — delete both the `.tar` and the `.tar.idx`.
 
 # Tips
 
-- **Run from SDCC `starsub` nodes** (that's where `hsi`/`htar`/`kinit` live).
 - **No ticket = nothing works** — `klist` to check, `kinit` to renew.
 - **Tape is slow.** A cold archive can take minutes to stage. Pulling many members in one
   command is cheaper than calling `htar` repeatedly.
