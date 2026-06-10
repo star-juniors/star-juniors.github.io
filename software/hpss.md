@@ -1,6 +1,7 @@
 ---
 title:  HPSS (Tape)
 parent: Software
+has_children: true
 ---
 
 
@@ -17,6 +18,15 @@ robot may need to mount a tape and seek to your data, which can take from second
 several minutes. This is normal.
 
 [Check your HPSS request status](https://www.star.bnl.gov/devcgi/display_accnt.cgi)
+
+{: .warning }
+> **Restoring production data (MuDST, picoDst, DST)? Don't use `hsi`/`htar` directly.**
+> This page is about archiving and restoring **your own** files. Shared production data
+> under `/home/starreco/...` must be pulled through the **[Data Carousel](/software/carousel)**
+> (or the newer **`next`** service) — never file-by-file with `hsi get`. Mass-pulling MuDST
+> straight off tape overwhelms HPSS and **collapses production for everyone**. The Carousel
+> batches, de-duplicates, and throttles requests, and it works for your own files too — so
+> when in doubt, use it.
 
 
 # The big picture
@@ -50,6 +60,14 @@ klist                  # check the ticket — look for a future "Expires" date
 - You only need to `kinit` **once per session**; every command below reuses the ticket.
 - A ticket lasts a few days. If `klist` shows none/expired, run `kinit` again.
 - Quick sanity check: `hsi "pwd"` should print your HPSS home (`/home/<username>`).
+
+{: .important }
+> **Do you even have an HPSS account?** Not every STAR user does. After `kinit`, run
+> `hsi "ls"`: if it lists a home directory of your own, you're set; if it returns nothing
+> or shows no directory, you don't have an HPSS account yet — request one (open an SDCC
+> ticket or ask your STAR liaison). Note you **don't** need your own account just to
+> *restore* files: the [Data Carousel](/software/carousel) runs as a managed service and
+> can restore into your disk area regardless.
 
 
 # Which tool do I use?
@@ -141,6 +159,10 @@ plain `hsi` file, just `hsi "ls -l ..."`.
 
 
 # Restore files
+
+These commands restore files **you** archived yourself (above). To restore **production
+data** (MuDST, picoDst, DST under `/home/starreco/...`), don't pull it here — use the
+**[Data Carousel](/software/carousel)** instead (see the warning at the top of this page).
 
 ```bash
 cd /path/to/restore_dir

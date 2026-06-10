@@ -13,12 +13,10 @@ permalink: /
 </span>
 -->
 
-{: .note-title }
-> New Tutorial
+{: .new-title }
+> New Material
 >
-> August 2025 - [StRoot](/tutorials/StRoot) tutorial in your browser!
-
-
+> June 2026 - Storage guides: [HPSS / tape](/software/hpss) and the [Data Carousel](/software/carousel) for restoring data.
 
 {: .highlight }
 April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)

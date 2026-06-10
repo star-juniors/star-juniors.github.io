@@ -71,6 +71,10 @@ get_file_list.pl -keys 'path,filename' \
 
 ## Restoring files from HPSS
 
+Once you have the HPSS paths, restore them through the **[Data Carousel](/software/carousel)** —
+that page has the full `hpss_user.pl` walkthrough and request-list formats. Never pull MuDst
+straight off tape with `hsi`/`htar`; see [HPSS (Tape)](/software/hpss) for why. The short version:
+
 - Check if the files exist by using the `get_file_list.pl` command. Note to put storage=hpss option.
 - Check the  STAR RunLog Browser to select a good run
 - Check the number of events in the file by using the option 'events' as in `get_file_list.pl` -keys 'path,filename,events'
