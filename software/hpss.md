@@ -20,7 +20,7 @@ several minutes. This is normal.
 [Check your HPSS request status](https://www.star.bnl.gov/devcgi/display_accnt.cgi)
 
 {: .warning }
-> **Restoring production data (MuDST, picoDst, DST)? Don't use `hsi`/`htar` directly.**
+> **Restoring production data (MuDST, picoDst)? Don't use `hsi`/`htar` directly.**
 > This page is about archiving and restoring **your own** files. Shared production data
 > under `/home/starreco/...` must be pulled through the **[Data Carousel](/software/carousel)**
 > (or the newer **`next`** service) — never file-by-file with `hsi get`. Mass-pulling MuDST
@@ -61,23 +61,18 @@ klist                  # check the ticket — look for a future "Expires" date
 - Quick sanity check: `hsi "pwd"` should print your HPSS home (`/home/<username>`).
 
 {: .important }
-> **Do you even have an HPSS account?** Not every STAR user does. After `kinit`, run
+> **Do you even have an HPSS account?** After `kinit`, run
 > `hsi "ls"`: if it lists a home directory of your own, you're set; if it returns nothing
-> or shows no directory, you don't have an HPSS account yet — request one (open an SDCC
-> ticket or ask your STAR liaison). Note you **don't** need your own account just to
+> or shows no directory, you don't have an HPSS account yet — request one ([open an SDCC ticket](https://www.sdcc.bnl.gov/help/reporting-problems)
+> - mail to [RT-RACF-HPSS@bnl.gov](mailto:RT-RACF-HPSS@bnl.gov)
+>  or ask on Mattermost). Note you **don't** need your own account just to
 > *restore* files: the [Data Carousel](/software/carousel) runs as a managed service and
 > can restore into your disk area regardless.
 
 
 # Which tool do I use?
 
-| Tool   | Use it for                                      | Think of it as |
-|--------|-------------------------------------------------|----------------|
-| `hsi`  | Browsing HPSS; pushing/pulling **one big file** | `cd`/`ls` + `cp` to tape |
-| `htar` | Bundling **many small files** into one archive  | `tar` straight to tape |
-
-Rule of thumb: **one large file → `hsi`. Many small files → `htar`.**
-
+Rule of thumb: **one large file → `hsi`. Many small/big files → `htar`.**
 
 # Best practices (please read — from Jerome Lauret)
 
@@ -97,8 +92,8 @@ Never push thousands of loose small files individually — aggregate first.
 # `hsi` — browse HPSS and move big files
 
 `hsi` ([docs](https://www.racf.bnl.gov/Facility/HPSS/Documentation/HSI/)) is an
-interactive shell into your HPSS space; most Linux commands work (`pwd`, `ls`, `cd`,
-`mkdir`, `rm`, `rmdir`). Run it interactively by typing `hsi`, or — recommended — pass a
+**interactive** shell into your HPSS space; most Linux commands work (`pwd`, `ls`, `cd`,
+`mkdir`, `rm`, `rmdir`). Run it interactively by typing `hsi`, or pass a
 single quoted command:
 
 ```bash
@@ -114,15 +109,14 @@ hsi "put results.root : /home/<user>/backup/results.root"   # archive
 hsi "get results.root : /home/<user>/backup/results.root"   # restore
 ```
 
-Small-files alternative (Jerome's tip) — bundle locally with a timestamp, push one file:
+Small-files alternative — bundle locally with a timestamp, push one file:
 
 ```bash
 tar -czf logs_2026-06-10.tar.gz mylogs/*.log
 hsi "put logs_2026-06-10.tar.gz : /home/<user>/backup/logs_2026-06-10.tar.gz"
 ```
 
-
-# `htar` — bundle many small files
+# `htar` — bundle many files
 
 `htar` ([docs](https://www.sdcc.bnl.gov/sites/default/files/2021-09/htar.txt),
 [STAR notes](https://drupal.star.bnl.gov/STAR/comp/sofi/hpss/htar)) is like `tar` but
@@ -143,7 +137,6 @@ htar -cP -f /home/<user>/backup/data.tar /path/to/files/*.root   # create + make
   `/path/to/files/*.root` restores to `<cwd>/path/to/files/...`; `cd`-ing in first and
   running on `*.root` restores to `<cwd>/...`.
 
-
 # Preview an archive (before restoring)
 
 `htar -t` lists the contents — it reads the index, so it's fast and does **not** pull
@@ -160,7 +153,7 @@ plain `hsi` file, just `hsi "ls -l ..."`.
 # Restore files
 
 These commands restore files **you** archived yourself (above). To restore **production
-data** (MuDST, picoDst, DST under `/home/starreco/...`), don't pull it here — use the
+data** (MuDST, picoDst under `/home/starreco/...`), don't pull it here — use the
 **[Data Carousel](/software/carousel)** instead (see the warning at the top of this page).
 
 ```bash
@@ -170,9 +163,7 @@ htar -xf /home/<user>/backup/data.tar               # restore EVERYTHING
 htar -xf /home/<user>/backup/data.tar data/a.txt    # restore ONE member (path from -t)
 hsi "get results.root : /home/<user>/backup/results.root"   # restore a big single file
 ```
-
 Restoring one member from a big archive avoids downloading the whole thing.
-
 
 # Cleaning up
 
@@ -183,14 +174,12 @@ hsi "rmdir /home/<user>/backup"                                          # empty
 
 htar archives come as a **pair** — delete both the `.tar` and the `.tar.idx`.
 
-
 # Tips
 
 - **No ticket = nothing works** — `klist` to check, `kinit` to renew.
 - **Tape is slow.** A cold archive can take minutes to stage. Pulling many members in one
   command is cheaper than calling `htar` repeatedly.
 - **Overwrites are silent** (htar create and extract) — check your destinations.
-
 
 # Quick reference
 
@@ -199,11 +188,11 @@ htar archives come as a **pair** — delete both the `.tar` and the `.tar.idx`.
 hsi "pwd"                               # HPSS home
 hsi "ls -l /home/you/backup"            # list
 
-# big single file
+# Interactive way on big single file
 hsi "put file.root : /home/you/backup/file.root"   # archive
 hsi "get file.root : /home/you/backup/file.root"   # restore
 
-# many small files
+# many files
 htar -cP -f /home/you/backup/data.tar  data/*       # archive (-P makes the path)
 htar -tf  /home/you/backup/data.tar                 # preview contents (fast)
 htar -xf  /home/you/backup/data.tar                 # restore all
