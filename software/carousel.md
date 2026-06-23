@@ -91,6 +91,8 @@ tape bandwidth allows — a large request takes time, that's normal.
 Check progress on the [accounting page](https://www.star.bnl.gov/devcgi/display_accnt.cgi);
 the last column shows success, or the reason a file failed.
 
+You can also check the queue status on the command line by running `hpss_user.pl -w`.
+However, this will show the queue for all submissions not just for a particular username
 
 # `next` — the newer restore path
 
