@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ '/assets/css/smart-search.css' | relative_url }}">
+<script defer src="{{ '/assets/js/smart-search.js' | relative_url }}"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    if (window.eicSmartSearch) {
+      window.eicSmartSearch.init({
+        smartSearchUrl: "https://star-api.aprozo.space",
+        smartSearchTopK: 5,
+      });
+    }
+  });
+</script>

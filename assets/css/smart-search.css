@@ -1,0 +1,659 @@
+/*
+ * Smart-search additions. Append this block to css/custom.css (or include as
+ * a separate stylesheet). All rules are namespaced under .smart-search-* or
+ * scoped via :has(#siteSearchSubmit), so sites running in the Lunr-fallback
+ * path are unaffected.
+ */
+
+/* ---------- arrow submit button inside the search bar -------------------- */
+
+.site-search-input-wrap:has(.site-search-submit) .site-search-input {
+    padding-right: 3.25rem;
+}
+
+.site-search-submit {
+    position: absolute;
+    top: 50%;
+    right: 0.3rem;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 999px;
+    background-color: #0ea5e9;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+}
+
+.site-search-submit:hover:not(:disabled) {
+    background-color: #0284c7;
+}
+
+.site-search-submit:hover:not(:disabled) svg {
+    transform: translateX(2px);
+}
+
+.site-search-submit svg {
+    transition: transform 180ms ease;
+}
+
+.site-search-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.site-search-submit[data-loading="true"] svg {
+    animation: smart-search-spin 1s linear infinite;
+}
+
+@keyframes smart-search-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Raise the panel unambiguously above the navbar and any dropdowns. A hovered
+ * card elsewhere on the page that creates its own stacking context (via
+ * transform) stays behind. */
+.site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+    z-index: 1090;
+    isolation: isolate;
+}
+
+/* ---------- centered search bar on extra-large screens ------------------- */
+
+/*
+ * When smart search is enabled AND the viewport is wide enough that the left
+ * nav items (brand + dropdowns like Tutorials/Software) and the right cluster
+ * leave real middle space, float the bar into the visual center of the
+ * navbar. On anything narrower (including zoomed-in viewports via
+ * Ctrl+scroll) the bar falls back to the natural right-aligned flow position
+ * so it never overlaps the menu items.
+ */
+@media (min-width: 1200px) {
+    .site-search-nav:has(#siteSearchSubmit) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(30rem, 40vw);
+    }
+}
+
+/* ---------- results panel: wider + centered below input at xl+ ---------- */
+
+@media (min-width: 1200px) {
+    .site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: min(46rem, 92vw);
+        max-height: min(72vh, 38rem);
+        border-radius: 1rem;
+    }
+}
+
+/*
+ * Single scrolling container. The existing site CSS sets `overflow: hidden`
+ * on .site-search-panel (no max-height) and a separate max-height on
+ * .site-search-results. Because the panel is position:absolute inside a
+ * fixed navbar, if we don't cap the panel height, overflow has nowhere to
+ * scroll to: the last source card literally renders off-viewport and gets
+ * clipped mid-card. Fix: cap the panel at ~viewport - navbar and let the
+ * whole thing scroll as one unit.
+ */
+.site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+    max-height: min(calc(100vh - 5rem), 40rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+}
+
+.site-search-nav:has(#siteSearchSubmit) .site-search-results {
+    max-height: none;
+    overflow: visible;
+}
+
+/* Smooth entry — default (not centered). */
+.site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+    animation: smart-search-panel-in-flow 140ms ease-out;
+}
+
+@keyframes smart-search-panel-in-flow {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* When centered (xl+), the panel is also translateX-centered, so its
+ * entry animation must preserve that X offset. */
+@media (min-width: 1200px) {
+    .site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+        animation: smart-search-panel-in-centered 160ms ease-out;
+    }
+    @keyframes smart-search-panel-in-centered {
+        from { opacity: 0; transform: translate(-50%, -4px); }
+        to   { opacity: 1; transform: translate(-50%, 0); }
+    }
+}
+
+/* ---------- answer block ------------------------------------------------ */
+
+.site-search-answer {
+    position: relative;
+    padding: 1rem 1.1rem 0.9rem 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Left accent stripe. Scoped to the smart-search panel. */
+.site-search-nav:has(#siteSearchSubmit) .site-search-answer::before {
+    content: "";
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 0.5rem;
+    width: 3px;
+    background-color: #0ea5e9;
+    border-radius: 999px;
+    opacity: 0.9;
+}
+
+.site-search-answer p { margin: 0 0 0.6rem; }
+.site-search-answer p:last-child { margin-bottom: 0; }
+.site-search-answer strong { font-weight: 600; color: #0f172a; }
+.site-search-answer em { font-style: italic; }
+
+/* Headings — answers rarely need them, but when the LLM emits one, keep it
+ * proportional to body text instead of inheriting Bootstrap's massive h1/h2. */
+.site-search-answer h1,
+.site-search-answer h2,
+.site-search-answer h3,
+.site-search-answer h4,
+.site-search-answer h5,
+.site-search-answer h6 {
+    margin: 0.9rem 0 0.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #0f172a;
+}
+.site-search-answer h1 { font-size: 1.05rem; }
+.site-search-answer h2 { font-size: 1rem; }
+.site-search-answer h3 { font-size: 0.97rem; }
+.site-search-answer h4,
+.site-search-answer h5,
+.site-search-answer h6 { font-size: 0.95rem; color: #334155; }
+.site-search-answer h1:first-child,
+.site-search-answer h2:first-child,
+.site-search-answer h3:first-child { margin-top: 0; }
+
+/* Lists — Bootstrap's reset leaves these unstyled inside the panel. Give
+ * them tight, readable indent and spacing that matches the body line-height. */
+.site-search-answer ul,
+.site-search-answer ol {
+    margin: 0.25rem 0 0.7rem;
+    padding-left: 1.25rem;
+}
+.site-search-answer ul { list-style: disc; }
+.site-search-answer ol { list-style: decimal; }
+.site-search-answer li {
+    margin: 0.15rem 0;
+    padding-left: 0.15rem;
+}
+.site-search-answer li > p { margin: 0 0 0.25rem; }
+.site-search-answer li:last-child { margin-bottom: 0; }
+.site-search-answer ul ul,
+.site-search-answer ol ol,
+.site-search-answer ul ol,
+.site-search-answer ol ul {
+    margin: 0.15rem 0 0.15rem;
+}
+
+.site-search-answer blockquote {
+    margin: 0.5rem 0 0.7rem;
+    padding: 0.1rem 0 0.1rem 0.75rem;
+    border-left: 3px solid #cbd5e1;
+    color: #475569;
+}
+.site-search-answer blockquote p:last-child { margin-bottom: 0; }
+
+.site-search-answer hr {
+    border: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    margin: 0.8rem 0;
+}
+
+.site-search-answer table {
+    border-collapse: collapse;
+    margin: 0.5rem 0 0.7rem;
+    font-size: 0.88rem;
+    width: auto;
+}
+.site-search-answer th,
+.site-search-answer td {
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    padding: 0.3rem 0.55rem;
+    text-align: left;
+}
+.site-search-answer th {
+    background-color: #f8fafc;
+    font-weight: 600;
+}
+
+.site-search-answer code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+    font-size: 0.88em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+.site-search-answer pre {
+    background-color: #f8fafc;
+    padding: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 0.85em;
+    margin: 0.7rem 0;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* ---------- smart-code blocks (fenced code with header + copy) --------- */
+
+.site-search-answer pre.smart-code {
+    background-color: #f8fafc;
+    padding: 0;
+    margin: 0.7rem 0;
+}
+
+.smart-code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0.7rem;
+    background-color: #eef2f7;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    font-size: 0.7rem;
+    color: #475569;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.smart-code-lang {
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.smart-code-copy {
+    border: 0;
+    background: transparent;
+    color: #475569;
+    font-size: 0.7rem;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.25rem;
+    transition: background-color 120ms ease, color 120ms ease;
+}
+
+.smart-code-copy:hover {
+    background-color: rgba(15, 23, 42, 0.08);
+    color: #1f2937;
+}
+
+.smart-code-copy[data-state="copied"] {
+    color: #047857;
+}
+
+.smart-code-copy[data-state="error"] {
+    color: #b91c1c;
+}
+
+.site-search-answer pre.smart-code code {
+    display: block;
+    padding: 0.7rem 0.9rem;
+    background: transparent;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #0f172a;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.site-search-answer pre.smart-code code::-webkit-scrollbar { height: 6px; }
+.site-search-answer pre.smart-code code::-webkit-scrollbar-thumb {
+    background-color: rgba(15, 23, 42, 0.15);
+    border-radius: 3px;
+}
+
+/* ---------- minimal highlight.js theme (medium tone, no pink) ---------- */
+/* Replaces the default GitHub palette (harsh pink keywords #d73a49 and
+ * purple titles #6f42c1) with mid-weight Tailwind 500/600s. Calm on the
+ * #f8fafc code background, still readable, no overly dark slabs. */
+
+.site-search-answer .hljs-comment,
+.site-search-answer .hljs-quote { color: #94a3b8; font-style: italic; }
+.site-search-answer .hljs-keyword,
+.site-search-answer .hljs-selector-tag,
+.site-search-answer .hljs-subst { color: #2563eb; }
+.site-search-answer .hljs-number,
+.site-search-answer .hljs-literal,
+.site-search-answer .hljs-variable,
+.site-search-answer .hljs-template-variable,
+.site-search-answer .hljs-tag .hljs-attr { color: #0891b2; }
+.site-search-answer .hljs-string,
+.site-search-answer .hljs-doctag { color: #16a34a; }
+.site-search-answer .hljs-title,
+.site-search-answer .hljs-section,
+.site-search-answer .hljs-selector-id { color: #475569; font-weight: 600; }
+.site-search-answer .hljs-type,
+.site-search-answer .hljs-class .hljs-title { color: #64748b; }
+.site-search-answer .hljs-tag,
+.site-search-answer .hljs-name,
+.site-search-answer .hljs-attribute { color: #0d9488; }
+.site-search-answer .hljs-regexp,
+.site-search-answer .hljs-link { color: #16a34a; }
+.site-search-answer .hljs-symbol,
+.site-search-answer .hljs-bullet { color: #d97706; }
+.site-search-answer .hljs-built_in,
+.site-search-answer .hljs-builtin-name { color: #2563eb; }
+.site-search-answer .hljs-meta { color: #94a3b8; }
+.site-search-answer .hljs-deletion { background-color: #fef2f2; }
+.site-search-answer .hljs-addition { background-color: #f0fdf4; }
+.site-search-answer .hljs-emphasis { font-style: italic; }
+.site-search-answer .hljs-strong { font-weight: 700; }
+.site-search-answer a { color: #0284c7; text-decoration: none; }
+.site-search-answer a:hover { text-decoration: underline; }
+
+.site-search-answer sup a {
+    display: inline-block;
+    padding: 0 0.25rem;
+    margin: 0 0.05rem;
+    background-color: #e0f2fe;
+    color: #075985;
+    border-radius: 0.25rem;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-decoration: none;
+}
+.site-search-answer sup a:hover {
+    background-color: #bae6fd;
+    text-decoration: none;
+}
+
+/* Small hint row above the list when in preview mode. */
+.site-search-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.5rem 1rem 0.55rem;
+    background-color: #fafafa;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    font-size: 0.72rem;
+    color: #6b7280;
+}
+
+.smart-search-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background-color: #f1f5f9;
+    font-variant-numeric: tabular-nums;
+}
+
+.smart-search-badge-hint {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* ---------- citation cards --------------------------------------------- */
+
+.smart-search-citation {
+    padding: 0.75rem 1rem !important;
+    /* Bootstrap's .list-group-item uses rgba(0,0,0,0.125) — a crisp dark
+     * line between cards. Soften to a barely-there separator. */
+    border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Remove the outer border on first/last cards so the list visually melts
+ * into the answer block above and the panel edge below. */
+.smart-search-citation:first-child {
+    border-top: 0 !important;
+}
+.smart-search-citation:last-child {
+    border-bottom: 0 !important;
+}
+
+.smart-search-citation-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: start;
+}
+
+.smart-search-citation-index {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #e0f2fe;
+    color: #075985;
+    border-radius: 0.45rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    margin-top: 0.1rem;
+}
+
+.smart-search-citation-body {
+    min-width: 0;
+}
+
+.smart-search-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: capitalize;
+    margin-bottom: 0.1rem;
+    overflow: hidden;
+}
+
+.smart-search-breadcrumb-sep {
+    color: #cbd5e1;
+}
+
+.smart-search-citation-title {
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: #111827;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.smart-search-citation-snippet {
+    font-size: 0.835rem;
+    line-height: 1.45;
+    color: #475569;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.smart-search-citation-score {
+    flex-shrink: 0;
+    align-self: start;
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background-color: #f8fafc;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- popular queries (empty-input suggestions) ------------------ */
+
+.smart-search-popular {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 0.75rem 1rem 0.95rem;
+    background-color: #ffffff;
+}
+
+.smart-search-popular-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 999px;
+    background-color: #f8fafc;
+    color: #1f2937;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease, transform 80ms ease;
+}
+
+.smart-search-popular-chip:hover,
+.smart-search-popular-chip:focus {
+    background-color: #eef2f7;
+    border-color: rgba(15, 23, 42, 0.18);
+    outline: 0;
+}
+
+.smart-search-popular-chip:active {
+    transform: translateY(1px);
+}
+
+.smart-search-popular-query {
+    max-width: 22rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.smart-search-popular-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.35rem;
+    padding: 0 0.35rem;
+    height: 1.25rem;
+    background-color: #e0f2fe;
+    color: #075985;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- hover / focus override (neutral, very light) ---------------- */
+
+/*
+ * Bootstrap's .list-group-item-action gives source cards a tinted blue-gray
+ * hover and a 0.25rem focus ring. Override to a near-neutral wash so the
+ * card highlights without competing with the answer block. Scoped via the
+ * smart-search specific class so Lunr fallback cards are untouched.
+ */
+.smart-search-citation {
+    transition: background-color 120ms ease;
+}
+
+/*
+ * Hover / focus / active: keep the card essentially white so the body text
+ * stays fully readable, and force the text back to its normal color (Bootstrap
+ * swaps it to a muted #495057 grey on hover, which is what makes the content
+ * look washed out). !important + a high-specificity selector are used because
+ * Bootstrap's own .list-group-item-action:hover sits on the same cascade
+ * level and ships after our stylesheet.
+ */
+.smart-search-citation.list-group-item-action:hover,
+.smart-search-citation.list-group-item-action:focus {
+    background-color: #f3f6fb !important;
+    color: #1f2937 !important;
+    box-shadow: inset 3px 0 0 rgba(14, 165, 233, 0.55) !important;
+    outline: 0 !important;
+}
+
+.smart-search-citation.list-group-item-action:active {
+    background-color: #e8eef7 !important;
+    color: #1f2937 !important;
+    box-shadow: inset 3px 0 0 rgba(14, 165, 233, 0.7) !important;
+    outline: 0 !important;
+}
+
+.smart-search-citation.list-group-item-action:hover .smart-search-citation-title,
+.smart-search-citation.list-group-item-action:focus .smart-search-citation-title,
+.smart-search-citation.list-group-item-action:active .smart-search-citation-title {
+    color: #111827 !important;
+}
+
+.smart-search-citation.list-group-item-action:hover .smart-search-citation-snippet,
+.smart-search-citation.list-group-item-action:focus .smart-search-citation-snippet,
+.smart-search-citation.list-group-item-action:active .smart-search-citation-snippet {
+    color: #334155 !important;
+}
+
+.smart-search-citation.list-group-item-action:focus-visible {
+    outline: 2px solid rgba(14, 165, 233, 0.55) !important;
+    outline-offset: -2px;
+}
+
+/* ---------- small-screen adjustments ------------------------------------- */
+
+/*
+ * On mobile, `.site-search-nav` is a narrow column pinned to the right of the
+ * navbar (next to the toggler), so an absolutely-positioned panel uses that
+ * narrow box as its containing block. With width ≈ 100vw and a small negative
+ * `right`, the panel's left edge would land off-screen. Switch to fixed
+ * positioning so the panel anchors to the viewport directly and spans full
+ * width regardless of how narrow the host nav is.
+ */
+@media (max-width: 991.98px) {
+    .site-search-nav:has(#siteSearchSubmit) .site-search-panel {
+        position: fixed;
+        top: 3.75rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        width: auto;
+        max-height: min(calc(100vh - 4.5rem), 40rem);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .smart-search-citation-title { font-size: 0.92rem; }
+}
+
+/* Feedback / expert-referral row (added 2026-08) */
+.smart-search-feedback { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 0.85rem; }
+.smart-search-expert { margin-bottom: 6px; color: #334; }
+.smart-search-rate { display: flex; align-items: center; gap: 8px; color: #667; }
+.smart-search-thumb { background: none; border: 1px solid rgba(0,0,0,0.15); border-radius: 6px; cursor: pointer; padding: 2px 8px; font-size: 1rem; }
+.smart-search-thumb:hover:not(:disabled) { background: rgba(0,0,0,0.05); }
+.smart-search-thumb:disabled { opacity: 0.4; cursor: default; }
+.smart-search-thanks { color: #093; }
+.smart-search-noresult { color: #556; font-size: 0.9rem; line-height: 1.5; }
+.smart-search-noresult a { color: #2a78d6; }

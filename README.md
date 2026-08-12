@@ -5,6 +5,26 @@ nav_order: 1
 permalink: /
 ---
 
+
+<div class="site-search-nav" id="siteSearch" style="max-width:640px; margin: 0 0 1.5rem">
+  <label class="visually-hidden" for="siteSearchInput">Ask about STAR</label>
+  <div class="site-search-input-wrap">
+    <input id="siteSearchInput" class="form-control site-search-input" type="search"
+      placeholder="Ask AI about STAR (e.g. how do I submit jobs?)" autocomplete="off" spellcheck="false"
+      aria-label="Ask about STAR" aria-controls="siteSearchResults" aria-expanded="false" aria-autocomplete="list">
+    <button id="siteSearchSubmit" class="site-search-submit" type="button"
+      aria-label="Ask the AI" title="Press Enter to ask the AI">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+  <div id="siteSearchPanel" class="site-search-panel" hidden>
+    <div id="siteSearchStatus" class="site-search-status">Start typing</div>
+    <div id="siteSearchAnswer" class="site-search-answer" hidden></div>
+    <div id="siteSearchMeta" class="site-search-meta" hidden></div>
+    <div id="siteSearchResults" class="site-search-results" aria-live="polite"></div>
+  </div>
+</div>
+
 # STAR Main Web Sites
 
 <!--
