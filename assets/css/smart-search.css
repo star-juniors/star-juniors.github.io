@@ -644,3 +644,17 @@
     line-height: 1.5;
 }
 .smart-search-noresult a { color: #7253ed; }
+
+/* Follow-up mode: "new topic" escape hatch next to the turn counter. */
+.smart-search-newtopic {
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.55rem;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.smart-search-newtopic:hover { opacity: 1; }

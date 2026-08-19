@@ -236,7 +236,55 @@
       lastPreviewQuery: null,
       mode: "idle",
       popularPromise: null,     // memoized fetch of /popular for the session
+      history: [],              // conversation turns [{role, content}], max 3 exchanges
     };
+    const originalPlaceholder = input.placeholder;
+
+    // ------------------------------------------------------------------
+    // Conversation history (follow-up questions)
+    // ------------------------------------------------------------------
+
+    function historyPayload() {
+      return state.history.slice(-6);
+    }
+
+    function pushHistory(query, answerText) {
+      if (!answerText) return;
+      const last = state.history[state.history.length - 2];
+      if (last && last.role === "user" && last.content === query) return; // re-render of same turn
+      state.history.push({ role: "user", content: String(query).slice(0, 2000) });
+      state.history.push({ role: "assistant", content: String(answerText).slice(0, 4000) });
+      while (state.history.length > 6) state.history.shift();
+      updateFollowupUi();
+    }
+
+    function clearHistory() {
+      state.history = [];
+      updateFollowupUi();
+    }
+
+    function updateFollowupUi() {
+      input.placeholder = state.history.length
+        ? "Ask a follow-up… (Esc = new topic)"
+        : originalPlaceholder;
+    }
+
+    function renderFollowupChip() {
+      if (!state.history.length) return;
+      const exchanges = state.history.length / 2;
+      meta.innerHTML =
+        '<span class="smart-search-badge smart-search-badge-hint">Follow-up mode · ' +
+        exchanges + (exchanges === 1 ? " turn" : " turns") + "</span> " +
+        '<button type="button" class="smart-search-newtopic" id="smartSearchNewTopic">✕ new topic</button>';
+      meta.hidden = false;
+      const btn = document.getElementById("smartSearchNewTopic");
+      if (btn) btn.addEventListener("click", function () {
+        clearHistory();
+        meta.hidden = true;
+        meta.innerHTML = "";
+        input.focus();
+      });
+    }
 
     function openPanel() {
       panel.hidden = false;
@@ -320,6 +368,7 @@
           scope: "public",
           top_k: generateAnswer ? submitTopK : topK,
           generate_answer: generateAnswer,
+          history: generateAnswer ? historyPayload() : [],
         }),
         signal: signal,
       }).then(function (response) {
@@ -343,6 +392,7 @@
           scope: "public",
           top_k: submitTopK,
           generate_answer: true,
+          history: historyPayload(),
         }),
         signal: ctrl.signal,
       });
@@ -516,7 +566,9 @@
       // Preview can go.
       cancelPreview();
 
-      const cached = getSpeculative(query);
+      // Speculative entries were fired without conversation history — in
+      // follow-up mode they would answer out of context. Skip them.
+      const cached = state.history.length ? null : getSpeculative(query);
       let dataPromise;
 
       if (cached && cached.resolved && cached.data) {
@@ -612,6 +664,10 @@
       // Run after the HTML is in the DOM, so KaTeX scans real text nodes; DOMPurify
       // never sees KaTeX output. Code blocks are skipped via ignoredTags.
       renderMath(answer);
+      // Remember the exchange so the next question can be a follow-up,
+      // and offer the escape hatch back to a fresh topic.
+      pushHistory(query, data.answer || "");
+      renderFollowupChip();
     }
 
     // ------------------------------------------------------------------
@@ -787,6 +843,10 @@
         return;
       }
       state.debounceTimer = setTimeout(function () {
+        // In follow-up mode the typed text is usually anaphoric ("how do I
+        // read one?") — previews and speculation on it retrieve garbage and
+        // would answer without the conversation context. Submit-only.
+        if (state.history.length) return;
         prefire(q);
         scheduleSpeculation(q);
       }, debounceMs);
@@ -805,6 +865,16 @@
         clearTimeout(state.speculativeTimer);
         submitFull(input.value.trim());
       } else if (e.key === "Escape") {
+        // First Esc in follow-up mode starts a new topic (keeps focus for
+        // the next question); Esc with no history closes the panel.
+        if (state.history.length) {
+          clearHistory();
+          meta.hidden = true;
+          meta.innerHTML = "";
+          input.value = "";
+          setStatus("New topic — conversation cleared.");
+          return;
+        }
         closePanel();
         cancelPreview();
         cancelSubmit();
