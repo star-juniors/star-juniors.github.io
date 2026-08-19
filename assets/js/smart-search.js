@@ -237,6 +237,7 @@
       mode: "idle",
       popularPromise: null,     // memoized fetch of /popular for the session
       history: [],              // conversation turns [{role, content}], max 3 exchanges
+      transcriptCache: "",      // rendered HTML of previous exchanges (collapsed)
     };
     const originalPlaceholder = input.placeholder;
 
@@ -260,7 +261,35 @@
 
     function clearHistory() {
       state.history = [];
+      state.transcriptCache = "";
       updateFollowupUi();
+    }
+
+    // Previous exchanges rendered as collapsed blocks so a follow-up never
+    // blanks the screen — the earlier answer stays one click away.
+    function buildTranscript(libs) {
+      if (!state.history.length) return "";
+      let html = "";
+      for (let i = 0; i + 1 < state.history.length; i += 2) {
+        const q = state.history[i];
+        const a = state.history[i + 1];
+        if (!q || !a) continue;
+        let body;
+        try {
+          body = libs.DOMPurify.sanitize(libs.marked.parse(a.content, { async: false }), { ADD_ATTR: ["target", "rel"] });
+        } catch (_err) {
+          body = escapeHtml(a.content);
+        }
+        html +=
+          '<details class="smart-search-prev"><summary>' + escapeHtml(q.content) + "</summary>" +
+          '<div class="smart-search-prev-body">' + body + "</div></details>";
+      }
+      return html;
+    }
+
+    function withTranscript(currentHtml) {
+      if (!state.transcriptCache) return currentHtml;
+      return state.transcriptCache + '<div class="smart-search-current">' + currentHtml + "</div>";
     }
 
     function updateFollowupUi() {
@@ -406,7 +435,9 @@
 
       function renderPartial() {
         const html = libs.marked.parse(answerMd, { async: false });
-        answer.innerHTML = libs.DOMPurify.sanitize(html, { ADD_ATTR: ["target", "rel"] });
+        answer.innerHTML = withTranscript(
+          libs.DOMPurify.sanitize(html, { ADD_ATTR: ["target", "rel"] })
+        );
         answer.hidden = false;
       }
 
@@ -565,6 +596,17 @@
       openPanel();
       // Preview can go.
       cancelPreview();
+      // Follow-up: snapshot the previous exchanges as collapsed blocks so
+      // the current answer never just vanishes while the next one thinks.
+      if (state.history.length) {
+        try {
+          state.transcriptCache = buildTranscript(await loadMarkdownLibs());
+        } catch (_err) {
+          state.transcriptCache = "";
+        }
+      } else {
+        state.transcriptCache = "";
+      }
 
       // Speculative entries were fired without conversation history — in
       // follow-up mode they would answer out of context. Skip them.
@@ -710,8 +752,16 @@
       }
 
       if (answerHtml) {
-        answer.innerHTML = answerHtml;
+        answer.innerHTML = withTranscript(answerHtml);
         answer.hidden = false;
+      } else if (mode === "full" && state.transcriptCache) {
+        // Follow-up in flight: keep the previous exchanges on screen
+        // (collapsed) instead of blanking the panel while the new answer
+        // generates.
+        answer.innerHTML = state.transcriptCache;
+        answer.hidden = false;
+        meta.hidden = true;
+        meta.innerHTML = "";
       } else {
         clearAnswer();
       }

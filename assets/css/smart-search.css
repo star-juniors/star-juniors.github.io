@@ -658,3 +658,28 @@
   opacity: 0.8;
 }
 .smart-search-newtopic:hover { opacity: 1; }
+
+/* Collapsed previous exchanges shown above the current answer in
+   follow-up mode — the old answer stays one click away instead of
+   vanishing while the next one generates. */
+.smart-search-prev {
+  margin: 0 0 0.5rem 0;
+  padding: 0.15rem 0.5rem;
+  border-left: 3px solid rgba(128, 128, 128, 0.35);
+  background: rgba(128, 128, 128, 0.06);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85em;
+  opacity: 0.85;
+}
+.smart-search-prev > summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.2rem 0;
+  list-style-position: inside;
+}
+.smart-search-prev-body {
+  padding: 0.25rem 0 0.35rem 0.25rem;
+}
+.smart-search-current {
+  margin-top: 0.35rem;
+}
