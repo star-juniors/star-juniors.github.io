@@ -14,7 +14,13 @@
 //     speculative result instantly. Otherwise (or if still in-flight) show
 //     the spinner, awaiting either the existing speculative promise or a
 //     fresh call.
-//   - Esc or outside click closes the panel.
+//   - After a full answer renders, a dedicated follow-up input appears at
+//     the bottom of the answer card. It owns the conversation: what is typed
+//     there is sent together with state.history, and the main field keeps the
+//     original question. Typing in the MAIN field means "new topic" and drops
+//     the history.
+//   - Esc or outside click closes the panel; Esc anywhere in the panel while a
+//     conversation is running starts a new topic instead.
 //
 // Exposed as window.eicSmartSearch.init(config) for site.js to invoke.
 
@@ -238,6 +244,7 @@
       popularPromise: null,     // memoized fetch of /popular for the session
       history: [],              // conversation turns [{role, content}], max 3 exchanges
       transcriptCache: "",      // rendered HTML of previous exchanges (collapsed)
+      followupPending: false,   // last submit came from the follow-up field
     };
     const originalPlaceholder = input.placeholder;
 
@@ -292,27 +299,115 @@
       return state.transcriptCache + '<div class="smart-search-current">' + currentHtml + "</div>";
     }
 
+    // The main field no longer doubles as the follow-up field, so its
+    // placeholder stays the original "search" wording at all times — the
+    // dedicated row under the answer is what says "ask a follow-up".
     function updateFollowupUi() {
-      input.placeholder = state.history.length
-        ? "Ask a follow-up… (Esc = new topic)"
-        : originalPlaceholder;
+      input.placeholder = originalPlaceholder;
     }
 
-    function renderFollowupChip() {
-      if (!state.history.length) return;
-      const exchanges = state.history.length / 2;
-      meta.innerHTML =
-        '<span class="smart-search-badge smart-search-badge-hint">Follow-up mode · ' +
-        exchanges + (exchanges === 1 ? " turn" : " turns") + "</span> " +
-        '<button type="button" class="smart-search-newtopic" id="smartSearchNewTopic">✕ new topic</button>';
-      meta.hidden = false;
-      const btn = document.getElementById("smartSearchNewTopic");
-      if (btn) btn.addEventListener("click", function () {
-        clearHistory();
-        meta.hidden = true;
-        meta.innerHTML = "";
-        input.focus();
+    // ------------------------------------------------------------------
+    // Follow-up row — dedicated input at the bottom of the answer card
+    // ------------------------------------------------------------------
+    //
+    // Division of labour (deliberate, see also the input handler below):
+    //
+    //   main field (#siteSearchInput)  → NEW topic. Typing there clears the
+    //       conversation history, because a box that sometimes continues a
+    //       thread and sometimes starts one is exactly the confusion this
+    //       row was added to remove. It also keeps the original question
+    //       visible while the follow-ups happen.
+    //   follow-up field (#smartSearchFollowupInput) → CONTINUES the thread.
+    //       Submitting sends state.history along; the main field is never
+    //       touched, and typing here fires no previews/speculation (there is
+    //       no input handler on it — follow-ups are anaphoric and retrieve
+    //       badly without the conversation context).
+    //
+    // The row is rebuilt at the end of every full answer render, so it always
+    // sits below the answer + feedback row and always reflects the turn count.
+    function renderFollowupRow() {
+      const old = document.getElementById("smartSearchFollowup");
+      if (old) old.remove();
+      const turns = Math.floor(state.history.length / 2);
+      const row = document.createElement("div");
+      row.id = "smartSearchFollowup";
+      row.className = "smart-search-followup";
+      row.innerHTML =
+        '<div class="smart-search-followup-field">' +
+        '<input type="text" id="smartSearchFollowupInput" class="smart-search-followup-input" ' +
+        'placeholder="Ask a follow-up…" aria-label="Ask a follow-up question" ' +
+        'autocomplete="off" spellcheck="false">' +
+        '<button type="button" class="smart-search-followup-send" aria-label="Send follow-up" title="Send follow-up">' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+        "</button>" +
+        "</div>" +
+        '<div class="smart-search-followup-foot">' +
+        '<span class="smart-search-followup-hint">' +
+        (turns
+          ? turns + (turns === 1 ? " question" : " questions") + " in this thread — answers keep the context"
+          : "Answers keep the context of this thread") +
+        "</span>" +
+        '<button type="button" class="smart-search-newtopic" id="smartSearchNewTopic">✕ new topic</button>' +
+        "</div>";
+
+      const field = row.querySelector(".smart-search-followup-input");
+      const send = row.querySelector(".smart-search-followup-send");
+
+      function submitFollowup() {
+        const q = field.value.trim();
+        if (q.length < 2) return; // matches submitFull's follow-up minimum
+        field.value = "";
+        // Any pending work scheduled from the main field is about a different
+        // query — drop it so it can't overwrite this answer.
+        clearTimeout(state.debounceTimer);
+        clearTimeout(state.speculativeTimer);
+        state.followupPending = true;
+        submitFull(q, { followup: true });
+      }
+
+      field.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submitFollowup();
+        }
       });
+      send.addEventListener("click", submitFollowup);
+      row.querySelector("#smartSearchNewTopic").addEventListener("click", startNewTopic);
+
+      answer.appendChild(row);
+      answer.hidden = false;
+
+      // Focus is never stolen when an answer simply renders. The one exception
+      // is a follow-up the user just sent from this very field: the old row was
+      // torn down mid-flight, so focus fell to <body> — put it back where they
+      // were typing, unless they have since clicked something else.
+      if (state.followupPending) {
+        state.followupPending = false;
+        const active = document.activeElement;
+        if (!active || active === document.body) {
+          try { field.focus({ preventScroll: true }); } catch (_err) { field.focus(); }
+        }
+      }
+    }
+
+    // Full reset: drop the conversation, empty the panel, hand the user back
+    // the main field. Wired to "✕ new topic" and to Esc.
+    function startNewTopic() {
+      clearTimeout(state.debounceTimer);
+      clearTimeout(state.speculativeTimer);
+      cancelPreview();
+      cancelSubmit();
+      clearHistory();
+      state.followupPending = false;
+      state.mode = "idle";
+      input.value = "";
+      clearAnswer();
+      results.innerHTML = "";
+      setStatus("New topic — ask anything.");
+      input.focus();
+      showPopular();
     }
 
     function openPanel() {
@@ -589,8 +684,12 @@
     // Submit: instant path via cache, else fresh call
     // ------------------------------------------------------------------
 
-    async function submitFull(query) {
-      if (!query || query.length < minChars) return;
+    // opts.followup — the query came from the dedicated follow-up field.
+    // Follow-ups are legitimately short ("why?", "and CI?"), so the minimum
+    // length that guards the main field would swallow them.
+    async function submitFull(query, opts) {
+      const minLength = opts && opts.followup ? 2 : minChars;
+      if (!query || query.length < minLength) return;
       state.mode = "full";
       setLoading(true);
       openPanel();
@@ -709,7 +808,8 @@
       // Remember the exchange so the next question can be a follow-up,
       // and offer the escape hatch back to a fresh topic.
       pushHistory(query, data.answer || "");
-      renderFollowupChip();
+      // Dedicated follow-up input, below the answer + feedback row.
+      renderFollowupRow();
     }
 
     // ------------------------------------------------------------------
@@ -880,6 +980,13 @@
       clearTimeout(state.debounceTimer);
       clearTimeout(state.speculativeTimer);
       cancelStaleSpeculation(q);
+      // Editing the main field == new topic. The follow-up row below the
+      // answer owns continuations now, so the main box gets one unambiguous
+      // meaning back: start a fresh search. Dropping the history here also
+      // re-enables preview + speculation for what is being typed (both are
+      // useless on anaphoric follow-ups, which is why they used to be
+      // suppressed while a conversation was live).
+      if (state.history.length) clearHistory();
       if (q.length === 0) {
         cancelPreview();
         state.mode = "idle";
@@ -893,10 +1000,6 @@
         return;
       }
       state.debounceTimer = setTimeout(function () {
-        // In follow-up mode the typed text is usually anaphoric ("how do I
-        // read one?") — previews and speculation on it retrieve garbage and
-        // would answer without the conversation context. Submit-only.
-        if (state.history.length) return;
         prefire(q);
         scheduleSpeculation(q);
       }, debounceMs);
@@ -915,14 +1018,10 @@
         clearTimeout(state.speculativeTimer);
         submitFull(input.value.trim());
       } else if (e.key === "Escape") {
-        // First Esc in follow-up mode starts a new topic (keeps focus for
-        // the next question); Esc with no history closes the panel.
+        // First Esc while a conversation is live starts a new topic (keeps
+        // focus for the next question); Esc with no history closes the panel.
         if (state.history.length) {
-          clearHistory();
-          meta.hidden = true;
-          meta.innerHTML = "";
-          input.value = "";
-          setStatus("New topic — conversation cleared.");
+          startNewTopic();
           return;
         }
         closePanel();
@@ -940,6 +1039,21 @@
         submitFull(input.value.trim());
       });
     }
+
+    // Esc anywhere inside the panel (follow-up field included) = new topic,
+    // falling back to "close" when there is no conversation to drop.
+    panel.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      e.preventDefault();
+      if (state.history.length) {
+        startNewTopic();
+        return;
+      }
+      closePanel();
+      cancelPreview();
+      cancelSubmit();
+      state.mode = "idle";
+    });
 
     document.addEventListener("mousedown", function (e) {
       if (!searchRoot.contains(e.target)) closePanel();
