@@ -32,7 +32,7 @@ April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas6
 [Drupal computing](https://drupal.star.bnl.gov/STAR/comp/){: .btn .btn-blue }
 </span>
 <span class="fs-5">
-[Chatbot](https://starchat.streamlit.app/){: .btn .btn-blue }
+[Chatbot](https://scibot.csi.bnl.gov/){: .btn .btn-blue }
 </span>
 <span class="fs-5">
 [Run Page](https://online.star.bnl.gov/){: .btn .btn-blue }
