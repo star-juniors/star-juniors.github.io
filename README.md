@@ -23,19 +23,19 @@ permalink: /
 April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)
 
 <span class="fs-5">
-[star.bnl.gov](https://www.star.bnl.gov/){: .btn .btn-blue }
+[star.bnl.gov](https://www.star.bnl.gov){: .btn .btn-blue }
 </span>
 <span class="fs-5">
 [Mattermost](https://chat.sdcc.bnl.gov){: .btn .btn-blue }
 </span>
 <span class="fs-5">
-[Drupal computing](https://drupal.star.bnl.gov/STAR/comp/){: .btn .btn-blue }
+[Drupal computing](https://drupal.star.bnl.gov/STAR/comp){: .btn .btn-blue }
 </span>
 <span class="fs-5">
-[Chatbot](https://scibot.csi.bnl.gov/){: .btn .btn-blue }
+[Chatbot](https://scibot.csi.bnl.gov){: .btn .btn-blue }
 </span>
 <span class="fs-5">
-[Run Page](https://online.star.bnl.gov/){: .btn .btn-blue }
+[Run Page](https://online.star.bnl.gov){: .btn .btn-blue }
 </span>
 
 ## Weekly meetings
