@@ -53,14 +53,20 @@ Once your Phonebook entry is live, wire yourself into the collaboration:
    - [star-juniors](https://lists.bnl.gov/sympa/subscribe/starjuniors-l/)
    - [Your physics working group](https://star-juniors.github.io/#mailing-lists)
    
+## Few words on structure of SDCC
+ * There HOME directory is under `/star/u/<username>` - it has only 25 GB available (could be a reason why some software like VS Code is not starting Remote SSH). This is where you land when performing SSH command. By default STAR uses `tcsh`, not `bash`, which was a historical choice.
+ * The second place with dynamical quota (up to 5.5 TB ) which [depends on institution](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/index_php.php?cluster=gpfs&experiment=star&fileset=star-pwg) is `/gpfs01/star/pwg/<username>`.
+
+However, there is a twist - after not touching files for > than 500 days on , the files on `/gpfs01/star/pwg/` are DELETED - make sure to back them up on [HPSS (tape)](https://star-juniors.github.io/software/hpss.html).
+The home directory is not touched in any case.
 
 ## Software Setup:
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsystem integrated into Windows
 
-## 0) Preconditions
+## 0) Preconditions 
 * SDCC account working with password login (first-time users must [set up their account](https://useraccount.sdcc.bnl.gov/new-user) and [add their SSH key](https://useraccount.sdcc.bnl.gov/ssh-key) manually)
 * Local [OpenSSH](https://documentation.ubuntu.com/server/how-to/security/openssh-server/) client (`ssh`, `ssh-keygen`)
-* Local [VS Code](https://code.visualstudio.com/download)
+
 
 ## 1) Generate an SSH key (local) and upload `.pub` to SDCC
 Use RSA-4096 for generation of the key pair (if you don't have one already):
@@ -71,6 +77,8 @@ chmod 700 ~/.ssh
 ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa_sdcc
 ```
 After generating, [upload](https://useraccount.sdcc.bnl.gov/ssh-key) it to SDCC in order to connect to `ssh.sdcc.bnl.gov` gateway if it has not been done.
+
+There exists 2 possibilities - either to use password every time you login or upload you public SSH key to servers. This is how you could upload your key and setup SSH connection with script:
 
 ### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
@@ -152,7 +160,7 @@ ssh starsub05
 ```
 
 ## 2) VS Code: Remote-SSH
-
+[VS Code](https://code.visualstudio.com/download) is an IDE (integrated development environment) that is recommended to be used. However it is not required for work  - you could install terminal-based editor on SDCC or use `vim`/`emacs`, or use you preferred IDE that has SSH capability (e.g. [JetBrains Gateway](https://www.jetbrains.com/remote-development/gateway/))
 ![Screenshot 2026-01-20 100729](https://github.com/user-attachments/assets/d982e274-9f33-40d7-b308-b8fa6dfd01c0)
 
 1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html) like [ROOT File viewer](vscode:extension/albertopdrf.root-file-viewer)
