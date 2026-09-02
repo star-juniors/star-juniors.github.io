@@ -815,3 +815,18 @@
 .smart-search-current {
   margin-top: 0.35rem;
 }
+
+/* ---------- report-this-answer box (opens on thumbs-down) --------------- */
+.smart-search-report { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+.smart-search-report-text {
+  width: 100%; box-sizing: border-box; font: inherit; font-size: 0.85rem;
+  padding: 6px 8px; border: 1px solid rgba(127,127,127,0.35); border-radius: 6px;
+  resize: vertical; background: transparent; color: inherit;
+}
+.smart-search-report-actions { display: flex; gap: 8px; }
+.smart-search-report-send, .smart-search-report-skip {
+  font-size: 0.8rem; padding: 3px 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid rgba(127,127,127,0.35); background: none; color: inherit;
+}
+.smart-search-report-send { font-weight: 600; }
+.smart-search-report-send:hover, .smart-search-report-skip:hover { background: rgba(127,127,127,0.08); }

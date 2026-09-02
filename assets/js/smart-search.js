@@ -909,20 +909,58 @@
       row.innerHTML = html;
       row.querySelectorAll(".smart-search-thumb").forEach(function (btn) {
         btn.addEventListener("click", function () {
-          sendFeedback(Number(btn.dataset.rate), data);
-          row.querySelector(".smart-search-thanks").hidden = false;
+          const rating = Number(btn.dataset.rate);
           row.querySelectorAll(".smart-search-thumb").forEach(function (b) { b.disabled = true; });
+          if (rating <= 2) {
+            showReportBox(row, data, rating);
+          } else {
+            sendFeedback(rating, data, null);
+            row.querySelector(".smart-search-thanks").hidden = false;
+          }
         });
       });
       answer.appendChild(row);
     }
 
-    function sendFeedback(rating, data) {
+    // "Report this answer": a thumbs-down opens an optional comment box, and
+    // the rating is held until Report/Skip so one feedback row carries both.
+    // If the user leaves the page first, pagehide beacons the bare rating.
+    function showReportBox(row, data, rating) {
+      const box = document.createElement("div");
+      box.className = "smart-search-report";
+      box.innerHTML =
+        '<textarea class="smart-search-report-text" maxlength="4000" rows="2" ' +
+        'placeholder="What was wrong? Outdated info, wrong link, missing answer\u2026 (optional)"></textarea>' +
+        '<div class="smart-search-report-actions">' +
+        '<button type="button" class="smart-search-report-send">Report</button>' +
+        '<button type="button" class="smart-search-report-skip">Skip</button></div>';
+      let pending = true;
+      function finish(comment) {
+        if (!pending) return;
+        pending = false;
+        sendFeedback(rating, data, comment);
+        box.remove();
+        const thanks = row.querySelector(".smart-search-thanks");
+        if (thanks) thanks.hidden = false;
+      }
+      box.querySelector(".smart-search-report-send").addEventListener("click", function () {
+        finish(box.querySelector(".smart-search-report-text").value.trim() || null);
+      });
+      box.querySelector(".smart-search-report-skip").addEventListener("click", function () {
+        finish(null);
+      });
+      window.addEventListener("pagehide", function () { finish(null); }, { once: true });
+      row.appendChild(box);
+      box.querySelector(".smart-search-report-text").focus();
+    }
+
+    function sendFeedback(rating, data, comment) {
       try {
         const payload = JSON.stringify({
           query_log_id: (data && data.query_log_id) || lastQueryLogId,
           rating: rating,
-          metadata: { type: "thumb" },
+          comment: comment || undefined,
+          metadata: { type: comment ? "report" : "thumb" },
         });
         navigator.sendBeacon(apiBase + "/feedback", new Blob([payload], { type: "application/json" }));
       } catch (_err) { /* telemetry only */ }
