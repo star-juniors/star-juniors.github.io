@@ -1,5 +1,6 @@
 ---
 title: Beginner Glossary
+parent: Tutorials
 ---
 inspired by Rob Líčeník, modified by Alexandr Prozorov
 

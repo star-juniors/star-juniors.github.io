@@ -25,7 +25,7 @@ Tunnels in VS Code allow remote access with fewer logins and better usability th
 
 Here’s how to set it up:  
 
-1. **Log into SDCC**: Use [NoMachine](no-machine.md) to avoid repeated GitHub authentication.
+1. **Log into SDCC**: Use [NoMachine](/software/remote-development#no-machine) to avoid repeated GitHub authentication.
 (or one can use ssh + tmux - needed for continous running of the tunnel)
 
 2.  ```bash

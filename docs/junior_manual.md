@@ -32,15 +32,18 @@ Once you have obtained your life number and other credentials, you can use them 
 ### Basic Commands for Logging in
 
 ```bash
-ssh -AX username@sssh.sdcc.bnl.gov
-rterm -i
+ssh -AX username@ssh.sdcc.bnl.gov
+term $USER@starsub03
 ```
 
-You will be prompted for a password, which corresponds to your local PC credentials. Upon running `rterm`, enter your SDCC password.
+You will be prompted for your SDCC password.
 
-However, it is highly recommended to use SSH keys folling tutorial [here](/software/ssh/)
+`rterm -i` no longer works. `term` now requires an explicit node, as shown above. Use `starsub03` to
+`starsub07` (see [Alma 9](/software/a9)). You can also `ssh starsub03.sdcc.bnl.gov` straight from the gateway.
 
-and take a look into [Remote Development](software/remote-development.html) instructions.
+However, it is highly recommended to use SSH keys following tutorial [here](/software/ssh/)
+
+and take a look into [Remote Development](/software/remote-development) instructions.
 
 A very efficient start is to use modern IDE like [VS Code](https://star-juniors.github.io/software/vscode.html) for working with SDCC - [see complete instruction](https://star-juniors.github.io/software/vs-code-tunnel.html)
 

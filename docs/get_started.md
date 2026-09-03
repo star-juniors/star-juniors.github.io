@@ -54,21 +54,45 @@ Once your Phonebook entry is live, wire yourself into the collaboration:
    - [Your physics working group](https://star-juniors.github.io/#mailing-lists)
    
 ## Few words on structure of SDCC
- * There HOME directory is under `/star/u/<username>` - it has only 25 GB available (could be a reason why some software like VS Code is not starting Remote SSH). This is where you land when performing SSH command. By default STAR uses `tcsh`, not `bash`, which was a historical choice.
+
+```mermaid
+flowchart LR
+    L["💻 Your laptop"] -->|ssh| GW["🔑 ssh.sdcc.bnl.gov<br>gateway"]
+    GW --> N["🖥️ starsub01-07<br>Alma 9 · tcsh"]
+
+    subgraph S["💾 Shared SDCC storage "]
+      direction TB
+      H["🏠 /star/u/USER<br><b>25 GB</b>"]
+      P["📂 /gpfs01/star/pwg/USER<br><b>up to 5.5 TB</b>"]
+    end
+
+    N --- S
+    P -.->|" you back up"| T["📼 HPSS<br>tape"]
+
+    style L  fill:#f5f5f5,stroke:#616161,stroke-width:2px
+    style GW fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
+    style N  fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style H  fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style P  fill:#fff3e0,stroke:#e65100,stroke-width:3px
+    style T  fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style S  fill:#ffffff,stroke:#9e9e9e,stroke-width:1px,stroke-dasharray: 5 5
+```
+
+ * The HOME directory is under `/star/u/<username>` - it has only 25 GB available (could be a reason why some software like VS Code is not starting Remote SSH). This is where you land when performing SSH command. By default STAR uses `tcsh`, not `bash`, which was a historical choice.
  * The second place with dynamical quota (up to 5.5 TB ) which [depends on institution](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/index_php.php?cluster=gpfs&experiment=star&fileset=star-pwg) is `/gpfs01/star/pwg/<username>`.
 
-However, there is a twist - after not touching files for > than 500 days on , the files on `/gpfs01/star/pwg/` are DELETED - make sure to back them up on [HPSS (tape)](https://star-juniors.github.io/software/hpss.html).
+However, there is a twist - after not touching files for > than 500 days, the files on `/gpfs01/star/pwg/` are DELETED - make sure to back them up on [HPSS (tape)](https://star-juniors.github.io/software/hpss.html).
 The home directory is not touched in any case.
 
 ## Software Setup:
 All following instructions are for Linux/MacOS users. Windows users are asked to use [WSL2](https://star-juniors.github.io/software/wsl.html) which is a Linux subsystem integrated into Windows
 
-## 0) Preconditions 
+### 0) Preconditions 
 * SDCC account working with password login (first-time users must [set up their account](https://useraccount.sdcc.bnl.gov/new-user) and [add their SSH key](https://useraccount.sdcc.bnl.gov/ssh-key) manually)
 * Local [OpenSSH](https://documentation.ubuntu.com/server/how-to/security/openssh-server/) client (`ssh`, `ssh-keygen`)
 
 
-## 1) Generate an SSH key (local) and upload `.pub` to SDCC
+### 1) Generate an SSH key (local) and upload `.pub` to SDCC
 Use RSA-4096 for generation of the key pair (if you don't have one already):
 
 ```bash
@@ -78,9 +102,9 @@ ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa_sdcc
 ```
 After generating, [upload](https://useraccount.sdcc.bnl.gov/ssh-key) it to SDCC in order to connect to `ssh.sdcc.bnl.gov` gateway if it has not been done.
 
-There exists 2 possibilities - either to use password every time you login or upload you public SSH key to servers. This is how you could upload your key and setup SSH connection with script:
+There exists 2 possibilities - either to use password every time you login or upload your public SSH key to servers. This is how you could upload your key and setup SSH connection with script:
 
-### Copy-paste script (local)
+#### Copy-paste script (local)
 Now, add your public key to SDCC STAR nodes `authorized_keys` using this script:
 
 ```mermaid
@@ -93,6 +117,7 @@ flowchart LR
 ```
 
 ```bash
+(
 YOUR_KEY="${HOME}/.ssh/id_rsa_sdcc"  # replace with your key path if different
 LOCAL_USER="$(whoami)"
 
@@ -143,15 +168,17 @@ Host star
     IdentityFile ${YOUR_KEY}
     ForwardAgent yes
     RequestTTY yes
+EOF
 
 # Load your key into the SSH agent (local)
 if [ -n "${SSH_AUTH_SOCK:-}" ]; then
   ssh-add -L 2>/dev/null || true
   ssh-add ${YOUR_KEY}
 fi
+)
 ```
 
-### Test: passwordless login
+#### Test: passwordless login
 
 ```bash
 ssh star
@@ -159,8 +186,10 @@ ssh star
 ssh starsub05
 ```
 
-## 2) VS Code: Remote-SSH
-[VS Code](https://code.visualstudio.com/download) is an IDE (integrated development environment) that is recommended to be used. However it is not required for work  - you could install terminal-based editor on SDCC or use `vim`/`emacs`, or use you preferred IDE that has SSH capability (e.g. [JetBrains Gateway](https://www.jetbrains.com/remote-development/gateway/))
+If it still asks for a password, check `~/.ssh/config`: the `Host star` block should be there exactly once.
+
+### 2) VS Code: Remote-SSH
+[VS Code](https://code.visualstudio.com/download) is an IDE (integrated development environment) that is recommended to be used. However it is not required for work  - you could install terminal-based editor on SDCC or use `vim`/`emacs`, or use your preferred IDE that has SSH capability (e.g. [JetBrains Gateway](https://www.jetbrains.com/remote-development/gateway/))
 ![Screenshot 2026-01-20 100729](https://github.com/user-attachments/assets/d982e274-9f33-40d7-b308-b8fa6dfd01c0)
 
 1. Install VS Code extension [**Remote - SSH**](vscode:extension/ms-vscode-remote.remote-ssh) and some [other useful extensions](https://star-juniors.github.io/software/vscode.html) like [ROOT File viewer](vscode:extension/albertopdrf.root-file-viewer)
@@ -171,7 +200,7 @@ Persistence note: the node state is not persistent; use [`tmux`](https://www.red
 
 *Remark*: for WSL2 it is necessary to [change Windows SSH config to work with VS Code](https://zitseng.com/archives/23322)
 
-## 3) Mount SDCC
+### 3) Mount SDCC
 
 <img width="2190" height="596" alt="mounting" src="https://github.com/user-attachments/assets/5642884a-724b-4ff7-a6aa-1fca30b1828a" />
 
@@ -180,18 +209,20 @@ If you need to download files from SDCC (like ROOT Trees) I recommend [mounting]
 ```bash
 sudo apt install sshfs #linux
 # brew install sshfs # for MacOS use Homebrew
-mkdir ~/starmount
+mkdir -p ~/starmount
 SDCC_USERNAME=$(whoami) # replace with your SDCC username if different from local
 echo "alias starmount='sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3  ${SDCC_USERNAME}@sftp.sdcc.bnl.gov:/gpfs01/star/pwg/${SDCC_USERNAME} ~/starmount'" >> ~/.bashrc
 source ~/.bashrc
 starmount
 ```
 
-## 4) Running STAR software locally (optional)
+Afterwards `~/starmount` behaves like a normal folder. Unmount with `fusermount -u ~/starmount`.
+
+### 4) Running STAR software locally (optional)
 In case you want to enter and run STAR container on your own laptop:
 
 - You need to install either [Docker engine](https://docs.docker.com/get-started/get-docker/) or [Apptainer (singularity)](https://apptainer.org/docs/admin/main/installation.html).
-For Linux simplier Apptainer (singularity) installation:
+For Linux simpler Apptainer (singularity) installation:
 
 ```bash
 sudo apt update
@@ -200,7 +231,7 @@ sudo add-apt-repository -y ppa:apptainer/ppa
 sudo apt update
 sudo apt install -y apptainer
 ```
-### Important! 
+#### Important! 
 Do not forget to comment in your `~/.bashrc` sourcing your local Root installation (`source /path/thisroot.sh`), otherwise there will be a conflict of 2 ROOT versions: one - from your local installation, another - from STAR container on startup.
 
  - And then run commands:
@@ -220,7 +251,7 @@ chmod +x ~/.local/bin/star-shell
 grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bashrc
 export PATH="$HOME/.local/bin:$PATH"
 ```
-### MacOS
+#### MacOS
 
 Install **Docker Desktop** 
 ```bash
@@ -263,7 +294,7 @@ grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.zshrc || echo 'export PATH="
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-Now can do:
+Now you can do:
 
 ```bash
 star-shell
