@@ -23,7 +23,8 @@ nav_order: 5
   - [PWGC Preview Requirements](#pwgc-preview-requirements)
 - [STAR Publication and Presentation Policies](#star-publication-and-presentation-policies)
   - [Responsibilities for GPC members](#responsibilities-for-gpc-members)
-- [Guidelines for preparing paper codes to be committed to CVS](#guidelines-for-preparing-paper-codes-to-be-committed-to-cvs)
+- [Paper code repository (Gitea)](#paper-code-repository-gitea)
+- [Guidelines for preparing paper codes to be committed to Gitea](#guidelines-for-preparing-paper-codes-to-be-committed-to-gitea)
 
 ### Preliminary and Presentation Resources
 
@@ -101,7 +102,7 @@ flowchart TD
 1. Start your analysis!
 2. Discuss the analysis with your supervisor/advisor.
 3. Ask for advice from more experienced colleagues.
-4. Check existing STAR paper codes -- available on CVS (with the same number as the corresponding note).
+4. Check existing STAR paper codes -- available in the [STAR papers repository on Gitea](https://git.racf.bnl.gov/gitea/STAR/papers) (with the same number as the corresponding note).
 5. Present frequently at PWG meetings!
 6. Present at STAR Collaboration Meetings
 7. Request official STAR simulations (embedding), if needed. (all requests are directed to PWG conveners)
@@ -190,7 +191,7 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 2. Once your results are ready for publication, request **PWGC preview**.
    <https://drupal.star.bnl.gov/STAR/pwg/common/policies/pwgc-preview-requirements>
 3. After the PWGC preview continue PWG review: address PWGC comments, **prepare Analysis Note and paper draft.** Send them to PWG for comments and conveners approval.
-4. Prepare analysis computing code for CVS submission. Guidelines: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Guidelines-paper-code-preparations>
+4. Prepare analysis computing code for submission to the [papers repository](#paper-code-repository-gitea). Guidelines: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Guidelines-paper-code-preparations>
 5. Request God-Parent Committee (GPC) formation.
    <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Responsibilities-GPC-members>
 
@@ -251,7 +252,40 @@ For the definition and scope of the God-Parent Committee, see STAR publication p
 - Be able to reproduce the paper figures
 - A tip: one can run `cppcheck` on RCF to find potential mistakes. The syntax is `cppcheck --enable=all test.C` or `cppcheck --enable=all StRoot/StMyAnalysis`, where the former checks only the supplied macro while the latter checks all the codes in the directory
 
-## **Guidelines for preparing paper codes to be committed to CVS**
+## **Paper code repository (Gitea)**
+
+STAR paper codes now live in a single Gitea repository at BNL, not in CVS:
+
+<https://git.racf.bnl.gov/gitea/STAR/papers>
+
+### First-time access
+
+Gitea uses your **SDCC** identity. Two things must line up:
+
+1. Log in to Gitea with your exact SDCC username and Kerberos password (not a STAR web password).
+2. Upload your SDCC **public** SSH key at <https://git.racf.bnl.gov/gitea/user/settings/keys>.
+
+If cloning fails with a message like `User: <id>:<name> with Key: ... is not authorized to read
+STAR/papers`, it is almost always one of these two: your Gitea login differs from your STAR username,
+or your SSH key has not propagated yet. Being able to browse the repo in your browser does **not** mean
+your key is set up.
+
+### Cloning just one paper
+
+All papers share one large repository, so clone it sparsely rather than in full. For `psn0786`:
+
+```bash
+git clone --filter=blob:none --no-checkout https://git.racf.bnl.gov/gitea/STAR/papers.git
+cd papers
+git sparse-checkout set psn0786
+git checkout
+cd psn0786
+```
+
+Reviewers and the PAC may also have a (partial) local copy of the papers area on disk - ask the PAC
+where the current one is.
+
+## **Guidelines for preparing paper codes to be committed to Gitea**
 
 - General guideline: people should be able to reproduce paper figures using provided instructions, codes and histograms
 
@@ -262,14 +296,14 @@ For the definition and scope of the God-Parent Committee, see STAR publication p
 - Small rootfiles containing necessary histograms, including those from running the full statistics, for reproducing paper figures
 - Instructions on how to run the code such that Code QA can reproduce the paper figures
 - Final results based on a small amount (1-2) of input PicoDst/MuDst and/or embedding files. These results will naturally have large error bars, but code QA should be able to reproduce them exactly.
-- Input PicoDst/MuDst and/or embedding files used to generate the results above should be restored and saved on RCF, but not needed to be committed to CVS
+- Input PicoDst/MuDst and/or embedding files used to generate the results above should be restored and saved on RCF, but not needed to be committed to the repository
 
 ### What should not be included
 
 - Secondary files, such as library files (.o, .so), figures, etc, that can be produced from source code
 - Log files
 - Empty directories
-- Remove all the directories named "CVS" (check the subdirectories as well). Otherwise, one might get into trouble during committing.
+- Remove version-control metadata directories - `CVS/` in old code, and any nested `.git/` (check the subdirectories as well). Otherwise, one might get into trouble during committing.
 - Standard makers that can be obtained from the STAR official library. Instructions should be given on how to retrieve the correct version of these makers. If some files are modified within a standard marker, only the modified files should be committed
 - For common codes, such as StRefMultCorr, that are used multiple times in different parts of the analysis, they should be committed only once.
 - Rootfiles of raw data, embedding data, analysis trees, etc.

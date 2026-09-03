@@ -68,8 +68,9 @@ STAR Papers are documented with analysis notes. Find them here:
 
 - STAR analysis notes:  
   <https://drupal.star.bnl.gov/STAR/starnotes>
-- Published analyses:  
-  <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offline/paper/>
+- Published analyses (paper codes) - now in Gitea:  
+  <https://git.racf.bnl.gov/gitea/STAR/papers>  
+  (legacy CVS viewer: <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offline/paper/>)
 
 Additional resources:
 

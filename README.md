@@ -164,7 +164,9 @@ Deep dive into technical papers on STAR detectors:
 
 - [StRoot doxygen documentation](https://www.star.bnl.gov/webdata/dox/html/files.html) - source code for all STAR classes and Makers
 
-- CVS in STAR
+- STAR paper codes are now in [Gitea](https://git.racf.bnl.gov/gitea/STAR/papers) (one repo for all papers - use a sparse checkout, see the [publication process](/docs/publication#paper-code-repository-gitea))
+
+- CVS in STAR (legacy)
  [https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs](https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/cvs)
 web $CVSROOT <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offline/paper/>  
  
