@@ -110,7 +110,7 @@ Embedding requests are typically:
 1. discussed and approved in the **PWG**,
 2. submitted by the **PWG convener** via the STAR embedding request page.  
 
-Request page (form): [https://drupal.star.bnl.gov/STAR/comp/embedding/submit](https://drupal.star.bnl.gov/STAR/comp/embedding/submit) 
+Request page (form): [https://drupal.star.bnl.gov/STAR/comp/embedding/submit-new-embedding-request](https://drupal.star.bnl.gov/STAR/comp/embedding/submit-new-embedding-request)
 
 ### What information is required?
 
