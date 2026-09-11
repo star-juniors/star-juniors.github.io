@@ -905,65 +905,87 @@
         '<div class="smart-search-rate">Helpful?' +
         '<button type="button" class="smart-search-thumb" data-rate="5" aria-label="Yes">👍</button>' +
         '<button type="button" class="smart-search-thumb" data-rate="1" aria-label="No">👎</button>' +
-        '<span class="smart-search-thanks" hidden>Thanks — logged.</span></div>';
+        '<span class="smart-search-thanks" hidden></span></div>';
       row.innerHTML = html;
+      const thanks = row.querySelector(".smart-search-thanks");
+      function setStatus(ok) {
+        thanks.textContent = ok ? "Thanks — logged." : "Could not send feedback.";
+        thanks.hidden = false;
+      }
       row.querySelectorAll(".smart-search-thumb").forEach(function (btn) {
         btn.addEventListener("click", function () {
           const rating = Number(btn.dataset.rate);
           row.querySelectorAll(".smart-search-thumb").forEach(function (b) { b.disabled = true; });
+          // The rating leaves on the click so it can never be lost; a
+          // thumbs-down also opens an optional report box whose text is
+          // attached to the same feedback row afterwards.
+          const sent = sendFeedback(rating, data);
           if (rating <= 2) {
-            showReportBox(row, data, rating);
+            showReportBox(row, sent, setStatus);
           } else {
-            sendFeedback(rating, data, null);
-            row.querySelector(".smart-search-thanks").hidden = false;
+            sent.then(function (id) { setStatus(Boolean(id)); });
           }
         });
       });
       answer.appendChild(row);
     }
 
-    // "Report this answer": a thumbs-down opens an optional comment box, and
-    // the rating is held until Report/Skip so one feedback row carries both.
-    // If the user leaves the page first, pagehide beacons the bare rating.
-    function showReportBox(row, data, rating) {
+    function showReportBox(row, sent, setStatus) {
       const box = document.createElement("div");
       box.className = "smart-search-report";
       box.innerHTML =
         '<textarea class="smart-search-report-text" maxlength="4000" rows="2" ' +
-        'placeholder="What was wrong? Outdated info, wrong link, missing answer\u2026 (optional)"></textarea>' +
+        'placeholder="What was wrong? Outdated info, wrong link, missing answer… (optional)"></textarea>' +
         '<div class="smart-search-report-actions">' +
         '<button type="button" class="smart-search-report-send">Report</button>' +
         '<button type="button" class="smart-search-report-skip">Skip</button></div>';
+      const text = box.querySelector(".smart-search-report-text");
       let pending = true;
       function finish(comment) {
         if (!pending) return;
         pending = false;
-        sendFeedback(rating, data, comment);
         box.remove();
-        const thanks = row.querySelector(".smart-search-thanks");
-        if (thanks) thanks.hidden = false;
+        sent.then(function (id) {
+          if (!id) return setStatus(false);
+          if (!comment) return setStatus(true);
+          return sendComment(id, comment).then(setStatus);
+        });
       }
       box.querySelector(".smart-search-report-send").addEventListener("click", function () {
-        finish(box.querySelector(".smart-search-report-text").value.trim() || null);
+        finish(text.value.trim() || null);
       });
       box.querySelector(".smart-search-report-skip").addEventListener("click", function () {
         finish(null);
       });
-      window.addEventListener("pagehide", function () { finish(null); }, { once: true });
+      // Leaving the page still delivers whatever was typed.
+      window.addEventListener("pagehide", function () { finish(text.value.trim() || null); }, { once: true });
       row.appendChild(box);
-      box.querySelector(".smart-search-report-text").focus();
+      text.focus();
     }
 
-    function sendFeedback(rating, data, comment) {
-      try {
-        const payload = JSON.stringify({
-          query_log_id: (data && data.query_log_id) || lastQueryLogId,
-          rating: rating,
-          comment: comment || undefined,
-          metadata: { type: comment ? "report" : "thumb" },
-        });
-        navigator.sendBeacon(apiBase + "/feedback", new Blob([payload], { type: "application/json" }));
-      } catch (_err) { /* telemetry only */ }
+    // Feedback travels over keepalive fetch: it survives navigation like a
+    // beacon but, unlike sendBeacon, reports when a browser extension or the
+    // edge drops it, so the widget can say so instead of claiming success.
+    function postJson(method, path, body) {
+      return fetch(apiBase + path, {
+        method: method,
+        keepalive: true,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; });
+    }
+
+    function sendFeedback(rating, data) {
+      return postJson("POST", "/feedback", {
+        query_log_id: (data && data.query_log_id) || lastQueryLogId,
+        rating: rating,
+      }).then(function (res) { return res && res.id ? res.id : null; });
+    }
+
+    function sendComment(id, comment) {
+      return postJson("PATCH", "/feedback/" + encodeURIComponent(id), { comment: comment }).then(Boolean);
     }
 
     function renderCitation(c, index) {
