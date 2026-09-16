@@ -1,6 +1,12 @@
 # Transitioning to Gitea
 
-Due to the size of the STAR software (commits plus code) a standard migration is not possible so STAR code will be pushed directly to a new Gitea repository
+The transition of STAR repositories from GitHub to the Gitea service hosted by the SCDF at BNL has been discussed in S&C meetings since April. Bringing STAR repositories together in one place will provide a consistent and seamless environment for our software developers. It will make collaboration among STAR members easier, keep related STAR software together, and provide support from people familiar with STAR software, computing resources, and workflows.
+
+At present, STAR repositories are fragmented between GitHub and Gitea. Gitea currently does not hold our offline core software. Consolidating them will also allow access to be managed consistently through STAR and BNL identities. All STAR users can access Gitea using their BNL credentials, while users who leave the collaboration will no longer retain the ability to modify STAR repositories (even those that are public). This is difficult to ensure on GitHub, where account identities and their relationship to current STAR membership are not always clear.
+
+The transition is also important as RHIC enters its preservation era. With data taking ending and long term preservation becoming a central responsibility, STAR software and its development history must remain under reliable institutional stewardship. Placing our version control repositories at BNL is therefore both advisable and appropriate, since BNL will ultimately be responsible for preserving and maintaining these resources.
+
+Due to the size of the STAR software (commits plus code) the built-in Github to Gitea migration is not possible so STAR code will be pushed directly to a new Gitea repository
 
 ## What is Gitea
 
@@ -16,14 +22,15 @@ This means that you will __only__ have ssh access to the Gitea servers when logg
 
 1. Go to https://git.racf.bnl.gov/gitea
    - You will be redirected to SDCC login page so use your SDCC credentials to login
-2. After logging in you will see a smiliar interface to Github
+2. After logging in you will see a similar interface to Github
 3. Ensure you are part of the STAR Collaboration
-   - If not, please contact the STAR software group to be added
+   - If not check that you are in the STAR phonebook and that your SDCC account is linked to the phonebook
 4. Check your settings for ssh keys
    - You should have an unremovable key by default created
 	 - It is your usual SDCC ssh public key
 	 - If you do not see a ssh key associated with your account make sure to add it on this setting page
    - This means you __must__ forward your ssh key when establishing a ssh connection to the SDCC nodes
+      - This is easier if you have an ssh-agent running
 5. That's it you can start working as you usually do with git
 
 
@@ -39,9 +46,9 @@ There is not much difference here and the only thing that changes is the host se
 
 (After forking from new STAR repository)
 1. Go to https://git.racf.bnl.gov/gitea
-2. Click on STAR software repository
+2. Click on STAR software repository. Or click here [https://git.racf.bnl.gov/gitea/STAR/](https://git.racf.bnl.gov/gitea/STAR/)
 3. Copy the SSH URL for the STAR software repository
-4. Navigate to your local copy of the STAR repository
+4. Navigate to your local copy of the STAR repository `cd /my/path/to/star-sw`
 5. Switch to the main branch `git checkout main`
    - You can safely add and commit any new code before switching to the main branch
 6. Type `git remote -v` to see a list of the remote URLs linked to your repository
