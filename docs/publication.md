@@ -10,21 +10,32 @@ nav_order: 5
 
 ## Table of Contents
 
-- [Analysis within PWG](#analysis-within-pwg)
-- [Abstract](#abstract)
-  - [Requirements for Abstract Submission](#requirements-for-abstract-submission)
-  - [Abstract Submission Process](#abstract-submission-process)
-- [Preliminary](#preliminary-results)
-  - [Requirements for Preliminary Results](#requirements-for-preliminary-results)
-  - [Preliminary Request](#preliminary-request)
-  - [Preliminary Plots](#preliminary-plots)
-- [Conference Presentation](#conference-presentation)
-- [Publication Process (in short)](#publication-process-in-short)
-  - [PWGC Preview Requirements](#pwgc-preview-requirements)
-- [STAR Publication and Presentation Policies](#star-publication-and-presentation-policies)
-  - [Responsibilities for GPC members](#responsibilities-for-gpc-members)
-- [Paper code repository (Gitea)](#paper-code-repository-gitea)
-- [Guidelines for preparing paper codes to be committed to Gitea](#guidelines-for-preparing-paper-codes-to-be-committed-to-gitea)
+- [How to get your results approved and published in STAR](#how-to-get-your-results-approved-and-published-in-star)
+  - [Table of Contents](#table-of-contents)
+    - [Preliminary and Presentation Resources](#preliminary-and-presentation-resources)
+    - [Publication Resources](#publication-resources)
+  - [Analysis within PWG](#analysis-within-pwg)
+    - [Physics Working Groups](#physics-working-groups)
+    - [Your analysis -- prepare](#your-analysis----prepare)
+    - [Your analysis -- start](#your-analysis----start)
+  - [Abstract](#abstract)
+    - [Requirements for Abstract Submission](#requirements-for-abstract-submission)
+    - [Abstract Submission Process](#abstract-submission-process)
+  - [Preliminary results](#preliminary-results)
+    - [Requirements for Preliminary Results](#requirements-for-preliminary-results)
+    - [Preliminary Request](#preliminary-request)
+    - [Preliminary Plots](#preliminary-plots)
+  - [Conference Presentation](#conference-presentation)
+  - [Publication Process (in short)](#publication-process-in-short)
+    - [PWGC Preview Requirements](#pwgc-preview-requirements)
+  - [STAR Publication and Presentation Policies](#star-publication-and-presentation-policies)
+    - [Responsibilities for GPC members](#responsibilities-for-gpc-members)
+  - [**Paper code repository (Gitea)**](#paper-code-repository-gitea)
+    - [First-time access](#first-time-access)
+    - [Cloning just one paper](#cloning-just-one-paper)
+  - [**Guidelines for preparing paper codes to be committed to Gitea**](#guidelines-for-preparing-paper-codes-to-be-committed-to-gitea)
+    - [What should be included](#what-should-be-included)
+    - [What should not be included](#what-should-not-be-included)
 
 ### Preliminary and Presentation Resources
 
@@ -36,7 +47,7 @@ nav_order: 5
 ### Publication Resources
 
 - PWGC preview requirements: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/pwgc-preview-requirements>
-- Paper publication procedure, step by step: [here](paper_publication) (official version: <https://drupal.star.bnl.gov/STAR/pwg/common/STAR-Paper-Publication-Procedure>)
+- Paper publication procedure: [step by step](paper_publication), <https://drupal.star.bnl.gov/STAR/pwg/common/STAR-Paper-Publication-Procedure>
 - Analysis computing code guidelines: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Guidelines-paper-code-preparations>
 - Analysis Note requirements: <https://www.star.bnl.gov/protected/common/GPCs/TechnicalNote.html>
 - God-Parent Committee (GPC) duty: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Responsibilities-GPC-members>
@@ -47,39 +58,26 @@ nav_order: 5
 
 ### Physics Working Groups
 
+<div class="mermaid-center" markdown="1">
+
 ```mermaid
 flowchart TD
-    PAC[Physics Analysis Coordinators
-    PAC
-    Sooraj Radhakrishnan
-    Barbara Trzeciak deputy] --> PWG1
+    PAC["Physics Analysis Coordinators (PAC)<br>Yue Hang Leung<br>Subhash Singha"] --> PWG1
     PAC --> PWG2
     PAC --> PWG3
     PAC --> PWG4
     PAC --> PWG5
-    
-    PWG1[Correlations and
-    Fluctuations] --- CONV1[Nu Xu
-    Xin Dong]
-    PWG2[Flow, Chirality
-    and Vorticity] --- CONV2[Richard Seto
-    Subhash Singha
-    Prithwish Tribedy]
-    PWG3[Hard Probes] --- CONV3[Jana Bielcikova
-    Isaac Mooney
-    Qian Yang]
-    PWG4[Light Flavor
-    Spectra and UPC] --- CONV4[Yue Hang Leung
-    Guannan Xie
-    Chun Yuen Tsang]
-    PWG5[Cold QCD
-     Spin] --- CONV5[Jae D. Nam
-    Ting Lin
-    Zilong Chang]
-    
-    NOTE[Current PAC and PWG conveners
-    as of 27.10.2025]
+
+    PWG1["Correlations and<br>Fluctuations"] --- CONV1["Nu Xu<br>Xin Dong"]
+    PWG2["Flow, Chirality<br>and Vorticity"] --- CONV2["Richard Seto<br>Diyu Shen<br>Niseem Magdy Abdelrahman"]
+    PWG3["Hard Probes"] --- CONV3["Jana Bielcikova<br>Gabe Dale-Gau<br>Qian Yang"]
+    PWG4["Light Flavor Spectra<br>and UPC"] --- CONV4["Guannan Xie<br>Ashik Ikbal<br>Yingjie Zhou"]
+    PWG5["Spin"] --- CONV5["Ting Lin<br>Zilong Chang"]
 ```
+
+</div>
+
+Current PAC and PWG conveners as of 23.09.2026:
 
 <https://drupal.star.bnl.gov/STAR/pwg/common/pwg-conveners>
 
