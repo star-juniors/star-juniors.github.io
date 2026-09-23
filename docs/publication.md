@@ -36,7 +36,7 @@ nav_order: 5
 ### Publication Resources
 
 - PWGC preview requirements: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/pwgc-preview-requirements>
-- Paper publication procedure: <https://drupal.star.bnl.gov/STAR/pwg/common/STAR-Paper-Publication-Procedure>
+- Paper publication procedure, step by step: [here](paper_publication) (official version: <https://drupal.star.bnl.gov/STAR/pwg/common/STAR-Paper-Publication-Procedure>)
 - Analysis computing code guidelines: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Guidelines-paper-code-preparations>
 - Analysis Note requirements: <https://www.star.bnl.gov/protected/common/GPCs/TechnicalNote.html>
 - God-Parent Committee (GPC) duty: <https://drupal.star.bnl.gov/STAR/pwg/common/policies/Responsibilities-GPC-members>
@@ -186,6 +186,8 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 8. Again, submit it to drupal and go via the approval procedure.
 
 ## Publication Process (in short)
+
+The full 10-step procedure, from paper proposal to publication, with diagrams: **[STAR Paper Publication Procedure](paper_publication)**.
 
 1. Finalize all the open and preliminary aspects of your analysis. Discuss regularly in PWG.
 2. Once your results are ready for publication, request **PWGC preview**.
