@@ -1,3 +1,8 @@
+---
+title: Transitioning to Gitea
+parent: Software
+---
+
 # Transitioning to Gitea
 
 The transition of STAR repositories from GitHub to the Gitea service hosted by the SCDF at BNL has been discussed in S&C meetings since April. Bringing STAR repositories together in one place will provide a consistent and seamless environment for our software developers. It will make collaboration among STAR members easier, keep related STAR software together, and provide support from people familiar with STAR software, computing resources, and workflows.
@@ -20,7 +25,7 @@ This means that you will __only__ have ssh access to the Gitea servers when logg
 
 ## Using the new Gitea site
 
-1. Go to https://git.racf.bnl.gov/gitea
+1. Go to [https://git.racf.bnl.gov/gitea](https://git.racf.bnl.gov/gitea)
    - You will be redirected to SDCC login page so use your SDCC credentials to login
 2. After logging in you will see a similar interface to Github
 3. Ensure you are part of the STAR Collaboration
@@ -45,7 +50,7 @@ Here is the picture of the workflow with Gitea
 There is not much difference here and the only thing that changes is the host server as explained above. This means we need only to add the new remote repository URLs of our "Local copy of Remote" as seen in the diagram above.
 
 ### Syncing your local copy with the new STAR Gitea main branch
-1. Go to https://git.racf.bnl.gov/gitea
+1. Go to [https://git.racf.bnl.gov/gitea](https://git.racf.bnl.gov/gitea)
 2. Click on STAR software repository. Or click here [https://git.racf.bnl.gov/gitea/STAR/](https://git.racf.bnl.gov/gitea/STAR/)
 3. Copy the SSH URL for the STAR software repository
 4. Navigate to your local copy of the STAR repository `cd /my/path/to/star-sw`
