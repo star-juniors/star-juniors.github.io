@@ -8,11 +8,10 @@ permalink: /
 
 # STAR Main Web Sites
 
-<!--
 <span class="fs-8">
-[Timetable for current(March 2026) collaboration meeting](https://drupal.star.bnl.gov/STAR/conference/timetable/talk/73324){: .btn .btn-green }
+[Timetable for current (October 2026) collaboration meeting](https://indico.bnl.gov/event/33970/timetable/#20261005.detailed){: .btn .btn-green }
 </span>
--->
+
 
 {: .new-title }
 > New Material
