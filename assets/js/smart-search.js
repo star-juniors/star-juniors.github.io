@@ -27,9 +27,9 @@
 (function () {
   "use strict";
 
-  const MARKED_URL = "https://esm.sh/marked@14";
-  const DOMPURIFY_URL = "https://esm.sh/dompurify@3";
-  const HLJS_URL = "https://esm.sh/highlight.js@11";
+  const MARKED_URL = "https://esm.sh/marked@14.1.4";
+  const DOMPURIFY_URL = "https://esm.sh/dompurify@3.4.17";
+  const HLJS_URL = "https://esm.sh/highlight.js@11.12.0";
   const KATEX_AUTO_RENDER_URL = "https://esm.sh/katex@0.16.11/contrib/auto-render";
   const KATEX_CSS_URL = "https://esm.sh/katex@0.16.11/dist/katex.min.css";
   // How long the user has to stop typing before we speculatively fire a
@@ -42,6 +42,140 @@
   const SPECULATE_MIN_WORDS = 3;
   const SPECULATIVE_CACHE_MAX = 10;
 
+  // LLM answers are untrusted (a crawled page can steer the model into
+  // emitting raw HTML), so the sanitizer drops anything that can fetch a
+  // resource or restyle the page, and only keeps links to hosts we trust:
+  // the hosts of the current answer's citations plus this static allowlist.
+  const STATIC_LINK_HOSTS = [
+    "github.com",
+    "eic.github.io",
+    "indico.bnl.gov",
+    "zenodo.org",
+    "edm4hep.web.cern.ch",
+    "wiki.bnl.gov",
+    "drupal.star.bnl.gov",
+    "www.star.bnl.gov",
+    "inspirehep.net",
+    "arxiv.org",
+    "doi.org",
+  ];
+  const SANITIZE_CONFIG = {
+    ADD_ATTR: ["target", "rel"],
+    FORBID_TAGS: ["img", "style", "form", "input", "button", "iframe", "object", "embed", "svg", "math", "video", "audio"],
+    FORBID_ATTR: ["style", "srcset"],
+    ALLOWED_URI_REGEXP: /^(?:https?:|#)/i,
+  };
+  // Hostnames of the citations of the answer currently being rendered; read
+  // by the DOMPurify href hook, refreshed via setCitationHosts per render.
+  let citationLinkHosts = new Set();
+
+  function isHttpUrl(url) {
+    return /^https?:\/\//i.test(String(url || "").trim());
+  }
+
+  function hostOf(url) {
+    try {
+      return new URL(String(url).trim()).hostname.toLowerCase();
+    } catch (_err) {
+      return "";
+    }
+  }
+
+  function setCitationHosts(citations) {
+    const hosts = new Set();
+    (Array.isArray(citations) ? citations : []).forEach(function (c) {
+      if (c && isHttpUrl(c.url)) {
+        const h = hostOf(c.url);
+        if (h) hosts.add(h);
+      }
+    });
+    citationLinkHosts = hosts;
+  }
+
+  function isAllowedLinkHost(host) {
+    return !!host && (citationLinkHosts.has(host) || STATIC_LINK_HOSTS.indexOf(host) !== -1);
+  }
+
+  function installSanitizerHooks(DOMPurify) {
+    if (!DOMPurify || typeof DOMPurify.addHook !== "function") return;
+    DOMPurify.addHook("uponSanitizeAttribute", function (_node, data) {
+      if (data.attrName !== "href") return;
+      const value = String(data.attrValue || "").trim();
+      if (value.charAt(0) === "#") return;
+      if (!isHttpUrl(value) || !isAllowedLinkHost(hostOf(value))) {
+        data.keepAttr = false;
+      }
+    });
+    DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+      if (node.tagName === "A" && isHttpUrl(node.getAttribute("href"))) {
+        node.setAttribute("target", "_blank");
+        node.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  }
+
+  function sanitizeAnswer(libs, html) {
+    return libs.DOMPurify.sanitize(html, SANITIZE_CONFIG);
+  }
+
+  // Post-sanitize DOM pass over the answer HTML: restores the code-block copy
+  // buttons (our own markup, removed by the sanitizer's button ban) and, when
+  // citations are given, turns [N] markers in text nodes into citation links
+  // built with createElement — never by string concatenation, so a marker
+  // can't rewrite an attribute. <template> content is inert: nothing loads.
+  function postProcessAnswer(cleanHtml, citations) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = cleanHtml;
+    const root = tpl.content;
+    root.querySelectorAll("pre.smart-code > .smart-code-header").forEach(function (header) {
+      if (header.querySelector(".smart-code-copy")) return;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "smart-code-copy";
+      btn.setAttribute("data-copy", "");
+      btn.setAttribute("aria-label", "Copy code");
+      btn.textContent = "Copy";
+      header.appendChild(btn);
+    });
+    if (Array.isArray(citations) && citations.length) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (/\[\d+\]/.test(n.nodeValue)) textNodes.push(n);
+      }
+      textNodes.forEach(function (textNode) {
+        const text = textNode.nodeValue;
+        const re = /\[(\d+)\]/g;
+        const frag = document.createDocumentFragment();
+        let last = 0;
+        let changed = false;
+        let m;
+        while ((m = re.exec(text)) !== null) {
+          const i = Number(m[1]);
+          if (!Number.isInteger(i) || i < 1 || i > citations.length) continue;
+          const citation = citations[i - 1] || {};
+          if (!isHttpUrl(citation.url)) continue;
+          frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          const sup = document.createElement("sup");
+          const a = document.createElement("a");
+          a.setAttribute("href", String(citation.url).trim());
+          a.setAttribute("target", "_blank");
+          a.setAttribute("rel", "noopener");
+          a.setAttribute("title", String(citation.title || ""));
+          a.textContent = "[" + i + "]";
+          sup.appendChild(a);
+          frag.appendChild(sup);
+          last = m.index + m[0].length;
+          changed = true;
+        }
+        if (!changed) return;
+        frag.appendChild(document.createTextNode(text.slice(last)));
+        textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+    return tpl.innerHTML;
+  }
+
   let markedPromise = null;
   function loadMarkdownLibs() {
     if (!markedPromise) {
@@ -53,6 +187,7 @@
         const marked = markedModule.marked || markedModule.default;
         const DOMPurify = domPurifyModule.default || domPurifyModule;
         const hljs = hljsModule.default || hljsModule;
+        installSanitizerHooks(DOMPurify);
         if (marked && typeof marked.setOptions === "function") {
           marked.setOptions({ breaks: false, gfm: true });
         }
@@ -85,7 +220,8 @@
                 return (
                   '<pre class="smart-code"><div class="smart-code-header">' +
                   '<span class="smart-code-lang">' + escapeHtml(labelText) + '</span>' +
-                  '<button type="button" class="smart-code-copy" data-copy aria-label="Copy code">Copy</button>' +
+                  // Copy button is added by postProcessAnswer after sanitizing
+                  // (the sanitizer bans <button>).
                   '</div><code class="hljs language-' + escapeHtml(langKey || "plaintext") + '">' +
                   highlighted +
                   "</code></pre>"
@@ -283,7 +419,7 @@
         if (!q || !a) continue;
         let body;
         try {
-          body = libs.DOMPurify.sanitize(libs.marked.parse(a.content, { async: false }), { ADD_ATTR: ["target", "rel"] });
+          body = postProcessAnswer(sanitizeAnswer(libs, libs.marked.parse(a.content, { async: false })), null);
         } catch (_err) {
           body = escapeHtml(a.content);
         }
@@ -508,6 +644,7 @@
     // back to the plain /query JSON endpoint.
     async function submitStream(query, ctrl) {
       const libs = await loadMarkdownLibs();
+      setCitationHosts([]);
       const response = await fetch(apiBase + "/query/stream", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -531,7 +668,7 @@
       function renderPartial() {
         const html = libs.marked.parse(answerMd, { async: false });
         answer.innerHTML = withTranscript(
-          libs.DOMPurify.sanitize(html, { ADD_ATTR: ["target", "rel"] })
+          postProcessAnswer(sanitizeAnswer(libs, html), null)
         );
         answer.hidden = false;
       }
@@ -551,6 +688,7 @@
           if (state.mode !== "full") { ctrl.abort(); return; }
           if (evMatch[1] === "citations") {
             // Provisional sources, pre-answer — visible within ~0.5 s.
+            setCitationHosts(payload.citations);
             renderResults({ citations: payload.citations }, "full", "");
             status.hidden = false;
             status.textContent = "Generating answer…";
@@ -787,18 +925,12 @@
       // formulas would otherwise be eaten as emphasis.
       const extracted = extractMath(data.answer || "");
       const html = libs.marked.parse(extracted.md, { async: false });
-      let clean = libs.DOMPurify.sanitize(html, { ADD_ATTR: ["target", "rel"] });
+      setCitationHosts(citations);
       // Citation replacement first — placeholders contain no [N] tokens, so
       // doing this before reinject avoids any [N] inside formulas being
-      // mistaken for citations.
-      clean = clean.replace(/\[(\d+)\]/g, function (match, n) {
-        const i = Number(n);
-        if (!Number.isInteger(i) || i < 1 || i > citations.length) return match;
-        const citation = citations[i - 1] || {};
-        const href = citation.url || "#smartCite" + i;
-        const title = escapeHtml(citation.title || "");
-        return '<sup><a href="' + href + '" target="_blank" rel="noopener" title="' + title + '">[' + i + "]</a></sup>";
-      });
+      // mistaken for citations. Only text nodes are rewritten; a citation
+      // without an http(s) URL stays as plain-text [N].
+      let clean = postProcessAnswer(sanitizeAnswer(libs, html), citations);
       clean = reinjectMath(clean, extracted.math);
       renderResults(data, "full", clean);
       // Render any LaTeX in the answer (e.g. $Q^2$, $$x = \\frac{p \\cdot q}{p \\cdot Q}$$).
