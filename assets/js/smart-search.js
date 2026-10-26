@@ -816,18 +816,17 @@
     // Rendering
     // ------------------------------------------------------------------
 
-    // Citation-click telemetry: feeds the backend feedback table so
-    // ranking can later learn from what users actually open.
+    // Citation-click telemetry: one row per opened citation in the backend
+    // citation_clicks table, so ranking can later learn from what users open.
     let lastQueryLogId = null;
     function beaconCitationClick(chunkId) {
       try {
         const payload = JSON.stringify({
           query_log_id: lastQueryLogId,
-          selected_citation_ids: [chunkId],
-          metadata: { type: "citation_click" },
+          chunk_id: chunkId,
         });
         navigator.sendBeacon(
-          apiBase + "/feedback",
+          apiBase + "/citations/click",
           new Blob([payload], { type: "application/json" })
         );
       } catch (_err) { /* telemetry only — never break navigation */ }
