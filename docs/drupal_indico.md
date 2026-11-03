@@ -83,7 +83,7 @@ google-chrome --user-data-dir="$HOME/.chrome-star" --proxy-pac-url=https://www4.
 **Other browsers** use the system proxy: on Windows *Settings → Network & internet → Proxy → Use setup script*, on macOS *Network → Details → Proxies → Automatic proxy configuration*, on GNOME *Network → Network Proxy → Automatic*.
 
 {: .warning }
-Do not set `localhost:1088` as a manual SOCKS proxy: that sends all your traffic through BNL.
+Do not set `localhost:1088` as a manual SOCKS proxy: all traffic then goes to BNL, and sites outside BNL stop loading.
 
 Then open <https://drupal.star.bnl.gov/STAR/>.
 
@@ -98,7 +98,7 @@ Then open <https://drupal.star.bnl.gov/STAR/>.
 
 ## 2. Talks on Indico
 
-Temporary procedure until InvenioRDM is ready. Proceedings go the same way as slides ([example](https://indico.bnl.gov/event/35279/)).
+Temporary procedure until InvenioRDM is ready. Slides for PWG meetings go to that week's event in the [PWG category](/#weekly-meetings). Proceedings go the same way as slides ([example](https://indico.bnl.gov/event/35279/)).
 
 ```mermaid
 flowchart LR
@@ -168,4 +168,4 @@ The result looks like this ([example event](https://indico.bnl.gov/event/35219/)
    ```
 
 2. Update the slides on Indico after the comments.
-3. When the conveners approve, they forward the email to STAR-talks. The PAC then reviews the talk as usual.
+3. When the conveners approve, they forward the email to STAR-talks. The PAC then reviews the talk and records the sign-off on Indico.
