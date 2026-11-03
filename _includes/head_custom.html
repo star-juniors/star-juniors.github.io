@@ -17,11 +17,12 @@
 <style>
   /* Category list styled like Indico */
   .indico-list { border: 1px solid #e0e0e0; margin: 1rem 0; }
-  .indico-list div { display: flex; align-items: center; background: #f2f2f2; border-bottom: 1px solid #e0e0e0; }
+  .indico-list div { display: grid; grid-template-columns: 1fr 8rem; background: #f2f2f2; border-bottom: 1px solid #e0e0e0; }
   .indico-list div:last-child { border-bottom: none; }
-  .indico-list div:hover { background: #e8e8e8; }
-  .indico-list div::after { content: "➜"; color: #bbb; padding-right: 1rem; }
-  .indico-list a { padding: 0.6rem 1rem; color: #2a6ebb; text-decoration: none; }
-  .indico-list a:first-child { flex: 1; }
-  .indico-list a.archive { font-size: 0.8em; color: #888; }
+  .indico-list a { padding: 0.6rem 1rem; text-decoration: none; }
+  .indico-list a:first-child { display: flex; justify-content: space-between; color: #2a6ebb; }
+  .indico-list a:first-child::after { content: "➜"; color: #bbb; }
+  .indico-list a:first-child:hover { background: #e8e8e8; }
+  .indico-list a.archive { display: flex; align-items: center; border-left: 1px solid #e0e0e0; font-size: 0.8em; color: #888; }
+  .indico-list a.archive:hover { color: #555; text-decoration: underline; }
 </style>
