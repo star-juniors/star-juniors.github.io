@@ -46,31 +46,18 @@ April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas6
 
 ## Weekly meetings
 
-```mermaid
-graph TD
-    PWG[PWG] --> HP[Hard Probes ]
-    PWG --> LFSUPC[Light Flavor
-Spectra and UPC]
-    PWG --> Spin[Cold QCD
-Spin]
-    PWG --> Correlations[Correlations 
-    and fluctuations]
-    PWG --> FCV[Flow, Chirality
-     and Vorticity]
+Regular STAR Physics Working Groups meetings on [Indico](https://indico.bnl.gov/category/690/):
 
-    click HP "https://drupal.star.bnl.gov/STAR/pwg/Hard-Probes/Weekly-HP-PWG-meeting" "Hard Probes weekly"
-    click LFSUPC "https://drupal.star.bnl.gov/STAR/pwg/light-flavor-spectra/lfs-upc-weekly-meeting" "LFSUPC weekly"
-    click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
-    click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
-    click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
-
-style PWG fill:#0d6efd,color:#ffffff;
-style HP fill:#0d6efd,color:#ffffff;
-style LFSUPC fill:#0d6efd,color:#ffffff;
-style Spin fill:#0d6efd,color:#ffffff;
-style FCV fill:#0d6efd,color:#ffffff;
-style Correlations fill:#0d6efd,color:#ffffff;
-```
+<div class="indico-list">
+  <a href="https://indico.bnl.gov/category/693/">LFSUPC - Light Flavor and Ultra-Peripheral Collisions</a>
+  <a href="https://indico.bnl.gov/category/695/">CF - Correlations and Fluctuations</a>
+  <a href="https://indico.bnl.gov/category/694/">FCV - Flow, Chirality, and Vorticity</a>
+  <a href="https://indico.bnl.gov/category/696/">HP - Hard Probes</a>
+  <a href="https://indico.bnl.gov/category/697/">Cold QCD</a>
+  <a href="https://indico.bnl.gov/category/698/">PWGC - PWG Convener Panel</a>
+  <a href="https://indico.bnl.gov/category/801/">Conferences</a>
+  <a href="https://indico.bnl.gov/category/817/">GPC</a>
+</div>
 
 ## Mailing lists
 
