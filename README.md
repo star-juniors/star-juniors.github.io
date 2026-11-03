@@ -9,12 +9,19 @@ permalink: /
 # STAR Main Web Sites
 
 <span class="fs-8">
-[Timetable for current (October 2026) collaboration meeting](https://indico.bnl.gov/event/33970/timetable/#20261005.detailed){: .btn .btn-green }
+[Drupal via SSH tunnel & talks on Indico](/drupal-indico){: .btn .btn-green }
 </span>
 
+<!--
+<span class="fs-8">
+[Timetable for current (October 2026) collaboration meeting](https://indico.bnl.gov/event/33970/timetable/#20261005.detailed){: .btn .btn-green }
+</span>
+-->
 
 {: .new-title }
 > New Material
+>
+> November 2026 - Drupal is reachable only through an SSH tunnel, and STAR talks are now uploaded to Indico: [instructions](/drupal-indico).
 >
 > June 2026 - Storage guides: [HPSS / tape](/software/hpss) and the [Data Carousel](/software/carousel) for restoring data.
 
