@@ -1,10 +1,10 @@
 ---
-title: Drupal access & Indico talks
+title: Drupal access and Indico
 nav_order: 7
 permalink: /drupal-indico
 ---
 
-# Drupal access and talks on Indico
+# Drupal access and Indico
 {: .no_toc }
 
 {: .warning }
