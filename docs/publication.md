@@ -82,7 +82,7 @@ Current PAC and PWG conveners as of 23.09.2026:
 <https://drupal.star.bnl.gov/STAR/pwg/common/pwg-conveners>
 
 - Sign up to your PWG mailing, STAR talks and other lists of interests! <https://www.star.bnl.gov/central/lists/>
-- Participate in PWG weekly meetings!
+- Participate in PWG [weekly meetings](/#weekly-meetings)!
 
 ### Your analysis -- prepare
 
@@ -92,7 +92,7 @@ Current PAC and PWG conveners as of 23.09.2026:
    - STAR papers: <https://drupal.star.bnl.gov/STAR/publications/> and <https://www.star.bnl.gov/protected/common/GPCs/gpc-committees.xml>
    - STAR analysis notes: <https://drupal.star.bnl.gov/STAR/starnotes>
    - STAR theses: <https://drupal.star.bnl.gov/STAR/theses>
-   - STAR conference presentations: <https://drupal.star.bnl.gov/STAR/presentations/>
+   - STAR conference presentations: [Indico](https://indico.bnl.gov/category/801/), [Drupal archive](https://drupal.star.bnl.gov/STAR/presentations/)
 4. Start your analysis!
 
 ### Your analysis -- start
@@ -174,14 +174,14 @@ Remember to include your name and "(for the STAR Collaboration)" in your abstrac
 1. Discuss your presentation with local group.
 2. Use high resolution plots.
 3. **Submit presentation at least 2 weeks before the conference starts!**
-   <https://drupal.star.bnl.gov/STAR/presentations>
+   Upload it to [Indico](https://indico.bnl.gov/category/801/) and email the PWG conveners: [instructions](/drupal-indico#2-talks-on-indico).
    *It stays for one week in PWG and then one week for PAC comments.*
 4. Rehearse your talk in front of local STAR group.
    *For major conferences, such as Quark Matter, there is rehearsal before the collaboration.*
 5. Address all comments.
 6. Guidance for STAR presentations: [here](guidance_presentations)
 7. **Prepare conference proceedings!**
-8. Again, submit it to drupal and go via the approval procedure.
+8. Upload the proceedings to Indico the same way as the talk and go via the approval procedure: [instructions](/drupal-indico#2-talks-on-indico).
 
 ## Publication Process (in short)
 

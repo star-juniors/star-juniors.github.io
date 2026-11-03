@@ -8,7 +8,7 @@ permalink: /drupal-indico
 {: .no_toc }
 
 {: .warning }
-Drupal is reachable only through an SSH tunnel to SDCC. Until STAR moves to InvenioRDM, talks for review go to [Indico](#2-talks-on-indico).
+Drupal is reachable only through an SSH tunnel to SDCC. Until STAR moves to InvenioRDM, talks and proceedings for review go to [Indico](#2-talks-on-indico).
 
 1. TOC
 {:toc}
@@ -98,7 +98,7 @@ Then open <https://drupal.star.bnl.gov/STAR/>.
 
 ## 2. Talks on Indico
 
-Temporary procedure until InvenioRDM is ready.
+Temporary procedure until InvenioRDM is ready. Proceedings go the same way as slides ([example](https://indico.bnl.gov/event/35279/)).
 
 ```mermaid
 flowchart LR

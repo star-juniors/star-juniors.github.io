@@ -847,7 +847,7 @@ A talk (usually slides) given at:
 * Collaboration Meeting,
 * conference.
 
-STAR internal presentations are usually uploaded to Drupal as “Blog entry” or STAR Contribution entries.
+STAR presentations are uploaded to [Indico](https://indico.bnl.gov/category/204/) ([instructions](/drupal-indico#2-talks-on-indico)). Older ones are on Drupal as “Blog entry” or STAR Contribution entries.
 
 *See also: [Guidances for STAR presentations](/docs/guidance_presentations).*
 
@@ -861,7 +861,7 @@ Short-lived particles decay away from the PV, generating secondary vertices.
 
 ### **Proceedings**
 
-Written summary of a conference contribution, usually a short paper associated with a talk or poster. Often required by conference organizers; must be approved within STAR similarly to other outputs.
+Written summary of a conference contribution, usually a short paper associated with a talk or poster. Often required by conference organizers; must be approved within STAR similarly to other outputs. Uploaded to Indico like talks ([instructions](/drupal-indico#2-talks-on-indico)).
 
 *See also: [Guidances for STAR presentations](/docs/guidance_presentations).*
 
@@ -896,11 +896,11 @@ Group of collaborators focusing on a specific physics area (e.g. jets, heavy fla
 
 * regular weekly meetings,
 * conveners,
-* mailing list, Drupal pages, Mattermost channel.
+* mailing list, Indico category, Mattermost channel.
 
 Your analysis belongs to one (or a few) PWGs.
 
-*See also: [PWG pages on Drupal](https://drupal.star.bnl.gov/STAR/pwg), [weekly meetings](/#weekly-meetings).*
+*See also: [weekly meetings](/#weekly-meetings), [PWG pages on Drupal](https://drupal.star.bnl.gov/STAR/pwg) (archive).*
 
 ### **PWGC – PWG Conveners’ Committee**
 
@@ -1159,7 +1159,7 @@ When you add a new Maker, you place its code under `StRoot`.
 
 ### **Submitter**
 
-A person who uploads an abstract, talk, poster, or proceedings to Drupal on behalf of an analysis. Often the main analyst or presenter.
+A person who uploads an abstract, talk, poster, or proceedings (talks and proceedings to Indico, abstracts to Drupal) on behalf of an analysis. Often the main analyst or presenter.
 
 ### **Systematic Errors / Systematic Uncertainties**
 

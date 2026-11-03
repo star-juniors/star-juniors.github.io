@@ -48,16 +48,7 @@ April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas6
 
 Regular STAR Physics Working Groups meetings on [Indico](https://indico.bnl.gov/category/690/):
 
-<div class="indico-list">
-  <a href="https://indico.bnl.gov/category/693/">LFSUPC - Light Flavor and Ultra-Peripheral Collisions</a>
-  <a href="https://indico.bnl.gov/category/695/">CF - Correlations and Fluctuations</a>
-  <a href="https://indico.bnl.gov/category/694/">FCV - Flow, Chirality, and Vorticity</a>
-  <a href="https://indico.bnl.gov/category/696/">HP - Hard Probes</a>
-  <a href="https://indico.bnl.gov/category/697/">Cold QCD</a>
-  <a href="https://indico.bnl.gov/category/698/">PWGC - PWG Convener Panel</a>
-  <a href="https://indico.bnl.gov/category/801/">Conferences</a>
-  <a href="https://indico.bnl.gov/category/817/">GPC</a>
-</div>
+{% include pwg_meetings.html %}
 
 ## Mailing lists
 
@@ -168,6 +159,8 @@ web $CVSROOT <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offl
 # Selected Junior Meetings on physics
 ## STAR Juniors [youtube channel](https://www.youtube.com/@starjuniors6947/videos)
 
+Juniors Days of recent collaboration meetings are on [Indico](https://indico.bnl.gov/category/251/); the talks below are on the Drupal archive.
+
 - [Relativistic hydrodynamics for heavy ion collisions](https://drupal.star.bnl.gov/STAR/event/2020/06/17/star-juniors-meeting-hydrodynamical-evolution) (Iurii Karpenko, June 2020)
 - [Handling Systematic Errors](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/handling-systematic-errors) (Roger Barlow, March 2021)
 - [STAR Embedding](https://drupal.star.bnl.gov/STAR/meetings/star-collaboration-meeting-march-2021/juniors-day/star-embedding-tutorial) (Xianglei Zhu, March 2021)
@@ -187,7 +180,7 @@ web $CVSROOT <https://www.star.bnl.gov/cgi-bin/protected/viewvc.cgi/cvsroot/offl
 
 - [STAR Theses](https://drupal.star.bnl.gov/STAR/theses) — Collection of STAR theses with detailed detector insights.
 - [STAR Analysis Notes](https://drupal.star.bnl.gov/STAR/starnotes) — Access technical notes and internal documents.
-- [Presentations](https://drupal.star.bnl.gov/STAR/presentations/) — abstracts / talks / posters / proceedings
+- [Conference talks and proceedings on Indico](https://indico.bnl.gov/category/801/) ([upload instructions](/drupal-indico#2-talks-on-indico)); older abstracts / talks / posters / proceedings: [Drupal archive](https://drupal.star.bnl.gov/STAR/presentations/)
 - [Real Data Summary Production](https://www.star.bnl.gov/public/comp/prod/ProdList.html) — Overview of data production summaries.
 - [BFC Production Options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl) — Configurations for dst, [git](https://github.com/star-bnl/star-sw/blob/main/StRoot/StBFChain/StBFChain.cxx)
 - [Disc Quota and Usage Status](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/) — monitoring GPFS

@@ -85,30 +85,11 @@ Additional resources:
 
 STAR has 5 PWGs for collaborative analysis. Find meeting links and past agendas here:
 
-- PWG meetings:  
+- PWG meetings on [Indico](https://indico.bnl.gov/category/690/):
 
-```mermaid
-graph TD
-    PWG[PWG] --> HP[Hard Probes ]
-    PWG --> LFSUPC[Light Flavor
-Spectra and UPC]
-    PWG --> Spin[Cold QCD
-Spin]
-    PWG --> Correlations[Correlations 
-    and fluctuations]
-    PWG --> FCV[Flow, Chirality
-     and Vorticity]
+{% include pwg_meetings.html %}
 
-    click HP "https://drupal.star.bnl.gov/STAR/pwg/Hard-Probes/Weekly-HP-PWG-meeting" "Hard Probes weekly"
-    click LFSUPC "https://drupal.star.bnl.gov/STAR/pwg/light-flavor-spectra/lfs-upc-weekly-meeting" "LFSUPC weekly"
-    click Spin "https://drupal.star.bnl.gov/STAR/pwg/spin/weekly-pwg-meetings" "Cold-QCD Webpage"
-    click FCV "https://drupal.star.bnl.gov/STAR/blog/jjiastar/bulkcorr" "Flow Chirality and Vorticity Webpage"
-    click Correlations "https://drupal.star.bnl.gov/STAR/blog/luoxf/correlations-and-fluctuations" "Correlations and Fluctuations Webpage"
-
-```
-
-- Events:  
-  <https://drupal.star.bnl.gov/STAR/event>
+- Events: [STAR on Indico](https://indico.bnl.gov/category/204/), [Drupal archive](https://drupal.star.bnl.gov/STAR/event)
 
 ## Mattermost Channels
 
@@ -125,9 +106,11 @@ Join the Mattermost channels to ask questions and get help from experts:
 
 ## STAR Collaboration Meetings
 
-Collaboration meetings occur twice a year, starting with Junior Days. Access past Junior Days materials here:
+Collaboration meetings occur twice a year, starting with Junior Days. Agendas and slides are on Indico:
 
-- Past Junior Days:  
+- Collaboration meetings:  
+  <https://indico.bnl.gov/category/251/>
+- Past Junior Days (Drupal archive):  
   <https://drupal.star.bnl.gov/STAR/juniors/past-juniors-days>
 - Junior Education Materials:  
   <https://drupal.star.bnl.gov/STAR/juniors/educational-materials>

@@ -17,8 +17,11 @@
 <style>
   /* Category list styled like Indico */
   .indico-list { border: 1px solid #e0e0e0; margin: 1rem 0; }
-  .indico-list a { display: flex; justify-content: space-between; padding: 0.6rem 1rem; background: #f2f2f2; border-bottom: 1px solid #e0e0e0; color: #2a6ebb; text-decoration: none; }
-  .indico-list a:last-child { border-bottom: none; }
-  .indico-list a:hover { background: #e8e8e8; }
-  .indico-list a::after { content: "➜"; color: #bbb; }
+  .indico-list div { display: flex; align-items: center; background: #f2f2f2; border-bottom: 1px solid #e0e0e0; }
+  .indico-list div:last-child { border-bottom: none; }
+  .indico-list div:hover { background: #e8e8e8; }
+  .indico-list div::after { content: "➜"; color: #bbb; padding-right: 1rem; }
+  .indico-list a { padding: 0.6rem 1rem; color: #2a6ebb; text-decoration: none; }
+  .indico-list a:first-child { flex: 1; }
+  .indico-list a.archive { font-size: 0.8em; color: #888; }
 </style>
