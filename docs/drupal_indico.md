@@ -116,11 +116,23 @@ STAR events on [indico.bnl.gov](https://indico.bnl.gov) are visible only to STAR
 
 1. [Register with CoManage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/). Use your BNL/SDCC account as the first identity if you have one. The first registration needs approval.
 2. [Add your ORCID](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/) to the CoManage entry. Other identities, e.g. your home institution, can be [added later](https://docs.sdcc.bnl.gov/access/accounts/connecting-comanage/). If the page misbehaves on a second visit, use a private window.
-3. Log in to Indico with **CILogon**, then log out. Indico merges the accounts that share your ORCID.
-4. PhoneBook syncs to Indico every hour at 20 minutes past. After the next sync, log in again with CILogon and open the [test event](https://indico.bnl.gov/event/34407/). If it opens, you are done.
+3. Log in to Indico with the **CILogon** button (*Federated Authentication* does not pass the ORCID), accept the account merge if asked, then log out.
+4. PhoneBook syncs to Indico every hour at 20 minutes past. After the next sync, log in again with CILogon in a private window and open the [test event](https://indico.bnl.gov/event/34407/). If it opens, you are done.
 
-{: .note }
-Still "Access Denied" after the sync? Usually the PhoneBook record has no ORCID or a different email than Indico. Ask in the [Mattermost channel](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration).
+The order matters: the sync only sees your ORCID after a CILogon login that happened *after* the ORCID was added. If you already have CoManage from ePIC, it usually just works.
+
+#### Indico login problems
+
+| Problem | Fix |
+|:--|:--|
+| `Access Denied` on the test event | Redo steps 3 and 4 in this order: CILogon login, wait for the next sync, log out and in again in a private window. |
+| Still `Access Denied` a few hours later | Your PhoneBook record has no ORCID, or its email differs from the one in Indico, or you have duplicate Indico accounts. Ask in the [Mattermost channel](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration); the PhoneBook entry or account merge is fixed by admins. |
+| `The identifier "http://cilogon.org/..." is not registered` | You picked a different identity provider than the one you enrolled with, or the enrollment is not approved yet (about one business day). Use the provider you enrolled with and do not enroll again. Other accounts are added with [account linking](https://docs.sdcc.bnl.gov/access/accounts/connecting-comanage/). |
+| `You do not have any current roles` | Enrollment is waiting for approval. Wait for the confirmation email. |
+| Link in the CoManage email gives `404 Not Found` | Fixed in October. If it happens again, write to [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov). |
+| SDCC login asks for a one-time code | The code comes from your authenticator app, not email. [Reset MFA](https://docs.sdcc.bnl.gov/access/authentication/mfa-deletion/) or [enroll a new one](https://account.sdcc.bnl.gov/otpenroll); Google Authenticator worked when others failed. |
+| `File not found` after the SDCC login, `mismatching_state`, `KeyError: 'email'` | Retry in a private window. If it persists, ask in the channel (usually a provisioning or MFA issue on the SDCC side). |
+| Test event opens, but some other events do not | Your access works; those events are restricted by their organizers. |
 
 ### Upload the slides
 
