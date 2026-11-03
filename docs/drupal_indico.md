@@ -56,7 +56,7 @@ WSL: run the command inside [WSL](/software/wsl). Windows browsers reach it as `
 
 ### Set up the browser
 
-PAC URL: `https://www4.rcf.bnl.gov/~geurts/configs/star.pac`
+PAC URL: [`https://www4.rcf.bnl.gov/~geurts/configs/star.pac`](https://www4.rcf.bnl.gov/~geurts/configs/star.pac)
 
 **Firefox:** Settings → Network Settings → Settings… → *Automatic proxy configuration URL* → paste the URL → Reload → OK ([Mozilla help](https://support.mozilla.org/kb/connection-settings-firefox)).
 
@@ -102,6 +102,7 @@ Temporary procedure until InvenioRDM is ready.
 
 ```mermaid
 flowchart LR
+    L[Log in to Indico] --> A
     A[Upload to Indico] --> B[Email PWG conveners]
     B --> C[Update slides]
     C --> B
@@ -109,21 +110,40 @@ flowchart LR
     D --> E[PAC review]
 ```
 
+### Log in to Indico
+
+STAR events on [indico.bnl.gov](https://indico.bnl.gov) are visible only to STAR members. Access comes from the STAR PhoneBook, matched to your Indico account through ORCID. Steps from the pinned post in the Mattermost channel [Indico / PhoneBook integration](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration):
+
+1. [Register with CoManage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/). Use your BNL/SDCC account as the first identity if you have one. The first registration needs approval.
+2. [Add your ORCID](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/) to the CoManage entry. Other identities, e.g. your home institution, can be [added later](https://docs.sdcc.bnl.gov/access/accounts/connecting-comanage/). If the page misbehaves on a second visit, use a private window.
+3. Log in to Indico with **CILogon**, then log out. Indico merges the accounts that share your ORCID.
+4. PhoneBook syncs to Indico every hour at 20 minutes past. After the next sync, log in again with CILogon and open the [test event](https://indico.bnl.gov/event/34407/). If it opens, you are done.
+
+{: .note }
+Still "Access Denied" after the sync? Usually the PhoneBook record has no ORCID or a different email than Indico. Ask in the [Mattermost channel](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration).
+
 ### Upload the slides
 
-1. Open the [STAR category on Indico](https://indico.bnl.gov/category/801/). If you have no access, register through CoManage ([instructions on Mattermost](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration)).
-2. Open the conference and your PWG. If they are missing, ask the PWG conveners and the PAC to create them.
-3. Click the pencil icon at the top, choose **Timetable**, then **Add new → Contribution**.
+1. Open the [STAR conferences category](https://indico.bnl.gov/category/801/), then the conference and your PWG. If they are missing, ask the PWG conveners and the PAC to create them.
 
-   <img src="https://learn.getindico.io/assets/meetings/timetable/timetable_open.png" alt="Timetable in the event management menu" width="360">
-   <img src="https://learn.getindico.io/assets/meetings/timetable/contribution_select.png" alt="Add new, Contribution" width="220">
+   <img src="/img/indico/category.png" alt="STAR conferences category on Indico" width="560">
 
-4. Title: `John Doe: Measurement of ...`. Save, then **Switch to display view** (top left).
-5. Next to your talk, click the pencil icon with a square background, choose **Material Editor**, then **Upload files**.
+2. Click the pencil icon in the top toolbar (*Switch to the management area*), then **Timetable**.
 
-   <img src="https://learn.getindico.io/assets/with-folders-material-meeting.png" alt="Material editor with Upload files button" width="480">
+   <img src="/img/indico/manage-button.png" alt="Pencil icon: switch to the management area" width="560">
+   <img src="/img/indico/timetable-menu.png" alt="Timetable in the management menu" width="180">
 
-Example: [indico.bnl.gov/event/35219](https://indico.bnl.gov/event/35219/). Screenshots from [Learning Indico](https://learn.getindico.io/meetings/timetable/#contributions).
+3. **Add new → Contribution**. Title: `John Doe: Measurement of ...`. Save, then **Switch to display view**.
+
+   <img src="/img/indico/add-contribution.png" alt="Add new, Contribution" width="220">
+
+4. Next to your talk, open the pencil menu, choose **Material editor** and upload the slides.
+
+   <img src="/img/indico/material-editor.png" alt="Contribution menu with Material editor" width="180">
+
+The result looks like this ([example event](https://indico.bnl.gov/event/35219/)):
+
+<img src="/img/indico/event-example.png" alt="Example contribution in the PWG event" width="560">
 
 ### Ask for review
 
