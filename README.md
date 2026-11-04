@@ -17,16 +17,14 @@ permalink: /
 [Timetable for current (October 2026) collaboration meeting](https://indico.bnl.gov/event/33970/timetable/#20261005.detailed){: .btn .btn-green }
 </span>
 -->
-
+<!--
 {: .new-title }
 > New Material
->
-> November 2026 - Drupal is reachable only through an SSH tunnel, and STAR talks are now uploaded to Indico: [instructions](/drupal-indico).
->
-> June 2026 - Storage guides: [HPSS / tape](/software/hpss) and the [Data Carousel](/software/carousel) for restoring data.
+-->
+
 
 {: .highlight }
-April 2025 - STAR moved to new Alma 9 nodes (`starsub0x`) instead of SL7 (`rcas60xx`). Check [instruction](/software/a9)
+November 2026 - Drupal is reachable only through an SSH tunnel, and STAR talks are now uploaded to Indico: [instructions](/drupal-indico).
 
 <span class="fs-5">
 [star.bnl.gov](https://www.star.bnl.gov){: .btn .btn-blue }
