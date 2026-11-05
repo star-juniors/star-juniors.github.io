@@ -15,11 +15,11 @@ Drupal is reachable only through an SSH tunnel to SDCC. Until STAR moves to Inve
 
 ## 1. Drupal through an SSH tunnel
 
-The tunnel opens a SOCKS proxy on `localhost:1088`. A [PAC file](https://www4.rcf.bnl.gov/~geurts/configs/star.pac) tells the browser to send only BNL addresses through it.
+The tunnel opens a SOCKS proxy on `localhost:1088`. A [PAC file](https://www4.rcf.bnl.gov/~geurts/configs/star.pac) tells the browser to send only STAR and SDCC addresses through it.
 
 ```mermaid
 flowchart LR
-    B[Browser] -- "*.bnl.gov" --> P["localhost:1088"]
+    B[Browser] -- "*.star.bnl.gov, *sdcc.bnl.gov" --> P["localhost:1088"]
     B -- "other sites" --> I[Internet]
     P == ssh ==> G[cssh.sdcc.bnl.gov] --> D[drupal.star.bnl.gov]
 ```
@@ -34,7 +34,7 @@ Linux, macOS and WSL:
 ssh -C -N -D 1088 <sdcc_user>@cssh.sdcc.bnl.gov
 ```
 
-Keep the terminal open; `Ctrl+C` closes the tunnel.
+Keep the terminal open.
 
 <details markdown="1">
 <summary>Shortcut in <code>~/.ssh/config</code></summary>
@@ -58,6 +58,9 @@ WSL: run the command inside [WSL](/software/wsl). Windows browsers reach it as `
 
 PAC URL: [`https://www4.rcf.bnl.gov/~geurts/configs/star.pac`](https://www4.rcf.bnl.gov/~geurts/configs/star.pac)
 
+{: .note }
+The PAC file is in a personal directory, so read it before using it. It should only send `*.star.bnl.gov` and `*sdcc.bnl.gov` to `127.0.0.1:1088` and everything else `DIRECT`. The port must match the `-D 1088` of the tunnel.
+
 **Firefox:** Settings → Network Settings → Settings… → *Automatic proxy configuration URL* → paste the URL → Reload → OK ([Mozilla help](https://support.mozilla.org/kb/connection-settings-firefox)).
 
 **Chrome** has no proxy setting of its own. Start a separate window with the PAC URL; the separate `--user-data-dir` is needed if Chrome is already running.
@@ -80,7 +83,9 @@ Linux:
 google-chrome --user-data-dir="$HOME/.chrome-star" --proxy-pac-url=https://www4.rcf.bnl.gov/~geurts/configs/star.pac
 ```
 
-**Other browsers** use the system proxy: on Windows *Settings → Network & internet → Proxy → Use setup script*, on macOS *Network → Details → Proxies → Automatic proxy configuration*, on GNOME *Network → Network Proxy → Automatic*.
+**Safari** uses the macOS proxy: System Settings → Wi-Fi (or your network) → Details → Proxies → turn on *Automatic proxy configuration* → paste the URL, leave *SOCKS proxy* off → OK. Restart Safari.
+
+**Other browsers** use the system proxy too: on macOS as for Safari, on Windows *Settings → Network & internet → Proxy → Use setup script*, on GNOME *Network → Network Proxy → Automatic*.
 
 {: .warning }
 Do not set `localhost:1088` as a manual SOCKS proxy: all traffic then goes to BNL, and sites outside BNL stop loading.
@@ -98,8 +103,6 @@ Then open <https://drupal.star.bnl.gov/STAR/>.
 
 ## 2. Talks on Indico
 
-Temporary procedure until InvenioRDM is ready. Slides for PWG meetings go to that week's event in the [PWG category](/#weekly-meetings). Proceedings go the same way as slides ([example](https://indico.bnl.gov/event/35279/)).
-
 ```mermaid
 flowchart LR
     L[Log in to Indico] --> A
@@ -112,26 +115,24 @@ flowchart LR
 
 ### Log in to Indico
 
-STAR events on [indico.bnl.gov](https://indico.bnl.gov) are visible only to STAR members. Access comes from the STAR PhoneBook, matched to your Indico account through ORCID. Steps from the pinned post in the Mattermost channel [Indico / PhoneBook integration](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration):
+STAR events on [indico.bnl.gov](https://indico.bnl.gov) are visible only to STAR members. Access comes from the STAR PhoneBook, matched to your Indico account through ORCID.
 
-1. [Register with CoManage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/). Use your BNL/SDCC account as the first identity if you have one. The first registration needs approval.
-2. [Add your ORCID](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/) to the CoManage entry. Other identities, e.g. your home institution, can be [added later](https://docs.sdcc.bnl.gov/access/accounts/connecting-comanage/). If the page misbehaves on a second visit, use a private window.
+1. [Register with CoManage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/). Use your BNL/SDCC account as the first identity if you have one.
+2. [Add your ORCID](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/) to the CoManage entry.
 3. Log in to Indico with the **CILogon** button (*Federated Authentication* does not pass the ORCID), accept the account merge if asked, then log out.
 4. PhoneBook syncs to Indico every hour at 20 minutes past. After the next sync, log in again with CILogon in a private window and open the [test event](https://indico.bnl.gov/event/34407/). If it opens, you are done.
-
-The order matters: the sync only sees your ORCID after a CILogon login that happened *after* the ORCID was added. If you already have CoManage from ePIC, it usually just works.
 
 #### Indico login problems
 
 | Problem | Fix |
 |:--|:--|
 | `Access Denied` on the test event | Redo steps 3 and 4 in this order: CILogon login, wait for the next sync, log out and in again in a private window. |
-| Still `Access Denied` a few hours later | Your PhoneBook record has no ORCID, or its email differs from the one in Indico, or you have duplicate Indico accounts. Ask in the [Mattermost channel](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration); the PhoneBook entry or account merge is fixed by admins. |
-| `The identifier "http://cilogon.org/..." is not registered` | You picked a different identity provider than the one you enrolled with, or the enrollment is not approved yet (about one business day). Use the provider you enrolled with and do not enroll again. Other accounts are added with [account linking](https://docs.sdcc.bnl.gov/access/accounts/connecting-comanage/). |
+| Still `Access Denied` a few hours later | Your PhoneBook record has no ORCID, or its email differs from the one in Indico, or you have duplicate Indico accounts. Ask in the [Mattermost channel](https://chat.sdcc.bnl.gov/star/channels/indico--phonebook-integration). |
+| `The identifier "http://cilogon.org/..." is not registered` | You picked a different identity provider than the one you enrolled with, or the enrollment is not approved yet (about one business day). Use the provider you enrolled with and do not enroll again. |
 | `You do not have any current roles` | Enrollment is waiting for approval. Wait for the confirmation email. |
-| Link in the CoManage email gives `404 Not Found` | Fixed in October. If it happens again, write to [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov). |
-| SDCC login asks for a one-time code | The code comes from your authenticator app, not email. [Reset MFA](https://docs.sdcc.bnl.gov/access/authentication/mfa-deletion/) or [enroll a new one](https://account.sdcc.bnl.gov/otpenroll); Google Authenticator worked when others failed. |
-| `File not found` after the SDCC login, `mismatching_state`, `KeyError: 'email'` | Retry in a private window. If it persists, ask in the channel (usually a provisioning or MFA issue on the SDCC side). |
+| Link in the CoManage email gives `404 Not Found` | Write to [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov). |
+| SDCC login asks for a one-time code | The code comes from your authenticator app, not email. [Reset MFA](https://docs.sdcc.bnl.gov/access/authentication/mfa-deletion/) or [enroll a new one](https://account.sdcc.bnl.gov/otpenroll). |
+| `File not found` after the SDCC login, `mismatching_state`, `KeyError: 'email'` | Retry in a private window. If it persists, ask in the channel. |
 | Test event opens, but some other events do not | Your access works; those events are restricted by their organizers. |
 
 ### Upload the slides
@@ -168,4 +169,3 @@ The result looks like this ([example event](https://indico.bnl.gov/event/35219/)
    ```
 
 2. Update the slides on Indico after the comments.
-3. When the conveners approve, they forward the email to STAR-talks. The PAC then reviews the talk and records the sign-off on Indico.
