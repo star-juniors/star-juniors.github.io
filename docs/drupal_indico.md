@@ -83,7 +83,12 @@ Linux:
 google-chrome --user-data-dir="$HOME/.chrome-star" --proxy-pac-url=https://www4.rcf.bnl.gov/~geurts/configs/star.pac
 ```
 
-**Safari** uses the macOS proxy: System Settings → Wi-Fi (or your network) → Details → Proxies → turn on *Automatic proxy configuration* → paste the URL, leave *SOCKS proxy* off → OK. Restart Safari.
+**Safari** uses the macOS proxy:
+
+1. System Settings → Wi-Fi (or your network) → Details → Proxies.
+2. *Automatic proxy configuration*: on, URL `https://www4.rcf.bnl.gov/~geurts/configs/star.pac`.
+3. *SOCKS proxy*: off.
+4. OK, then restart Safari.
 
 **Other browsers** use the system proxy too: on macOS as for Safari, on Windows *Settings → Network & internet → Proxy → Use setup script*, on GNOME *Network → Network Proxy → Automatic*.
 
