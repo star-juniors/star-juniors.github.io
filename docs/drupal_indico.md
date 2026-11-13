@@ -52,36 +52,16 @@ Then run `ssh -N star-socks`.
 </details>
 
 {: .note }
-WSL: run the command inside [WSL](/software/wsl). Windows browsers reach it as `localhost:1088`; check with `Test-NetConnection 127.0.0.1 -Port 1088` in PowerShell.
-
+WSL: run the command inside [WSL](/software/wsl)
 ### Set up the browser
 
 PAC URL: [`https://www4.rcf.bnl.gov/~geurts/configs/star.pac`](https://www4.rcf.bnl.gov/~geurts/configs/star.pac)
 
 {: .note }
-The PAC file is in a personal directory, so read it before using it. It should only send `*.star.bnl.gov` and `*sdcc.bnl.gov` to `127.0.0.1:1088` and everything else `DIRECT`. The port must match the `-D 1088` of the tunnel.
+The PAC file- send `*.star.bnl.gov` and `*sdcc.bnl.gov` to `127.0.0.1:1088` and everything else `DIRECT`. The port must match the `-D 1088` of the tunnel.
 
 **Firefox:** Settings → Network Settings → Settings… → *Automatic proxy configuration URL* → paste the URL → Reload → OK ([Mozilla help](https://support.mozilla.org/kb/connection-settings-firefox)).
 
-**Chrome** has no proxy setting of its own. Start a separate window with the PAC URL; the separate `--user-data-dir` is needed if Chrome is already running.
-
-Windows (desktop shortcut target, replace `<you>`):
-
-```
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --user-data-dir="C:\Users\<you>\AppData\Local\Google\Chrome STAR" --proxy-pac-url=https://www4.rcf.bnl.gov/~geurts/configs/star.pac
-```
-
-macOS:
-
-```bash
-open -na "Google Chrome" --args --user-data-dir="$HOME/.chrome-star" --proxy-pac-url=https://www4.rcf.bnl.gov/~geurts/configs/star.pac
-```
-
-Linux:
-
-```bash
-google-chrome --user-data-dir="$HOME/.chrome-star" --proxy-pac-url=https://www4.rcf.bnl.gov/~geurts/configs/star.pac
-```
 
 **Safari** uses the macOS proxy:
 
@@ -139,38 +119,3 @@ STAR events on [indico.bnl.gov](https://indico.bnl.gov) are visible only to STAR
 | SDCC login asks for a one-time code | The code comes from your authenticator app, not email. [Reset MFA](https://docs.sdcc.bnl.gov/access/authentication/mfa-deletion/) or [enroll a new one](https://account.sdcc.bnl.gov/otpenroll). |
 | `File not found` after the SDCC login, `mismatching_state`, `KeyError: 'email'` | Retry in a private window. If it persists, ask in the channel. |
 | Test event opens, but some other events do not | Your access works; those events are restricted by their organizers. |
-
-### Upload the slides
-
-1. Open the [STAR conferences category](https://indico.bnl.gov/category/801/), then the conference and your PWG. If they are missing, ask the PWG conveners and the PAC to create them.
-
-   <img src="/img/indico/category.png" alt="STAR conferences category on Indico" width="560">
-
-2. Click the pencil icon in the top toolbar (*Switch to the management area*), then **Timetable**.
-
-   <img src="/img/indico/manage-button.png" alt="Pencil icon: switch to the management area" width="560">
-   <img src="/img/indico/timetable-menu.png" alt="Timetable in the management menu" width="180">
-
-3. **Add new → Contribution**. Title: `John Doe: Measurement of ...`. Save, then **Switch to display view**.
-
-   <img src="/img/indico/add-contribution.png" alt="Add new, Contribution" width="220">
-
-4. Next to your talk, open the pencil menu, choose **Material editor** and upload the slides.
-
-   <img src="/img/indico/material-editor.png" alt="Contribution menu with Material editor" width="180">
-
-The result looks like this ([example event](https://indico.bnl.gov/event/35219/)):
-
-<img src="/img/indico/event-example.png" alt="Example contribution in the PWG event" width="560">
-
-### Ask for review
-
-1. Email the PWG conveners:
-
-   ```
-   Subject: STAR presentation by John Doe for Quark Matter 2027 submitted for review
-
-   Slides: https://indico.bnl.gov/event/<id>/contributions/<id>/
-   ```
-
-2. Update the slides on Indico after the comments.
